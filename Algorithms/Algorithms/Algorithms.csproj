@@ -53,6 +53,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="sort\BubbleSort.cs" />
+    <Compile Include="sort\HeapSort.cs" />
+    <Compile Include="sort\MergeSort.cs" />
+    <Compile Include="sort\QuickSort.cs" />
+    <Compile Include="sort\SelectionSort.cs" />
+    <Compile Include="_struct\AVLTree.cs" />
+    <Compile Include="_struct\BinaryTree.cs" />
+    <Compile Include="_struct\BTree.cs" />
+    <Compile Include="_struct\LinkedQueue.cs" />
+    <Compile Include="_struct\Queue.cs" />
+    <Compile Include="_struct\TreeRedBlack.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +100,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="exception\" />
+    <Folder Include="fileManager\" />
+    <Folder Include="node\" />
+    <Folder Include="util\" />
+    <Folder Include="_abstract\" />
+    <Folder Include="_interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
