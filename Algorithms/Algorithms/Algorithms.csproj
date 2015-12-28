@@ -53,11 +53,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="exception\EmptyCollectionException.cs" />
+    <Compile Include="search\BinarySearch.cs" />
     <Compile Include="sort\BubbleSort.cs" />
     <Compile Include="sort\HeapSort.cs" />
     <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
     <Compile Include="sort\SelectionSort.cs" />
+    <Compile Include="_abstract\Node.cs" />
+    <Compile Include="_abstract\StaticStruct.cs" />
+    <Compile Include="_interface\ICommon.cs" />
     <Compile Include="_struct\AVLTree.cs" />
     <Compile Include="_struct\BinaryTree.cs" />
     <Compile Include="_struct\BTree.cs" />
@@ -102,12 +107,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="exception\" />
     <Folder Include="fileManager\" />
     <Folder Include="node\" />
     <Folder Include="util\" />
-    <Folder Include="_abstract\" />
-    <Folder Include="_interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

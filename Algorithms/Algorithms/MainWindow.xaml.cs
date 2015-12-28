@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Algorithms.search;
 
 namespace Algorithms
 {
@@ -22,6 +23,12 @@ namespace Algorithms
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			BinarySearch<Int32> bs = new BinarySearch<Int32>();
+			Int32[] v = { 1,2, 3, 4, 5, 6};
+			Int32 result = bs.Search(v, 54);
+			Console.WriteLine(result);
+			
 		}
 	}
 }
