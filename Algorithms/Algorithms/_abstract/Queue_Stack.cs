@@ -9,6 +9,12 @@ namespace Algorithms._abstract
 {
 	internal abstract class Queue_Stack<E> : StaticStruct<E>
 	{
+		public bool canExtend;
+		/// <summary>
+		/// Propriedade que indica se a fila pode 
+		/// </summary>
+		public bool CanExtend { get; set; }
+
 		public abstract void Insert(E obj);
 		public abstract E Remove();
 		public abstract E Retrive();

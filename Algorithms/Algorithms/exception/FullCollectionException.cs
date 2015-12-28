@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Algorithms.exception
 {
-	class EmptyCollectionException: Exception
+	class FullCollectionException: Exception
 	{
-		private const string commonMessage = "A coleção de itens está vazia!";
-		public EmptyCollectionException() : base(commonMessage) { }
-		public EmptyCollectionException(string message) : base(message) { }
+		private const string commonMessage = "A coleção de itens está cheia!";
+		public FullCollectionException() : base(commonMessage) { }
+		public FullCollectionException(string message) : base(message) { }
 
 		// A constructor is needed for serialization when an
 		// exception propagates from a remoting server to the client. 

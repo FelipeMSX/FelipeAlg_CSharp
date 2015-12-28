@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="search\BinarySearch.cs" />
     <Compile Include="sort\BubbleSort.cs" />
@@ -64,13 +65,13 @@
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
     <Compile Include="_interface\ICommon.cs" />
-    <Compile Include="_struct\AVLTree.cs" />
-    <Compile Include="_struct\BinaryTree.cs" />
-    <Compile Include="_struct\BTree.cs" />
-    <Compile Include="_struct\LinkedQueue.cs" />
-    <Compile Include="_struct\Stack.cs" />
-    <Compile Include="_struct\Queue.cs" />
-    <Compile Include="_struct\TreeRedBlack.cs" />
+    <Compile Include="collection\AVLTree.cs" />
+    <Compile Include="collection\BinaryTree.cs" />
+    <Compile Include="collection\BTree.cs" />
+    <Compile Include="collection\LinkedQueue.cs" />
+    <Compile Include="collection\Stack.cs" />
+    <Compile Include="collection\Queue.cs" />
+    <Compile Include="collection\TreeRedBlack.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

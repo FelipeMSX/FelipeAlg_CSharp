@@ -4,13 +4,18 @@ using System.Linq;
 using System.Text;
 using Algorithms._abstract;
 
-namespace Algorithms._struct
+namespace Algorithms.collection
 {
-	class Stack<E> : Queue_Stack<E> where E : IComparable
+
+	class Queue<E> : Queue_Stack<E> where E : IComparable
 	{
+		
 		public override void Insert(E obj)
 		{
-			throw new NotImplementedException();
+			if (CurrentSize == MaxSize)
+			{
+				
+			}
 		}
 
 		public override E Remove()
