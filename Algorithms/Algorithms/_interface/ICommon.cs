@@ -9,11 +9,8 @@ namespace Algorithms._interface
 	{
 		bool IsFull();
 		bool ISEmpty();
-
 		E FirstItem();
 		E LastItem();
-
 		int Size();
-
 	}
 }

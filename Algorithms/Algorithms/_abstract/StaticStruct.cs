@@ -7,15 +7,28 @@ using Algorithms.exception;
 
 namespace Algorithms._abstract
 {
-	abstract class StaticStruct<E> : ICommon<E>
+	internal abstract class StaticStruct<E> : ICommon<E>
 	{
-		protected E[] Vector;
+		protected E[] vector;
+		protected E[] Vector { get; set; }
 
 		protected int currentSize;
 		protected int CurrentSize { get; set; }
 
 		protected int maxSize;
 		protected int MaxSize { get; set; }
+
+
+		#region métodos da interface
+		public bool ISEmpty()
+		{
+			return CurrentSize == 0;
+		}
+
+		public bool IsFull()
+		{
+			return currentSize == MaxSize;
+		}
 
 		public E FirstItem()
 		{
@@ -25,24 +38,18 @@ namespace Algorithms._abstract
 				return Vector[0];
 		}
 
-		public bool ISEmpty()
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool IsFull()
-		{
-			throw new NotImplementedException();
-		}
-
 		public E LastItem()
 		{
-			throw new NotImplementedException();
+			if (ISEmpty())
+				throw new EmptyCollectionException("A coleção de itens está vazia!");
+			else
+				return Vector[currentSize - 1];
 		}
 
 		public int Size()
 		{
-			throw new NotImplementedException();
+			return CurrentSize;
 		}
+		#endregion
 	}
 }
