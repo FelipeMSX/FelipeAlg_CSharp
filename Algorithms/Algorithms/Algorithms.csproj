@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="exception\NullObjectException.cs" />
     <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="search\BinarySearch.cs" />

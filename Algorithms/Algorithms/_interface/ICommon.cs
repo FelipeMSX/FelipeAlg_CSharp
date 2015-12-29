@@ -8,7 +8,7 @@ namespace Algorithms._interface
 	interface ICommon<E>
 	{
 		bool IsFull();
-		bool ISEmpty();
+		bool IsEmpty();
 		E FirstItem();
 		E LastItem();
 		int Size();
