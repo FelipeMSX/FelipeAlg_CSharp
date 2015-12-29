@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Algorithms.exception
 {
+	/// <summary>
+	/// Uma exceção será lançada quando tentar acessar uma coleção vazia.
+	/// </summary>
 	class EmptyCollectionException: Exception
 	{
 		private const string commonMessage = "A coleção de itens está vazia!";

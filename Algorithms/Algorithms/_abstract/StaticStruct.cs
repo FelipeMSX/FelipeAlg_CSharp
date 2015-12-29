@@ -42,8 +42,21 @@ namespace Algorithms._abstract
 			set { canExtend = value; }
 		}
 
+		/// <summary>
+		/// Inicializa com o valor padrão que é 100.
+		/// </summary>
 		public StaticStruct()
 		{
+			vector = new E[MaxSize];
+		}
+
+		/// <summary>
+		/// Inicializa com o valor de acordo com o parâmetro.
+		/// </summary>
+		/// <param name="initialSize"></param>
+		public StaticStruct(int initialSize)
+		{
+			MaxSize = initialSize;
 			vector = new E[MaxSize];
 		}
 
@@ -62,17 +75,11 @@ namespace Algorithms._abstract
 		}
 
 		#region métodos da interface
-		public bool IsEmpty()
-		{
-			return CurrentSize == 0;
-		}
-
-		public bool IsFull()
-		{
-			return currentSize == MaxSize;
-		}
-
-		public E FirstItem()
+		/// <summary>
+		/// Retorna o primeiro item da coleção sem removê-lo.
+		/// </summary>
+		/// <returns></returns>
+		public virtual E FirstItem()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
@@ -80,7 +87,11 @@ namespace Algorithms._abstract
 				return Vector[0];
 		}
 
-		public E LastItem()
+		/// <summary>
+		/// Retorna o último item da coleção sem removê-lo.
+		/// </summary>
+		/// <returns></returns>
+		public virtual E LastItem()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
@@ -88,6 +99,28 @@ namespace Algorithms._abstract
 				return Vector[currentSize - 1];
 		}
 
+		/// <summary>
+		/// Indica se a lista está vazia.
+		/// </summary>
+		/// <returns></returns>
+		public bool IsEmpty()
+		{
+			return CurrentSize == 0;
+		}
+
+		/// <summary>
+		/// Indica se a lista está com sua capacidade no limite.
+		/// </summary>
+		/// <returns></returns>
+		public bool IsFull()
+		{
+			return currentSize == MaxSize;
+		}
+
+		/// <summary>
+		/// Retorna o atual tamanho da coleção.
+		/// </summary>
+		/// <returns></returns>
 		public int Size()
 		{
 			return CurrentSize;

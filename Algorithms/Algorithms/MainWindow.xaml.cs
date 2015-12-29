@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Algorithms.collection;
+using Algorithms.exception;
 using Algorithms.search;
 
 namespace Algorithms
@@ -23,12 +25,27 @@ namespace Algorithms
 		public MainWindow()
 		{
 			InitializeComponent();
-			Queue<string> q = new Queue<string>();
+
 			
-		//	Int32[] v = { 1,2, 3, 4, 5, 6};
+		}
+
+		private void button_Click(object sender, RoutedEventArgs e)
+		{
+			Stack<string> q = new Stack<string>();
+
+			q.Push("Felipe");
+			q.Push("Albert");
+			q.Push("Diego Costa");
+			q.Push("Zé Todinho");
 		
-			//Console.WriteLine(result);
 			
+			//	Int32[] v = { 1,2, 3, 4, 5, 6};
+
+			Console.WriteLine(q.Pop());
+			Console.WriteLine(q.Pop());
+			Console.WriteLine(q.Pop());
+			Console.WriteLine(q.Pop());
+			Console.WriteLine(q.Pop());
 		}
 	}
 }

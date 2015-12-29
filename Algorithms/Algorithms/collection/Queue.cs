@@ -9,18 +9,23 @@ namespace Algorithms.collection
 {
 
 	/// <summary>
-	/// -----------------------------------Descrição da fila---------------------------------
-	/// -------------------------------------------------------------------------------------
 	/// </summary>
 	/// <typeparam name="E"></typeparam>
 	class Queue<E> : Queue_Stack<E> where E : IComparable
 	{
 		/// <summary>
+		/// Inicializa com o valor padrão que é 100.
+		/// </summary>
+		public Queue(): base(){}
+
+		public Queue(int initialSize): base(initialSize) {}
+
+		/// <summary>
 		/// Inserir o objeto de acordo com o indicador do currentSize,ou seja, a cada inserção a próxima ocorrerá no currentSize+1.
 		/// Não é permitido valor nulo.
 		/// </summary>
 		/// <param name="obj"></param>
-		public override void Insert(E obj)
+		public override void Push(E obj)
 		{
 			if (obj == null)
 				throw new NullObjectException();
@@ -42,27 +47,20 @@ namespace Algorithms.collection
 		/// Remove e retorna o primeiro item a sair da fila(vector[0]).
 		/// </summary>
 		/// <returns></returns>
-		public override E Remove()
+		public override E Pop()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
 
 			E temp = Vector[0];
-			currentSize--;
+			CurrentSize--;
 
-			for (int i = 0; i < currentSize; i++)
+			for (int i = 0; i < CurrentSize; i++)
 				Vector[i] = Vector[i + 1];
 
-			return temp;
-		}
+			Vector[CurrentSize] = default(E);
 
-		/// <summary>
-		/// Recupara o primeiro item a sair da fila.
-		/// </summary>
-		/// <returns></returns>
-		public override E Retrive()
-		{
-			return FirstItem();
+			return temp;
 		}
 	}
 }

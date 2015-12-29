@@ -9,10 +9,11 @@ namespace Algorithms._abstract
 {
 	internal abstract class Queue_Stack<E> : StaticStruct<E>
 	{
+		public Queue_Stack():base(){}
 
-		public abstract void Insert(E obj);
-		public abstract E Remove();
-		public abstract E Retrive();
+		public Queue_Stack(int initialSize):base(initialSize){}
 
+		public abstract void Push(E obj);
+		public abstract E Pop();
 	}
 }
