@@ -58,7 +58,7 @@
     <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="search\Search.cs" />
-    <Compile Include="sort\Sort.cs" />
+    <Compile Include="_sort\Sort.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
