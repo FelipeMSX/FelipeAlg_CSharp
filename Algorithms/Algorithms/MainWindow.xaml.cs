@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using Algorithms.collection;
 using Algorithms.exception;
 using Algorithms.search;
+using Algorithms.sort;
 
 namespace Algorithms
 {
@@ -24,28 +25,28 @@ namespace Algorithms
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
-
-			
+			InitializeComponent();			
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-			Stack<string> q = new Stack<string>();
 
-			q.Push("Felipe");
-			q.Push("Albert");
-			q.Push("Diego Costa");
-			q.Push("Zé Todinho");
+				Int32[] v = { 10,-2, 337, 4,4, 50, 61};
+			Int32[] result = Sort< Int32>.MergeSort(v);
+
+
+		}
+
 		
-			
-			//	Int32[] v = { 1,2, 3, 4, 5, 6};
+	}
 
-			Console.WriteLine(q.Pop());
-			Console.WriteLine(q.Pop());
-			Console.WriteLine(q.Pop());
-			Console.WriteLine(q.Pop());
-			Console.WriteLine(q.Pop());
+	public class ObjectTeste : IComparable<ObjectTeste>
+	{
+		string Name;
+		int age;
+		public int CompareTo(ObjectTeste obj)
+		{
+			return Name.CompareTo(obj.Name);
 		}
 	}
 }

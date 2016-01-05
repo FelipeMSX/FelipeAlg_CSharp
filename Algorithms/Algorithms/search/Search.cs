@@ -8,7 +8,7 @@ namespace Algorithms.search
 	/// Autor: Felipe Morais; 
 	/// E-mail:felipemsx18@gmail.com
 
-	 sealed partial class BinarySearch<E> where E : IComparable
+	 static class Search<E> where E : IComparable
 	{
 
 		/// <summary>
@@ -16,7 +16,9 @@ namespace Algorithms.search
 		/// </summary>
 		/// <param name="array"> Vetor ordenado</param>
 		/// <param name="item"></param>
-		public E Search(E[] array, E item)
+		/// 
+
+		public static E BinarySearch(E[] array, E item)
 		{
 			int left = 0;
 			int right = array.Length - 1;
@@ -40,7 +42,7 @@ namespace Algorithms.search
 			return default(E);
 		}
 
-		private int midvalue(int left, int right)
+		private static int midvalue(int left, int right)
 		{
 			return left + (right - left) / 2;
 		}

@@ -7,7 +7,7 @@ namespace Algorithms._abstract
 {
 	abstract class Node<E>
 	{
-		private E name;
-		public E Name { get; set; }
+		private E obj;
+		public E Obj { get; set; }
 	}
 }

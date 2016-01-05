@@ -57,12 +57,8 @@
     <Compile Include="exception\NullObjectException.cs" />
     <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
-    <Compile Include="search\BinarySearch.cs" />
-    <Compile Include="sort\BubbleSort.cs" />
-    <Compile Include="sort\HeapSort.cs" />
-    <Compile Include="sort\MergeSort.cs" />
-    <Compile Include="sort\QuickSort.cs" />
-    <Compile Include="sort\SelectionSort.cs" />
+    <Compile Include="search\Search.cs" />
+    <Compile Include="sort\Sort.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
@@ -70,7 +66,6 @@
     <Compile Include="collection\AVLTree.cs" />
     <Compile Include="collection\BinaryTree.cs" />
     <Compile Include="collection\BTree.cs" />
-    <Compile Include="collection\LinkedQueue.cs" />
     <Compile Include="collection\Stack.cs" />
     <Compile Include="collection\Queue.cs" />
     <Compile Include="collection\TreeRedBlack.cs" />

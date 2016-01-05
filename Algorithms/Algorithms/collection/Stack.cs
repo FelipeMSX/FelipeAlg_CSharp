@@ -55,7 +55,7 @@ namespace Algorithms.collection
 		/// Recupera o primeiro objeto da pilha sem removê-lo.
 		/// </summary>
 		/// <returns></returns>
-		public override E FirstItem()
+		public override E First()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
@@ -68,12 +68,23 @@ namespace Algorithms.collection
 		/// Recupera o último objeto da pilha sem removê-lo.
 		/// </summary>
 		/// <returns></returns>
-		public override E LastItem()
+		public override E Last()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
 			else
 				return Vector[0];
+		}
+
+		public override E Find(E obj)
+		{
+			for (int i = 0; i < CurrentSize; i++)
+			{
+				if (Vector[i].CompareTo(obj) == 0)
+					return Vector[i];
+			}
+
+			return default(E);
 		}
 	}
 }

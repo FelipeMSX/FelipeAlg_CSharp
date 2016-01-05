@@ -62,5 +62,16 @@ namespace Algorithms.collection
 
 			return temp;
 		}
+
+		public override E Find(E obj)
+		{
+			for (int i = 0; i < CurrentSize; i++)
+			{
+				if (Vector[i].CompareTo(obj) == 0)
+					return Vector[i];
+			}
+
+			return default(E);
+		}
 	}
 }

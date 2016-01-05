@@ -79,7 +79,7 @@ namespace Algorithms._abstract
 		/// Retorna o primeiro item da coleção sem removê-lo.
 		/// </summary>
 		/// <returns></returns>
-		public virtual E FirstItem()
+		public virtual E First()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
@@ -91,7 +91,7 @@ namespace Algorithms._abstract
 		/// Retorna o último item da coleção sem removê-lo.
 		/// </summary>
 		/// <returns></returns>
-		public virtual E LastItem()
+		public virtual E Last()
 		{
 			if (IsEmpty())
 				throw new EmptyCollectionException();
@@ -125,6 +125,9 @@ namespace Algorithms._abstract
 		{
 			return CurrentSize;
 		}
+
+		public abstract E Find(E obj);
+
 		#endregion
 	}
 }
