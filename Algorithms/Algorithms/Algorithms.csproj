@@ -53,22 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="collection\PriorityQueue.cs" />
     <Compile Include="exception\NullObjectException.cs" />
     <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="search\Search.cs" />
     <Compile Include="_sort\Sort.cs" />
-    <Compile Include="_abstract\Node.cs" />
-    <Compile Include="_abstract\Queue_Stack.cs" />
-    <Compile Include="_abstract\StaticStruct.cs" />
     <Compile Include="_interface\ICommon.cs" />
-    <Compile Include="collection\AVLTree.cs" />
-    <Compile Include="collection\BinaryTree.cs" />
-    <Compile Include="collection\BTree.cs" />
-    <Compile Include="collection\Stack.cs" />
-    <Compile Include="collection\Queue.cs" />
-    <Compile Include="collection\TreeRedBlack.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,9 +97,11 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="collection\" />
     <Folder Include="fileManager\" />
     <Folder Include="node\" />
     <Folder Include="util\" />
+    <Folder Include="_abstract\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

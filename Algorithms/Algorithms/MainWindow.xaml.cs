@@ -11,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Algorithms.collection;
 using Algorithms.exception;
 using Algorithms.search;
 using Algorithms.sort;
