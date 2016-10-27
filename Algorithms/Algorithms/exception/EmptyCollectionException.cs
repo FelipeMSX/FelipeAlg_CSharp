@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	/// <summary>
-	/// Uma exceção será lançada quando tentar acessar uma coleção vazia.
-	/// </summary>
-	class EmptyCollectionException: Exception
+	class EmptyCollectionException : Exception
 	{
-		private const string commonMessage = "A coleção de itens está vazia!";
-		public EmptyCollectionException() : base(commonMessage) { }
-		public EmptyCollectionException(string message) : base(message) { }
+		public const string MESSAGE = "This collection does not cotain any element!"; 
+		public EmptyCollectionException() : base(MESSAGE)
+		{
+		}
 
-		// A constructor is needed for serialization when an
-		// exception propagates from a remoting server to the client. 
-
+		public EmptyCollectionException(string message) : base(message)
+		{
+		}
 	}
 }

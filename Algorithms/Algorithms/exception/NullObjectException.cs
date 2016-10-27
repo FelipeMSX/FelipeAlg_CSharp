@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class NullObjectException: Exception
+	class NullObjectException : Exception
 	{
-		private const string commonMessage = "Não é permitido valor nulo!";
-		public NullObjectException() : base(commonMessage) { }
-		public NullObjectException(string message) : base(message) { }
+		public const string MESSAGE = "Object can't be null!"; 
+		public NullObjectException() : base(MESSAGE)
+		{
+		}
+
+		public NullObjectException(string message) : base(message)
+		{
+		}
 	}
 }
