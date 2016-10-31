@@ -17,7 +17,17 @@ namespace Algorithms.sort
 	class QuickSort<E>
 	{
 		private Comparison<E> comparator;
-		public Comparison<E> Comparator { get { return comparator; } set { comparator = value; } }
+		
+		public Comparison<E> Comparator
+		{
+			get { return comparator; }
+			set
+			{
+				if (value == null)
+					throw new ComparerNotSetException();
+				comparator = value;
+			}
+		}
 		QuickSort(Comparison<E> comparator)
 		{
 			this.Comparator = comparator;
@@ -25,9 +35,6 @@ namespace Algorithms.sort
 
 		public void Sort(E[] input)
 		{
-			if (Comparator == null)
-				throw new ComparerNotSetException();
-
 			Quicksort(input, 0, input.Length);
 		}
 

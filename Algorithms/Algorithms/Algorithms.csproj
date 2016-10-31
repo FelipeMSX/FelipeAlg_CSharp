@@ -43,28 +43,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="exception\ValueNotValidException.cs" />
     <Compile Include="exception\NullObjectException.cs" />
     <Compile Include="exception\FullCollectionException.cs" />
     <Compile Include="exception\EqualsElementException.cs" />
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="exception\ElementNotFoundException.cs" />
     <Compile Include="exception\ComparerNotSetException.cs" />
+    <Compile Include="node\LinkedNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="search\Search.cs" />
     <Compile Include="sort\HeapSort.cs" />
     <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
+    <Compile Include="_abstract\Node.cs" />
+    <Compile Include="_abstract\Queue_Stack.cs" />
+    <Compile Include="_abstract\StaticStruct.cs" />
+    <Compile Include="_interface\Common.cs" />
+    <Compile Include="_struct\StaticPriorityQueue.cs" />
+    <Compile Include="_struct\StaticQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="node\" />
     <Folder Include="study\" />
     <Folder Include="util\" />
-    <Folder Include="_abstract\" />
-    <Folder Include="_interface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
