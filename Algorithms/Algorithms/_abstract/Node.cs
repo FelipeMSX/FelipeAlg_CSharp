@@ -15,13 +15,16 @@ namespace Algorithms._abstract
 			get { return value; }
 			set
 			{
-				if (value == null)
-					throw new NullObjectException();
 				this.value = value;
 			}
 		}
 
 		public Node(E value)
+		{
+			Value = value;
+		}
+
+		public Node()
 		{
 			Value = value;
 		}

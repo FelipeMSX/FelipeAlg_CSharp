@@ -10,6 +10,11 @@ namespace Algorithms.node
 	class LinkedNode<E> : Node<E>
 	{
 		public LinkedNode<E> Next { get; set; }
+
+		public LinkedNode() : base()
+		{
+
+		}
 		public LinkedNode(E obj) : base(obj)
 		{		
 		}

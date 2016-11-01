@@ -57,12 +57,15 @@
     <Compile Include="sort\HeapSort.cs" />
     <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
+    <Compile Include="_abstract\LinkedStruct.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
     <Compile Include="_interface\Common.cs" />
+    <Compile Include="_struct\LinkedList.cs" />
     <Compile Include="_struct\StaticPriorityQueue.cs" />
     <Compile Include="_struct\StaticQueue.cs" />
+    <Compile Include="_struct\StaticStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

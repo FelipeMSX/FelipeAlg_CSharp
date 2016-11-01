@@ -8,7 +8,7 @@ using Algorithms.exception;
 
 namespace Algorithms._struct
 {
-	class StaticPriorityQueue<E> : StaticQueue<E>
+	class StaticPriorityQueue<E> : StaticQueue<E> where E : new()
 	{
 		public StaticPriorityQueue() : base(MAXSIZEDEFAULT)
 		{

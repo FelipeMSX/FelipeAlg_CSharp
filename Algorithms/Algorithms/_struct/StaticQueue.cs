@@ -8,7 +8,7 @@ using Algorithms.exception;
 
 namespace Algorithms._struck
 {
-	class StaticQueue<E> : Queue_Stack<E>
+	class StaticQueue<E> : Queue_Stack<E> where E : new()
 	{
 
 		public StaticQueue() : base(MAXSIZEDEFAULT)

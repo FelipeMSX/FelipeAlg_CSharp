@@ -8,7 +8,7 @@ using Algorithms.exception;
 
 namespace Algorithms._abstract
 {
-	class StaticStruct<E> : Common<E>
+	class StaticStruct<E> : Common<E> where E : new()
 	{
 		public const int MAXSIZEDEFAULT = 100;
 		private Comparison<E> comparator;

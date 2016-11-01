@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms._abstract
 {
-	abstract class Queue_Stack<E> : StaticStruct<E>
+	abstract class Queue_Stack<E> : StaticStruct<E> where E: new()
 	{
 		public abstract void Push(E obj);
 		public abstract E Pop();
