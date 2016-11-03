@@ -9,17 +9,7 @@ namespace Algorithms.sort
 {
 	class MergeSort<E>
 	{
-		private Comparison<E> comparator;
-		public Comparison<E> Comparator
-		{
-			get { return comparator; }
-			set
-			{
-				if (value == null)
-					throw new ComparerNotSetException();
-				comparator = value;
-			}
-		}
+		public Comparison<E> Comparator{ get; set; }
 
 		private E[] Vector;
 
@@ -64,7 +54,7 @@ namespace Algorithms.sort
 				// Se i > meio, significa que não existe mais elementos do inicio ao fim para comparar, agora é só adicioar do meio +1 ao fim.
 				else if (i > middle)
 					Vector[k++] = input[j++];
-				else if (comparator(input[i], input[j]) <= 0)
+				else if (Comparator(input[i], input[j]) <= 0)
 					Vector[k++] = input[i++];
 				else
 					Vector[k++] = input[j++];

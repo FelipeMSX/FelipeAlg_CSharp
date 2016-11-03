@@ -8,7 +8,7 @@ using Algorithms.node;
 
 namespace Algorithms._struct
 {
-	class LinkedList<E> : LinkedStruct<E, LinkedNode<E>>
+	class LinkedDoubleList<E> : LinkedStruct<E, LinkedDoubleNode<E>>
 	{
 		public override void Insert(E obj)
 		{

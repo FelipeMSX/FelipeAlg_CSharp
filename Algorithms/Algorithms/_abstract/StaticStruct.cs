@@ -8,20 +8,10 @@ using Algorithms.exception;
 
 namespace Algorithms._abstract
 {
-	class StaticStruct<E> : Common<E> where E : new()
+	public class StaticStruct<E> : Common<E> 
 	{
 		public const int MAXSIZEDEFAULT = 100;
-		private Comparison<E> comparator;
-		protected Comparison<E> Comparator
-		{
-			get { return comparator; }
-			set
-			{
-				if (value == null)
-					throw new ComparerNotSetException();
-				comparator = value;
-			}
-		}
+		protected Comparison<E> Comparator{ get; set; }
 
 		protected E[] Vector { get; set; }
 
@@ -49,41 +39,15 @@ namespace Algorithms._abstract
 			ResizeValue = MAXSIZEDEFAULT;
 			Vector		= new E[MaxSize];
 			Resizable	= true; 
-			
 		}
 
-		public StaticStruct(int maxSize)
-		{
-			MaxSize		= maxSize;
-			ResizeValue = MAXSIZEDEFAULT;
-			Vector		= new E[MaxSize];
-			Resizable	= true;
-		}
-
-		public StaticStruct(int maxSize, bool resizable)
-		{
-			MaxSize		= maxSize;
-			ResizeValue = MAXSIZEDEFAULT;
-			Vector		= new E[MaxSize];
-			Resizable = resizable;
-
-		}
-		public StaticStruct(int maxSize, Comparison<E> comparator)
-		{
-			MaxSize		= maxSize;
-			ResizeValue = MAXSIZEDEFAULT;
-			Vector		= new E[MaxSize];
-			Resizable	= true;
-			Comparator	= comparator;
-		}
-		public StaticStruct(int maxSize,bool resizable, Comparison<E> comparator)
+		public StaticStruct(int maxSize, bool resizable = true, Comparison<E> comparator = null)
 		{
 			MaxSize		= maxSize;
 			ResizeValue = MAXSIZEDEFAULT;
 			Vector		= new E[MaxSize];
 			Resizable	= resizable;
 			Comparator	= comparator;
-
 		}
 
 		public void DisposeAll()

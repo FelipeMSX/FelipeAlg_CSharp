@@ -8,7 +8,7 @@ using Algorithms.exception;
 
 namespace Algorithms._struct
 {
-	class StaticPriorityQueue<E> : StaticQueue<E> where E : new()
+	class StaticPriorityQueue<E> : StaticQueue<E>
 	{
 		public StaticPriorityQueue() : base(MAXSIZEDEFAULT)
 		{
@@ -18,13 +18,13 @@ namespace Algorithms._struct
 		{
 		}
 
-		public StaticPriorityQueue(int maxsize, bool resizable) : base(maxsize, resizable)
-		{
-		}
+		//public StaticPriorityQueue(int maxsize, bool resizable) : base(maxsize, resizable)
+		//{
+		//}
 
-		public StaticPriorityQueue(int maxSize, Comparison<E> comparator) : base(maxSize ,comparator)
-		{
-		}
+		//public StaticPriorityQueue(int maxSize, Comparison<E> comparator) : base(maxSize ,comparator)
+		//{
+		//}
 
 		public StaticPriorityQueue(int maxsize, bool resizable, Comparison<E> comparator) : base (maxsize, resizable, comparator)
 		{

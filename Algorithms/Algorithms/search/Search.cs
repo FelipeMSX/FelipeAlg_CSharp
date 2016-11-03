@@ -11,16 +11,16 @@ namespace Algorithms.search
 
 	public class Search<E>
 	{
-		private Comparison<E> Comparer;
+		private Comparison<E> Comparator { get; set; }
 
 		public Search(Comparison<E> comparer)
 		{
-			Comparer = comparer;
+			Comparator = comparer;
 		}
 
 		public E BinarySearch(E[] array, E item)
 		{
-			if (Comparer == null)
+			if (Comparator == null)
 				throw new ComparerNotSetException();
 
 			int left = 0;
@@ -33,12 +33,12 @@ namespace Algorithms.search
 				// Se o valor do item a ser achado for maior ao do array é necessário avançar para direita.
 				// arrayItem < item
 				;
-				if (Comparer(array[mid], item) <= -1)
+				if (Comparator(array[mid], item) <= -1)
 					left = mid + 1;
 				else
 				// Se o valor do item a ser achado for menor ao do array é necessário avançar para esquerda.
 				// arrayItem > item
-				if (Comparer(array[mid], item) >= 1)
+				if (Comparator(array[mid], item) >= 1)
 					right = mid - 1;
 				else
 					return array[mid];

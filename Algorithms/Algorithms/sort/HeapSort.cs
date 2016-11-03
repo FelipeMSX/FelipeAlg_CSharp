@@ -9,17 +9,8 @@ namespace Algorithms.sort
 {
 	class HeapSort<E>
 	{
-		private Comparison<E> comparator;
-		public Comparison<E> Comparator
-		{
-			get { return comparator; }
-			set
-			{
-				if (value == null)
-					throw new ComparerNotSetException();
-				comparator = value;
-			}
-		}
+		private Comparison<E> Comparator { get; set; }
+	
 
 		HeapSort(Comparison<E> comparator)
 		{

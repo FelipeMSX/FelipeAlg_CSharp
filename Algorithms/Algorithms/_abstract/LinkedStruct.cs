@@ -10,72 +10,87 @@ using System.Collections;
 
 namespace Algorithms._abstract
 {
-	class LinkedStruct<E, T> : Common<E> where T: LinkedNode<E>, new()
+	public abstract class LinkedStruct<E, T> : Common<E> 
+		where T: LinkedNode<E> 
+		where T: LinkedDoubleNode<E>
 	{
 
 		public LinkedStruct()
-		{ 
-			Head =  new T();
+		{
+			Head = default(T);
 		}
 
-		private Comparison<E> comparator;
-		protected Comparison<E> Comparator
-		{
-			get { return comparator; }
-			set
-			{
-				if (value == null)
-					throw new ComparerNotSetException();
-				comparator = value;
-			}
-		}
+		public abstract void Insert(E obj);
+		public abstract E Remove(E obj);
+
+		protected Comparison<E> Comparator { get; set; }
 		protected T Head { get; set; }
 
 		public int Length { get; protected set; }
 
-		private int maxSize;
-		public int MaxSize
-		{
-			get { return maxSize; }
-			set
-			{
-				if (value < maxSize)
-					throw new ValueNotValidException("max size can't be less than current!");
-				maxSize = value;
-			}
-		}
-
 		public void DisposeAll()
 		{
-			throw new NotImplementedException();
+			Head.Next	= default(T);
+			Length		= 0;
 		}
 
 		public bool Empty()
 		{
-			throw new NotImplementedException();
+			return Length == 0;
 		}
 
 		public E First()
 		{
-			throw new NotImplementedException();
+			if (Empty())
+			{
+				throw new EmptyCollectionException();
+			}
+			else
+			{
+				return Head.Next.Value;
+			}
 		}
 
 		public E Last()
 		{
-			throw new NotImplementedException();
+			if (Empty())
+			{
+				throw new EmptyCollectionException();
+			}
+			else
+			{
+				LinkedNode<E> current = Head.Next;
+				while (current.HasNext())
+				{
+					current = current.Next;
+				}
+				return current.Value;
+			}
 		}
 
 		public E Retrive(E obj)
 		{
-			throw new NotImplementedException();
+			if (Empty())
+			{
+				throw new EmptyCollectionException();
+			}
+			else
+			{
+				LinkedNode<E> current = Head.Next;
+				while (current != null && obj.Equals(current.Value))
+				{
+					current = current.Next;
+				}
+				return current.Value;
+			}
 		}
 
-		public IEnumerator Iterator()
+		public IEnumerator<E> Iterator()
 		{
 			LinkedNode<E> current = Head.Next;
 			while(current != null)
 			{
-				yield return current;
+				yield return current.Value;
 				current = current.Next;
 			}
 		}

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Algorithms;
 using Algorithms.search;
 using System.Collections;
+using Algorithms.node;
 
 namespace Algorithms_Test.search
 {
@@ -19,6 +20,7 @@ namespace Algorithms_Test.search
 		public void TestBinarySearch()
 		{
  
+			LinkedDoubleNode<String> n = new LinkedDoubleNode<string>();
 			//Definindo o delegate com lambda expression.
 			Search<int> s = new Search<int>((x, y) => 
 			{

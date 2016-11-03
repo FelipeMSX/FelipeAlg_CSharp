@@ -8,26 +8,14 @@ using Algorithms.exception;
 
 namespace Algorithms._struck
 {
-	class StaticQueue<E> : Queue_Stack<E> where E : new()
+	public class StaticQueue<E> : Queue_Stack<E>
 	{
 
 		public StaticQueue() : base(MAXSIZEDEFAULT)
 		{
 		}
 
-		public StaticQueue(int maxSize): base(maxSize)
-		{
-		}
-
-		public StaticQueue(int maxsize, bool resizable) : base(maxsize, resizable)
-		{
-		}
-
-		public StaticQueue(int maxSize, Comparison<E> comparator) : base(maxSize ,comparator)
-		{ 
-		}
-
-		public StaticQueue(int maxsize, bool resizable, Comparison<E> comparator) : base (maxsize, resizable, comparator)
+		public StaticQueue(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
 		{
 		}
 		public override E Pop()

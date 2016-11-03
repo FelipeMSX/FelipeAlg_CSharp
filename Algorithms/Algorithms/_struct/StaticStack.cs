@@ -8,25 +8,13 @@ using Algorithms.exception;
 
 namespace Algorithms._struct
 {
-	class StaticStack<E> : Queue_Stack<E> where E: new()
+	public class StaticStack<E> : Queue_Stack<E> 
 	{
-		public StaticStack() : base(MAXSIZEDEFAULT)
+		public StaticStack() : base()
 		{
 		}
 
-		public StaticStack(int maxSize): base(maxSize)
-		{
-		}
-
-		public StaticStack(int maxsize, bool resizable) : base(maxsize, resizable)
-		{
-		}
-
-		public StaticStack(int maxSize, Comparison<E> comparator) : base(maxSize ,comparator)
-		{
-		}
-
-		public StaticStack(int maxsize, bool resizable, Comparison<E> comparator) : base (maxsize, resizable, comparator)
+		public StaticStack(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
 		{
 		}
 

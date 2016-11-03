@@ -16,18 +16,8 @@ namespace Algorithms.sort
 	*/
 	class QuickSort<E>
 	{
-		private Comparison<E> comparator;
+		private Comparison<E> Comparator { get; set; }
 		
-		public Comparison<E> Comparator
-		{
-			get { return comparator; }
-			set
-			{
-				if (value == null)
-					throw new ComparerNotSetException();
-				comparator = value;
-			}
-		}
 		QuickSort(Comparison<E> comparator)
 		{
 			this.Comparator = comparator;

@@ -7,9 +7,9 @@ using Algorithms._abstract;
 
 namespace Algorithms.node
 {
-	class LinkedNode<E> : Node<E>
+	public class LinkedNode<E,T> : Node<E> where T: LinkedNode<E,T>
 	{
-		public LinkedNode<E> Next { get; set; }
+		public T Next { get; set; }
 
 		public LinkedNode() : base()
 		{

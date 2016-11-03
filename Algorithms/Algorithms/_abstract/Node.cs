@@ -7,17 +7,10 @@ using Algorithms.exception;
 
 namespace Algorithms._abstract
 {
-	abstract class Node<E>
+	public abstract class Node<E>
 	{
-		private E value;
-		public E Value
-		{
-			get { return value; }
-			set
-			{
-				this.value = value;
-			}
-		}
+
+		public E Value{ get; set; }
 
 		public Node(E value)
 		{
@@ -26,7 +19,6 @@ namespace Algorithms._abstract
 
 		public Node()
 		{
-			Value = value;
 		}
 	}
 }
