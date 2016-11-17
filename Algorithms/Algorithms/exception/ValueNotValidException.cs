@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class ValueNotValidException : Exception
+	public class ValueNotValidException : Exception
 	{
 		public const string MESSAGE = "The value is not valid!"; 
 		public ValueNotValidException() : base(MESSAGE)

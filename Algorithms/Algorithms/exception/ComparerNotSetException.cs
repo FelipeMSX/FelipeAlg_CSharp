@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class ComparerNotSetException : Exception
+	public class ComparerNotSetException : Exception
 	{
 		public const string MESSAGE = "Comparer can't be null"; 
 		public ComparerNotSetException() : base(MESSAGE)

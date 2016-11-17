@@ -7,9 +7,10 @@ using Algorithms._abstract;
 
 namespace Algorithms.node
 {
-	public class LinkedDoubleNode<E> : LinkedNode<E,LinkedDoubleNode<E>>
+	public class LinkedDoubleNode<E> : Node<E>
 	{
 		public LinkedDoubleNode<E> Previous { get; set; }
+		public LinkedDoubleNode<E> Next { get; set; }
 
 		public LinkedDoubleNode() : base()
 		{
@@ -18,6 +19,11 @@ namespace Algorithms.node
 		public LinkedDoubleNode(E obj) : base(obj)
 		{
 
+		}
+
+		public bool HasNext()
+		{
+			return Next != null;
 		}
 
 		public bool HasPrevious()

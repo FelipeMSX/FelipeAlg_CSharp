@@ -18,14 +18,6 @@ namespace Algorithms._struct
 		{
 		}
 
-		//public StaticPriorityQueue(int maxsize, bool resizable) : base(maxsize, resizable)
-		//{
-		//}
-
-		//public StaticPriorityQueue(int maxSize, Comparison<E> comparator) : base(maxSize ,comparator)
-		//{
-		//}
-
 		public StaticPriorityQueue(int maxsize, bool resizable, Comparison<E> comparator) : base (maxsize, resizable, comparator)
 		{
 		}

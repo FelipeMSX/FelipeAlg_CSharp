@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class EmptyCollectionException : Exception
+	public class EmptyCollectionException : Exception
 	{
 		public const string MESSAGE = "This collection does not cotain any element!"; 
 		public EmptyCollectionException() : base(MESSAGE)

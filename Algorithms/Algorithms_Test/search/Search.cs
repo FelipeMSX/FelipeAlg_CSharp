@@ -22,17 +22,8 @@ namespace Algorithms_Test.search
  
 			LinkedDoubleNode<String> n = new LinkedDoubleNode<string>();
 			//Definindo o delegate com lambda expression.
-			Search<int> s = new Search<int>((x, y) => 
-			{
-				if (x > y)
-					return 1;
-				else
-				if (x < y)
-					return -1;
-				else
-					return 0;
-			}
-			);
+			Search<int> s = new Search<int>((x, y) => x.CompareTo(y));
+			
 
 			int[] numbers = new int[] { 1, 2, 3, 4, 5 };
 

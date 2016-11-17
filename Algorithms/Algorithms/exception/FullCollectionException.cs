@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class FullCollectionException : Exception
+	public class FullCollectionException : Exception
 	{
 		public const string MESSAGE = "The collection does not accept any more element"; 
 		public FullCollectionException() : base(MESSAGE)

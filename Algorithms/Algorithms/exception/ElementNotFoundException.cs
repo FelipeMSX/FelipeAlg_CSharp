@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class ElementNotFoundException : Exception
+	public class ElementNotFoundException : Exception
 	{
 		public const string MESSAGE = "The object can't be found in this collection!"; 
 		public ElementNotFoundException() : base(MESSAGE)

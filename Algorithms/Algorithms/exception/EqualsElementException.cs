@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.exception
 {
-	class EqualsElementException : Exception
+	public class EqualsElementException : Exception
 	{
 		public const string MESSAGE = "Equals elements are not allowed!"; 
 		public EqualsElementException() : base(MESSAGE)
