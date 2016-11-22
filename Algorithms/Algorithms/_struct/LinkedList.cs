@@ -44,91 +44,79 @@ namespace Algorithms._struct
 		{
 			if (obj == null)
 				throw new NullObjectException();
-			else
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
+			if (Comparator == null)
+				throw new ComparerNotSetException();
+
+			//Caso a coleção contenha somente um elemento.
+			if (Comparator(Head.Next.Value, obj) == 0)
+			{
+				LinkedNode<E> temp = Head.Next;
+				Head.Next = temp.Next;
+				Length--;
+				return temp.Value;
+				//Caso quando a coleção possui vários elementos e é preciso procurar o elemento.
 			}
 			else
 			{
-				if (Comparator == null)
-					throw new ComparerNotSetException();
+				LinkedNode<E> search = Head.Next;
+				LinkedNode<E> previous = Head.Next;
 
-				//Caso a coleção contenha somente um elemento.
-				if (Comparator(Head.Next.Value, obj) == 0)
+				while (previous.HasNext())
 				{
-					LinkedNode<E> temp = Head.Next;
-					Head.Next = temp.Next;
-					Length--;
-					return temp.Value;
-					//Caso quando a coleção possui vários elementos e é preciso procurar o elemento.
-				}
-				else
-				{
-					LinkedNode<E> search = Head.Next;
-					LinkedNode<E> previous = Head.Next;
-
-					while (previous.HasNext())
+					if (Comparator(search.Value, obj) == 0)
 					{
-						if (Comparator(search.Value, obj) == 0)
-						{
-							previous.Next = search.Next;
-							search.Next = null;
-							Length--;
-							return search.Value;
-						}
-						previous = search;
-						search = search.Next;
+						previous.Next = search.Next;
+						search.Next = null;
+						Length--;
+						return search.Value;
 					}
-					throw new ElementNotFoundException();
+					previous = search;
+					search = search.Next;
 				}
+				throw new ElementNotFoundException();
 			}
+
 		}
 
 		public override E First()
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
-			{
-				return Head.Next.Value;
-			}
+
+			return Head.Next.Value;
 		}
 
 		public override E Last()
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
+
+			LinkedNode<E> current = Head.Next;
+			while (current.HasNext())
 			{
-				LinkedNode<E> current = Head.Next;
-				while (current.HasNext())
-				{
-					current = current.Next;
-				}
-				return current.Value;
+				current = current.Next;
 			}
+			return current.Value;
 		}
 
 		public override E Retrive(E obj)
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
+			if (obj == null)
+				throw new NullObjectException();
+			if (Comparator == null)
+				throw new ComparerNotSetException();
+
+			LinkedNode<E> current = Head.Next;
+			while (current != null && Comparator(current.Value, obj) != 0)
 			{
-				LinkedNode<E> current = Head.Next;
-				while (current != null && obj.Equals(current.Value))
-				{
-					current = current.Next;
-				}
-				return current.Value;
+				current = current.Next;
 			}
+			return current.Value;
+
 		}
 
 		public override IEnumerator<E> GetEnumerator()

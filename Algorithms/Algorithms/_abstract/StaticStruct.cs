@@ -74,14 +74,10 @@ namespace Algorithms._abstract
 		public E Retrive(E obj)
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
 			if (Comparator == null)
-			{
 				throw new ComparerNotSetException();
-			}
+
 
 			for (int i = 0; i < Length; i++)
 			{
@@ -95,19 +91,16 @@ namespace Algorithms._abstract
 		protected void DoubleCapacity()
 		{
 			if (Resizable)
-			{
 				throw new FullCollectionException();
-			}else
-			{
-				MaxSize += ResizeValue;
-				E[] temp = new E[MaxSize];
 
-				for (int i = 0; i < Length; i++)
-				{
-					temp[i] = Vector[i];
-				}
-				Vector = temp;
+			MaxSize += ResizeValue;
+			E[] temp = new E[MaxSize];
+
+			for (int i = 0; i < Length; i++)
+			{
+				temp[i] = Vector[i];
 			}
+			Vector = temp;
 		}
 
 		public bool Full()

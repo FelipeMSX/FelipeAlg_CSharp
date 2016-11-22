@@ -21,38 +21,23 @@ namespace Algorithms._struct
 		public override E Pop()
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
-			{
-				E temp = Vector[--Length];
-				Vector[Length] = default(E);
 
-				return temp;
-			}
+			E temp = Vector[--Length];
+			Vector[Length] = default(E);
+
+			return temp;
 		}
 
 		public override void Push(E obj)
 		{
-			if(obj == null)
-			{
+			if (obj == null)
 				throw new NullObjectException();
-			}else
-			{
-				if (Full())
-				{
-					if (Resizable)
-					{
-						DoubleCapacity();
-						Vector[Length++] = obj;
-					}
-					else
-					{
-						throw new FullCollectionException();
-					}
-				}
-			}
+			if (Full() && !Resizable)
+				throw new FullCollectionException();
+
+			DoubleCapacity();
+			Vector[Length++] = obj;
 		}
 	}
 }

@@ -24,37 +24,25 @@ namespace Algorithms._struct
 
 		public override void Push(E obj)
 		{
-			if(obj == null)
-			{
+			if (obj == null)
 				throw new NullObjectException();
-			}
-			else
+			if (Full() && !Resizable)
+				throw new FullCollectionException();
+
+			DoubleCapacity();
+			int position = 0;
+			//Encontra a posição do item a ser colocado.
+			while (Length > 0 && Comparator(obj, Vector[position]) < 0)
+				position++;
+
+			//Desloca os itens uma posição a frente para colocar o objeto no lugar.
+			for (int i = MaxSize - 1; i >= position; i--)
 			{
-				if (Full())
-				{
-					if (Resizable)
-					{
-						DoubleCapacity();
-						int position = 0;
-						//Encontra a posição do item a ser colocado.
-						while (Length > 0 && Comparator(obj, Vector[position]) < 0)
-							position++;
-
-						//Desloca os itens uma posição a frente para colocar o objeto no lugar.
-						for (int i = MaxSize - 1; i >= position; i--)
-						{
-							Vector[i + 1] = Vector[i];
-						}
-
-						Vector[position] = obj;
-						Length++;
-					}
-					else
-					{
-						throw new FullCollectionException();
-					}
-				}
+				Vector[i + 1] = Vector[i];
 			}
+
+			Vector[position] = obj;
+			Length++;
 		}
 	}
 }

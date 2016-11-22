@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace Algorithms._abstract
 {
-	public abstract class LinkedStruct<E, T> : Common<E>
+	public abstract class LinkedStruct<E, T> : Common<E>, IEnumerable<E>
 		where T: Node<E>
 	{
 
@@ -45,6 +45,9 @@ namespace Algorithms._abstract
 
 		public abstract IEnumerator<E> GetEnumerator();
 
-
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

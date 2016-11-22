@@ -21,41 +21,28 @@ namespace Algorithms._struck
 		public override E Pop()
 		{
 			if (Empty())
-			{
 				throw new EmptyCollectionException();
-			}
-			else
-			{
-				E obj = Vector[0];
-				for (int i = 0; i < Length; i++)
-				{
-					Vector[i] = Vector[i + 1];
-				}
 
-				Length--;
-				return obj;
+			E obj = Vector[0];
+			for (int i = 0; i < Length; i++)
+			{
+				Vector[i] = Vector[i + 1];
 			}
+
+			Length--;
+			return obj;
+
 		}
 
 		public override void Push(E obj)
 		{
-			if(obj == null)
-			{
+			if (obj == null)
 				throw new NullObjectException();
-			}else
-			{
-				if (Full())
-				{
-					if (Resizable)
-					{
-						DoubleCapacity();
-						Vector[MaxSize++] = obj;
-					}else
-					{
-						throw new FullCollectionException();
-					}
-				}
-			}
+			if (Full() && !Resizable)
+				throw new FullCollectionException();
+
+			DoubleCapacity();
+			Vector[MaxSize++] = obj;
 		}
 	}
 }

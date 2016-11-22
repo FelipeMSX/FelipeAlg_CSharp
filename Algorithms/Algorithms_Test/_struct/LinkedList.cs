@@ -89,26 +89,62 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
+		[TestCategory("LinkedList - First")]
 		public void FirstLinkedList()
 		{
-			throw new NotImplementedException();
+			Assert.IsTrue(list.First() == ObjectTest.Objects[0]) ;
+		}
+
+		[TestMethod]
+		[TestCategory("LinkedList - First")]
+		[ExpectedException(typeof(EmptyCollectionException))]
+		public void FirstLinkedListEmpty()
+		{
+			emptyList.First();
 		}
 
 		[TestMethod()]
+		[TestCategory("LinkedList - Last")]
 		public void LastLinkedList()
 		{
-			throw new NotImplementedException();
+			Assert.IsTrue(list.Last() == ObjectTest.Objects[3]);
 		}
+
+		[TestMethod()]
+		[TestCategory("LinkedList - Last")]
+		[ExpectedException(typeof(EmptyCollectionException))]
+		public void LastLinkedListEmpty()
+		{
+			emptyList.Last();
+		}
+
 
 		[TestMethod()]
 		public void RetriveLinkedList()
 		{
-			throw new NotImplementedException();
+			Assert.IsTrue(list.Retrive(ObjectTest.Objects[0]) == ObjectTest.Objects[0],"Deve ser capaz de encontrar o objeto.");
 		}
 
 		[TestMethod()]
+		public void RetriveLinkedListEmpty()
+		{
+			emptyList.Retrive(ObjectTest.Objects[0]);
+		}
+		[TestMethod()]
+		public void RetriveLinkedListNullObject()
+		{
+			throw new NotImplementedException();
+		}
+		[TestMethod()]
+		public void RetriveLinkedListNullComparator()
+		{
+			throw new NotImplementedException();
+		}
+
+
+		[TestMethod()]
 		public void GetEnumeratorLinkedList()
-		{ 
+		{
 			int i = 0;
 			foreach(String s in list)
 			{
