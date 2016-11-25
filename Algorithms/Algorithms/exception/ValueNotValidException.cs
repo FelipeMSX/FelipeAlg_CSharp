@@ -9,12 +9,9 @@ namespace Algorithms.exception
 	public class ValueNotValidException : Exception
 	{
 		public const string MESSAGE = "The value is not valid!"; 
-		public ValueNotValidException() : base(MESSAGE)
-		{
-		
-		}
 
-		public ValueNotValidException(string message) : base(message)
+
+		public ValueNotValidException(string message = null) : base(message ?? MESSAGE)
 		{
 		}
 	}

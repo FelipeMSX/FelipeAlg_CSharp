@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LINQ\MainTests.cs" />
     <Compile Include="ObjectTest.cs" />
     <Compile Include="search\Search.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
