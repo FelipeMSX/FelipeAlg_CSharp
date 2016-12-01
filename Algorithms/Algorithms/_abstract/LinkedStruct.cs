@@ -10,10 +10,11 @@ using System.Collections;
 
 namespace Algorithms._abstract
 {
-	public abstract class LinkedStruct<E, T> : Common<E>, IEnumerable<E>
-		where T: Node<E>
+	public abstract class LinkedStruct<E, T> : Common<E>, IEnumerable<E>, DefaultComparator<E>
+		where T : Node<E>
 	{
 
+		public Comparison<E> Comparator { get; set; }
 		public LinkedStruct()
 		{
 			Head = default(T);
@@ -27,7 +28,7 @@ namespace Algorithms._abstract
 
 		public abstract E Retrive(E obj);
 
-		public Comparison<E> Comparator { get; set; }
+	
 		protected T Head { get; set; }
 
 		public int Length { get; protected set; }

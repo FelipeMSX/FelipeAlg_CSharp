@@ -10,7 +10,6 @@ namespace Algorithms.exception
 	{
 		public const string MESSAGE = "The value is not valid!"; 
 
-
 		public ValueNotValidException(string message = null) : base(message ?? MESSAGE)
 		{
 		}

@@ -50,9 +50,6 @@
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="exception\ElementNotFoundException.cs" />
     <Compile Include="exception\ComparerNotSetException.cs" />
-    <Compile Include="LINQ\LINK.cs" />
-    <Compile Include="LINQ\LinkedListLINK.cs" />
-    <Compile Include="LINQ\LINQExtension.cs" />
     <Compile Include="node\LinkedDoubleNode.cs" />
     <Compile Include="node\LinkedNode.cs" />
     <Compile Include="Program.cs" />
@@ -61,11 +58,13 @@
     <Compile Include="sort\HeapSort.cs" />
     <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
+    <Compile Include="util\Util.cs" />
     <Compile Include="_abstract\LinkedStruct.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
     <Compile Include="_interface\Common.cs" />
+    <Compile Include="_interface\DefaultComparator.cs" />
     <Compile Include="_struct\LinkedList.cs" />
     <Compile Include="_struct\StaticPriorityQueue.cs" />
     <Compile Include="_struct\StaticQueue.cs" />
@@ -76,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="study\" />
-    <Folder Include="util\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

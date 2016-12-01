@@ -63,6 +63,7 @@ namespace Algorithms._abstract
 
 		public bool Empty()
 		{
+			
 			return Length == 0;
 		}
 

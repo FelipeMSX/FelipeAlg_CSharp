@@ -8,6 +8,10 @@ namespace Algorithms._abstract
 {
 	public abstract class Queue_Stack<E> : StaticStruct<E>
 	{
+		/// <summary>
+		/// teste
+		/// </summary>
+		/// <param name="obj"></param>
 		public abstract void Push(E obj);
 		public abstract E Pop();
 

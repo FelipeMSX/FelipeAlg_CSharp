@@ -42,6 +42,7 @@ namespace Algorithms._struct
 
 		public override E Remove(E obj)
 		{
+			//Validações
 			if (obj == null)
 				throw new NullObjectException();
 			if (Empty())
@@ -82,6 +83,7 @@ namespace Algorithms._struct
 
 		public override E First()
 		{
+			//Validações
 			if (Empty())
 				throw new EmptyCollectionException();
 

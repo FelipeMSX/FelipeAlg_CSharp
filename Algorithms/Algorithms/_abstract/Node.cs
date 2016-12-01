@@ -7,6 +7,9 @@ using Algorithms.exception;
 
 namespace Algorithms._abstract
 {
+	/// <summary>
+	/// Classe que possui um objeto genérico como atribuito.
+	/// </summary>
 	public abstract class Node<E>
 	{
 

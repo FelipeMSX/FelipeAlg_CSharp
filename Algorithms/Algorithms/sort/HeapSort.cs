@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms._interface;
 using Algorithms.exception;
+using Algorithms.util;
 
 namespace Algorithms.sort
 {
-	class HeapSort<E>
+	class HeapSort<E> : DefaultComparator<E>
 	{
-		private Comparison<E> Comparator { get; set; }
-	
+		public Comparison<E> Comparator { get; set; }
 
 		HeapSort(Comparison<E> comparator)
 		{
@@ -28,7 +29,7 @@ namespace Algorithms.sort
 			int i;
 			for (i = n - 1; i > 0; i--)
 			{
-				SwapItem(input, 0, i);
+				Util.SwapItem(input, 0, i);
 				MinHeapify(input, 0, i);
 			}
 		}
@@ -47,7 +48,7 @@ namespace Algorithms.sort
 
 			if (P != i)
 			{
-				SwapItem(input, i, P);
+				Util.SwapItem(input, i, P);
 				MinHeapify(input, P, n);
 			}
 
@@ -57,13 +58,6 @@ namespace Algorithms.sort
 		{
 			for (int i = n / 2 - 1; i >= 0; i--)
 				MinHeapify(input, i, n);
-		}
-
-		private void SwapItem(E[] input, int X, int Y)
-		{
-			E temp = input[X];
-			input[X] = input[Y];
-			input[Y] = temp;
 		}
 
 		private int Father(int i)

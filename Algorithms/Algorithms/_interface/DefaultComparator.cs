@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.LINQ
+namespace Algorithms._interface
 {
-	public interface LINK<out E>
+	public interface DefaultComparator<E>
 	{
-		 IEnumerator<E> GetEnumerator();
-		
+		Comparison<E> Comparator { get; set; }
 	}
-
-
 }

@@ -33,7 +33,10 @@ namespace Algorithms._struck
 			return obj;
 
 		}
-
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="obj"></param>
 		public override void Push(E obj)
 		{
 			if (obj == null)

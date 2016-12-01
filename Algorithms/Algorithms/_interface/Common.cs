@@ -8,6 +8,10 @@ namespace Algorithms._interface
 {
 	interface Common<E>
 	{
+		/// <summary>
+		/// Teste
+		/// </summary>
+		/// <returns></returns>
 		bool Empty();
 		E First();
 		E Last();
