@@ -8,19 +8,18 @@ namespace Algorithms.util
 {
 	public static class Util
 	{
-
 		/// <summary>
-		/// Faz a troca de dois objetos do vetor.
+		/// Faz a troca de dois objetos de um vetor.
 		/// </summary>
 		/// <typeparam name="E"> Tipo do objeto do vetor.</typeparam>
-		/// <param name="input">Vetor de entrada.</param>
+		/// <param name="vector">Vetor de entrada.</param>
 		/// <param name="X">Posição onde irá ser feita a troca.</param>
 		/// <param name="Y">Posição onde irá ser feita a troca.</param>
-		public static void SwapItem<E>(E[] input, int X, int Y)
+		public static void SwapItem<E>(E[] vector, int X, int Y)
 		{
-			E temp = input[X];
-			input[X] = input[Y];
-			input[Y] = temp;
+			E temp = vector[X];
+			vector[X] = vector[Y];
+			vector[Y] = temp;
 		}
 	}
 }

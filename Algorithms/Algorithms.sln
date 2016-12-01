@@ -7,13 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms_Test", "Algorith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{12386036-C2BE-45FA-B678-5E57EA8979DA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CED7130A-2F79-4988-9C56-E66D7898976B}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Tests", "Algorithms.Tests\Algorithms.Tests.csproj", "{3B3CB4D1-5545-4D1D-B0AA-0AD38C759F25}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +21,6 @@ Global
 		{12386036-C2BE-45FA-B678-5E57EA8979DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12386036-C2BE-45FA-B678-5E57EA8979DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12386036-C2BE-45FA-B678-5E57EA8979DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B3CB4D1-5545-4D1D-B0AA-0AD38C759F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B3CB4D1-5545-4D1D-B0AA-0AD38C759F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B3CB4D1-5545-4D1D-B0AA-0AD38C759F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B3CB4D1-5545-4D1D-B0AA-0AD38C759F25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

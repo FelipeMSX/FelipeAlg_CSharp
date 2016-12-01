@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Algorithms._abstract
 {
+	/// <summary>
+	/// Classe abstrata utilizada na criação de qualquer coleção que utilize uma pilha ou fila.
+	/// </summary>
+	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
 	public abstract class Queue_Stack<E> : StaticStruct<E>
 	{
-		/// <summary>
-		/// teste
-		/// </summary>
-		/// <param name="obj"></param>
+
 		public abstract void Push(E obj);
 		public abstract E Pop();
 
