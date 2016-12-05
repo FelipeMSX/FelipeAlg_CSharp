@@ -6,6 +6,8 @@ namespace Algorithms.node
 	/// Classe que representa uma estrutura com dois ponteiros,
 	/// um ponteiro para frente e outro para trás. Contendo também um objeto qualquer.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E"></typeparam>
 	public class LinkedDoubleNode<E> : Node<E>
 	{

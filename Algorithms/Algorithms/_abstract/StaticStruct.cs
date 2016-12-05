@@ -8,8 +8,10 @@ namespace Algorithms._abstract
 	/// Define uma classe abstrata para qualquer estrutura que precise de um vetor.
 	/// Vetor pode ter sua capacidade aumentada caso necessário.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public abstract class StaticStruct<E> : Common<E>, DefaultComparator<E>
+	public abstract class StaticStruct<E> : ICommon<E>, IDefaultComparator<E>
 	{
 		/// <summary>
 		/// Constante que define um valor inicial padrão para a coleção.

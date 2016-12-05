@@ -7,6 +7,8 @@ namespace Algorithms._struct
 	/// <summary>
 	///  Estrutura de dados que representa uma pilha.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de Objeto da pilha.</typeparam>
 	public class StaticStack<E> : Queue_Stack<E> 
 	{

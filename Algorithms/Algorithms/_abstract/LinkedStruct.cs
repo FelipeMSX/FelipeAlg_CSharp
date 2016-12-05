@@ -8,9 +8,11 @@ namespace Algorithms._abstract
 	/// <summary>
 	/// Classe abstrata utilizada em todas as coleções que se assemelham a uma lista dinâmica e suas variações.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Objeto armazenado pela coleção.</typeparam>
 	/// <typeparam name="T">Tipo do node utilizado na coleção.</typeparam>
-	public abstract class LinkedStruct<E, T> : Common<E>, IEnumerable<E>, DefaultComparator<E>
+	public abstract class LinkedStruct<E, T> : ICommon<E>, IEnumerable<E>, IDefaultComparator<E>
 		where T : Node<E>
 	{
 

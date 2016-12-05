@@ -9,7 +9,7 @@ using Algorithms.util;
 
 namespace Algorithms.sort
 {
-	class HeapSort<E> : DefaultComparator<E>
+	class HeapSort<E> : IDefaultComparator<E>
 	{
 		public Comparison<E> Comparator { get; set; }
 

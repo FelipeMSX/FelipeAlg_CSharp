@@ -7,6 +7,8 @@ namespace Algorithms._struct
 	/// <summary>
 	/// Classe que define uma estrutura de dados do tipo fila de prioridade.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de objeto da fila de prioridade.</typeparam>
 	class StaticPriorityQueue<E> : StaticQueue<E>
 	{

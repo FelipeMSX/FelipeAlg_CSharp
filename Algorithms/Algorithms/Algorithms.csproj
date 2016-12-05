@@ -63,8 +63,8 @@
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
-    <Compile Include="_interface\Common.cs" />
-    <Compile Include="_interface\DefaultComparator.cs" />
+    <Compile Include="_interface\ICommon.cs" />
+    <Compile Include="_interface\IDefaultComparator.cs" />
     <Compile Include="_struct\LinkedList.cs" />
     <Compile Include="_struct\StaticPriorityQueue.cs" />
     <Compile Include="_struct\StaticQueue.cs" />

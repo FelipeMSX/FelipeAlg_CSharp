@@ -6,8 +6,6 @@ using Algorithms.exception;
 
 namespace Algorithms.search
 {
-	/// Autor: Felipe Morais; 
-	/// E-mail:felipemsx18@gmail.com
 
 	public class Search<E>
 	{

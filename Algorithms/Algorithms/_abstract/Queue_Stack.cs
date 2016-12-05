@@ -9,6 +9,8 @@ namespace Algorithms._abstract
 	/// <summary>
 	/// Classe abstrata utilizada na criação de qualquer coleção que utilize uma pilha ou fila.
 	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
 	public abstract class Queue_Stack<E> : StaticStruct<E>
 	{
