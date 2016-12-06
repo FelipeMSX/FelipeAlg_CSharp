@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Algorithms._abstract;
 using Algorithms.exception;
 using Algorithms.node;
 
 namespace Algorithms._struct
 {
+	/// <summary>
+	/// Classe que define uma estrutura de dados do tipo lista.
+	/// </summary>
+	/// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
+	/// <typeparam name="E">Tipo de objeto da lista.</typeparam>
 	public class LinkedList<E> : LinkedStruct<E, LinkedNode<E>>
 	{
 
@@ -17,6 +19,11 @@ namespace Algorithms._struct
 			Head = new LinkedNode<E>();
 		}
 
+		/// <summary>
+		/// Adiciona um elemento a lista, não deve ser nulo.
+		/// </summary>
+		/// <exception cref="NullObjectException">Objeto não pode ser nulo.</exception>
+		/// <param name="obj">Novo objeto a ser adicionado na coleção.</param>
 		public override void Insert(E obj)
 		{
 			if (obj == null)
@@ -40,6 +47,15 @@ namespace Algorithms._struct
 			Length++;
 		}
 
+		/// <summary>
+		/// Percorre a lista até encontrar o objeto, caso encontrado o objeto é desvincula e retornado.
+		/// </summary>
+		/// <exception cref="NullObjectException">Objeto de entrada não pode ser nulo.</exception>
+		/// <exception cref="EmptyCollectionException">A lista está vazia.</exception>
+		/// <exception cref="ComparerNotSetException">Comparator não deve ser nulo.</exception>
+		/// <exception cref="ElementNotFoundException">Objeto não encontrado na lista.</exception>
+		/// <param name="obj">Objeto do tipo da lista com as chaves necessárias para encontrar qualquer elemento na lista.</param>
+		/// <returns></returns>
 		public override E Remove(E obj)
 		{
 			//Validações
@@ -78,31 +94,13 @@ namespace Algorithms._struct
 				}
 				throw new ElementNotFoundException();
 			}
-
 		}
 
-		public override E First()
-		{
-			//Validações
-			if (Empty())
-				throw new EmptyCollectionException();
-
-			return Head.Next.Value;
-		}
-
-		public override E Last()
-		{
-			if (Empty())
-				throw new EmptyCollectionException();
-
-			LinkedNode<E> current = Head.Next;
-			while (current.HasNext())
-			{
-				current = current.Next;
-			}
-			return current.Value;
-		}
-
+		/// <summary>
+		/// Recupera um objeto da coleção sem removê-lo.
+		/// </summary>
+		/// <param name="obj">Objeto utilizado como parâmetro chave para encontrar os dados.</param>
+		/// <returns></returns>
 		public override E Retrive(E obj)
 		{
 			if (Empty())
@@ -118,9 +116,41 @@ namespace Algorithms._struct
 				current = current.Next;
 			}
 			return current.Value;
-
 		}
 
+		/// <summary>
+		/// Obtém o primeiro elemento da lista.
+		/// </summary>
+		/// <exception cref="EmptyCollectionException">A coleção está vazia.</exception>
+		public override E First()
+		{
+			//Validações
+			if (Empty())
+				throw new EmptyCollectionException();
+
+			return Head.Next.Value;
+		}
+
+		/// <summary>
+		/// Obtém o último elemento da lista localizado no fim.
+		/// </summary>
+		/// <exception cref="EmptyCollectionException">Caso a coleção esteja vazia.</exception>
+		public override E Last()
+		{
+			if (Empty())
+				throw new EmptyCollectionException();
+
+			LinkedNode<E> current = Head.Next;
+			while (current.HasNext())
+			{
+				current = current.Next;
+			}
+			return current.Value;
+		}
+	
+		/// <summary>
+		/// Define um enumerador para a lista.
+		/// </summary>
 		public override IEnumerator<E> GetEnumerator()
 		{
 			LinkedNode<E> current = Head.Next;

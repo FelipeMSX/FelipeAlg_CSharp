@@ -2,49 +2,56 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Algorithms._interface;
 using Algorithms.exception;
 
 namespace Algorithms.search
 {
 
-	public class Search<E>
+	public class Search<E> : IDefaultComparator<E>
 	{
-		private Comparison<E> Comparator { get; set; }
+		public Comparison<E> Comparator { get; set; }
 
 		public Search(Comparison<E> comparer)
 		{
 			Comparator = comparer;
 		}
 
-		public E BinarySearch(E[] array, E item)
+		/// <summary>
+		/// Utiliza a busca binária para encontrar um objeto no vetor.
+		/// O vetor deve estar ordenado para funcionar.
+		/// </summary>
+		/// <param name="orderedArray">Array com itens ordenados.</param>
+		/// <param name="item">Objeto almejado.</param>
+		/// <returns>Retorna o objeto caso exista, caso contrário, valor padrão do objeto.</returns>
+		public E BinarySearch(E[] orderedArray, E item)
 		{
 			if (Comparator == null)
 				throw new ComparerNotSetException();
 
 			int left = 0;
-			int right = array.Length - 1;
+			int right = orderedArray.Length - 1;
 			int mid = 0;
 
 			while (left <= right)
 			{
-				mid = midvalue(left, right);
+				mid = MidValue(left, right);
 				// Se o valor do item a ser achado for maior ao do array é necessário avançar para direita.
 				// arrayItem < item
-				;
-				if (Comparator(array[mid], item) <= -1)
+				if (Comparator(orderedArray[mid], item) <= -1)
 					left = mid + 1;
 				else
 				// Se o valor do item a ser achado for menor ao do array é necessário avançar para esquerda.
 				// arrayItem > item
-				if (Comparator(array[mid], item) >= 1)
+				if (Comparator(orderedArray[mid], item) >= 1)
 					right = mid - 1;
 				else
-					return array[mid];
+					return orderedArray[mid];
 			}
 			return default(E);
 		}
 
-		private  int midvalue(int left, int right)
+		private  int MidValue(int left, int right)
 		{
 			return left + (right - left) / 2;
 		}
