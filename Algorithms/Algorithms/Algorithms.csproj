@@ -60,7 +60,6 @@
     <Compile Include="sort\QuickSort.cs" />
     <Compile Include="util\Util.cs" />
     <Compile Include="_abstract\LinkedStruct.cs" />
-    <Compile Include="_abstract\Map.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
