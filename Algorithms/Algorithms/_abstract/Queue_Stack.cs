@@ -17,7 +17,7 @@ namespace Algorithms._abstract
 		public Queue_Stack() : base()
 		{
 		}
-
+		
 		public Queue_Stack(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
 		{
 		}
