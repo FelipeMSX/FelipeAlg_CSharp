@@ -2,7 +2,7 @@
 using Algorithms._abstract;
 using Algorithms.exception;
 
-namespace Algorithms._struck
+namespace Algorithms._struct
 {
 	/// <summary>
 	/// Estrutura de dados que representa uma fila.

@@ -16,6 +16,7 @@ namespace Algorithms._struct
 
 		public LinkedList() : base()
 		{
+			
 			Head = new LinkedNode<E>();
 		}
 

@@ -1,6 +1,6 @@
 ﻿using Algorithms._abstract;
 
-namespace Algorithms.node
+ namespace Algorithms.node
 {
 	/// <summary>
 	/// Classe que representa uma estrutura com um ponteiro além de armazenar um objeto qualquer.
@@ -31,9 +31,7 @@ namespace Algorithms.node
 		/// Avalia se existe um próximo node.
 		/// </summary>
 		/// <returns>Retorna true se existir um próximo node, caso contrário, false.</returns>
-		public bool HasNext()
-		{
-			return Next != null;
-		}
+		public bool HasNext() => Next != null;
+		
 	}
 }

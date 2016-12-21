@@ -1,5 +1,5 @@
 ﻿using System;
-using Algorithms._struck;
+using Algorithms._struct;
 using Algorithms.exception;
 
 namespace Algorithms._struct

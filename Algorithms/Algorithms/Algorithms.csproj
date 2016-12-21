@@ -52,6 +52,8 @@
     <Compile Include="exception\ComparerNotSetException.cs" />
     <Compile Include="node\LinkedDoubleNode.cs" />
     <Compile Include="node\LinkedNode.cs" />
+    <Compile Include="node\MultiTreeNode.cs" />
+    <Compile Include="node\TreeSearchNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="search\Search.cs" />
@@ -60,13 +62,13 @@
     <Compile Include="sort\QuickSort.cs" />
     <Compile Include="util\Util.cs" />
     <Compile Include="_abstract\LinkedStruct.cs" />
-    <Compile Include="_abstract\Map.cs" />
     <Compile Include="_abstract\Node.cs" />
     <Compile Include="_abstract\Queue_Stack.cs" />
+    <Compile Include="_abstract\SearchTree.cs" />
     <Compile Include="_abstract\StaticStruct.cs" />
     <Compile Include="_interface\ICommon.cs" />
     <Compile Include="_interface\IDefaultComparator.cs" />
-    <Compile Include="_struct\HashTable.cs" />
+    <Compile Include="_struct\BinaryTree.cs" />
     <Compile Include="_struct\LinkedList.cs" />
     <Compile Include="_struct\OrderedLinkedList.cs" />
     <Compile Include="_struct\StaticPriorityQueue.cs" />

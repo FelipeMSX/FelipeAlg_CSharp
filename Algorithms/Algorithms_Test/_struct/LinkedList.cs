@@ -14,7 +14,7 @@ namespace Algorithms._struct.Tests
 	
 	public class LinkedList
 	{
-		private  LinkedList<String> list;
+		private LinkedList<String> list;
 		private LinkedList<String> emptyList;
 
 		[TestInitialize]
@@ -23,7 +23,6 @@ namespace Algorithms._struct.Tests
 			list = new LinkedList<string>();
 			emptyList = new LinkedList<string>();
 			list.Comparator = (x, y) => x.CompareTo(y);
-			
 			list.Insert(ObjectTest.Objects[0]);
 			list.Insert(ObjectTest.Objects[1]);
 			list.Insert(ObjectTest.Objects[2]);
@@ -31,7 +30,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Insert")]
+		[TestCategory("LinkedList")]
 		public void InsertLinkedList()
 		{
 			list.Remove(ObjectTest.Objects[0]);
@@ -47,7 +46,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Remove")]
+		[TestCategory("LinkedList")]
 		public void RemoveLinkedList()
 		{
 			Object obj = list.Remove(ObjectTest.Objects[0]);
@@ -56,7 +55,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Remove")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(EmptyCollectionException))]
 		public void RemoveLinkedListEmpty()
 		{
@@ -64,7 +63,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Remove")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(NullObjectException))]
 		public void RemoveLinkedListNullObject()
 		{
@@ -72,7 +71,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Remove")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(ComparerNotSetException))]
 		public void RemoveLinkedListNullComparator()
 		{
@@ -81,7 +80,7 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - Remove")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(ElementNotFoundException))]
 		public void RemoveLinkedListElementNotFound()
 		{
@@ -89,14 +88,14 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - First")]
+		[TestCategory("LinkedList")]
 		public void FirstLinkedList()
 		{
 			Assert.IsTrue(list.First() == ObjectTest.Objects[0]) ;
 		}
 
 		[TestMethod]
-		[TestCategory("LinkedList - First")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(EmptyCollectionException))]
 		public void FirstLinkedListEmpty()
 		{
@@ -104,20 +103,19 @@ namespace Algorithms._struct.Tests
 		}
 
 		[TestMethod()]
-		[TestCategory("LinkedList - Last")]
+		[TestCategory("LinkedList")]
 		public void LastLinkedList()
 		{
 			Assert.IsTrue(list.Last() == ObjectTest.Objects[3]);
 		}
 
 		[TestMethod()]
-		[TestCategory("LinkedList - Last")]
+		[TestCategory("LinkedList")]
 		[ExpectedException(typeof(EmptyCollectionException))]
 		public void LastLinkedListEmpty()
 		{
 			emptyList.Last();
 		}
-
 
 		[TestMethod()]
 		public void RetriveLinkedList()
