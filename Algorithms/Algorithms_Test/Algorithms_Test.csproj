@@ -55,6 +55,7 @@
     <Compile Include="ObjectTest.cs" />
     <Compile Include="search\Search.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
     <Compile Include="_struct\LinkedList.cs" />
   </ItemGroup>

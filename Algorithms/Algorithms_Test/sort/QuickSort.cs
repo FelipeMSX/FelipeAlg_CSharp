@@ -6,6 +6,8 @@ namespace Algorithms_Test.sort
 	[TestClass]
 	public class QuickSort
 	{
+		private String list;
+
 		[TestMethod]
 		[TestCategory("Sort")]
 		public void TestQuickSort()
