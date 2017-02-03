@@ -6,25 +6,49 @@ using System.Threading.Tasks;
 
 namespace Concurrency_Application
 {
-	public  class TaskStudy
+	public class TaskStudy
 	{
 		int timeToRelease = 1000;
-		public int total = 0;
-		public async Task<int> Somar(int acumulado)
+		int inicial = 2;
+
+		private static int balance = 50;
+		public static int Balance
 		{
-			Task<int> t = new Task<int>(() =>
+			get { return balance; }
+			set
 			{
-				int i = 0;
-
-		
-			
-				return 1;
+				lock ("balance")
+				{
+					balance = value;
+				}
 			}
-			);
-			total += acumulado;
-			return await t;
 		}
+
+		public int CalcManyTimes()
+		{
+			int i = 0;
+			while (i < 1000000000)
+			{
+				i++;
+			}
+			inicial++;
+			return inicial + 5;
+		}
+		public async Task<int> ObserveOneExceptionAsync()
+		{
+			int result = await Task<int>.Run(() => CalcManyTimes());
+
+			try
+			{
+
+			}
+			catch (Exception ex)
+			{
+				// "ex" is either NotImplementedException or InvalidOperationException.
+
+			}
+			return result;
+		}
+
 	}
-
-
 }
