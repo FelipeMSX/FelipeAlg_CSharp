@@ -7,7 +7,8 @@ using System.Data.SqlClient;
 using _3tn.Dados;
 using _3tn.Util;
 using _3tn.Dominus;
-
+using AspectProgramming.ExceptionHandling;
+using AspectProgramming.Transaction;
 
 namespace AspectProgramming.Objects
 {
@@ -136,11 +137,10 @@ namespace AspectProgramming.Objects
 		/// Descrição: Método que insere os dados no banco. 
 		/// Programador: Paulo Henrique 
 		/// </summary> 
+		[ExceptionHandling.SqlException]
 		public void Inserir()
 		{
 			clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados(clsAcessoDados.Conexao.ABERTA);
-			try
-			{
 				D.IniciarTransacao();
 				//Se foi Definido o evento AntesDeInserir 
 				if (AntesDeInserir != null)
@@ -175,15 +175,6 @@ namespace AspectProgramming.Objects
 
 				D.FinalizarTransacao();
 				GravarLogEvento(Evento.Inserir);
-			}
-			catch (Exception ex)
-			{
-				throw new Exception(ex.Message);
-			}
-			finally
-			{
-				D.FecharConexao();
-			}
 		}
 
 
@@ -256,10 +247,11 @@ namespace AspectProgramming.Objects
 		/// Descrição: Método que atualiza os dados no banco. 
 		/// Programador: Paulo Henrique 
 		/// </summary> 
+		[ExceptionHandling.SqlException]
 		public void Atualizar()
 		{
-			try
-			{
+			//try
+			//{ 
 				clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados();
 				#region Parametros 
 				D._3tnAddParametro("@nu_cnpj", SqlDbType.VarChar, nuCnpj);
@@ -277,11 +269,11 @@ namespace AspectProgramming.Objects
 				#endregion
 				D._3tnExecProcedure("dbo.pa_Abastecimento");
 				GravarLogEvento(Evento.Atualizar);
-			}
-			catch (Exception ex)
-			{
-				throw new Exception(ex.Message);
-			}
+			//}
+			//catch (Exception ex)
+			//{
+			//	throw new Exception(ex.Message);
+			//}
 		}
 
 
@@ -314,38 +306,56 @@ namespace AspectProgramming.Objects
 		/// Descrição: Exclusão em Massa. 
 		/// Programador: Paulo Henrique 
 		/// </summary> 
+		[OnTransationAspect]
+		[ExceptionHandling.SqlException]
 		public void Excluir(List<Abastecimento> ListAbastecimento)
 		{
-			clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados(clsAcessoDados.Conexao.ABERTA);
-			try
-			{
-				D.IniciarTransacao();
-				for (int i = 0; i < ListAbastecimento.Count; i++)
-				{
-					#region Parametros 
-					D.Parametros.Clear();
-					this.nuCnpj = ListAbastecimento[i].NuCnpj;
-					this.dtAno = ListAbastecimento[i].DtAno;
-					this.sqAbastecimento = ListAbastecimento[i].SqAbastecimento;
-					this.sqVeiculo = ListAbastecimento[i].SqVeiculo;
-					D._3tnAddParametro("@nu_cnpj", SqlDbType.VarChar, this.nuCnpj);
-					D._3tnAddParametro("@dt_ano", SqlDbType.VarChar, this.dtAno);
-					D._3tnAddParametro("@sq_abastecimento", SqlDbType.Int, this.sqAbastecimento);
-					D._3tnAddParametro("@sq_veiculo", SqlDbType.Int, this.sqVeiculo);
-					D._3tnExecProcedure("dbo.pe_Abastecimento");
-					#endregion
+			//clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados(clsAcessoDados.Conexao.ABERTA);
+			//try
+			//{
+			//	D.IniciarTransacao();
+			//	for (int i = 0; i < ListAbastecimento.Count; i++)
+			//	{
+			//		#region Parametros 
+			//		D.Parametros.Clear();
+			//		this.nuCnpj = ListAbastecimento[i].NuCnpj;
+			//		this.dtAno = ListAbastecimento[i].DtAno;
+			//		this.sqAbastecimento = ListAbastecimento[i].SqAbastecimento;
+			//		this.sqVeiculo = ListAbastecimento[i].SqVeiculo;
+			//		D._3tnAddParametro("@nu_cnpj", SqlDbType.VarChar, this.nuCnpj);
+			//		D._3tnAddParametro("@dt_ano", SqlDbType.VarChar, this.dtAno);
+			//		D._3tnAddParametro("@sq_abastecimento", SqlDbType.Int, this.sqAbastecimento);
+			//		D._3tnAddParametro("@sq_veiculo", SqlDbType.Int, this.sqVeiculo);
+			//		D._3tnExecProcedure("dbo.pe_Abastecimento");
+			//		#endregion
 
-					GravarLogEvento(Evento.Excluir);
-				}
-				D.FinalizarTransacao();
-			}
-			catch (Exception ex)
+			//		GravarLogEvento(Evento.Excluir);
+			//	}
+			//	D.FinalizarTransacao();
+			//}
+			//catch (Exception ex)
+			//{
+			//	throw new Exception(ex.Message);
+			//}
+			//finally
+			//{
+			//	D.FecharConexao();
+			//}
+
+			for (int i = 0; i < ListAbastecimento.Count; i++)
 			{
-				throw new Exception(ex.Message);
-			}
-			finally
-			{
-				D.FecharConexao();
+				#region Parametros 
+				D.Parametros.Clear();
+				this.nuCnpj = ListAbastecimento[i].NuCnpj;
+				this.dtAno = ListAbastecimento[i].DtAno;
+				this.sqAbastecimento = ListAbastecimento[i].SqAbastecimento;
+				this.sqVeiculo = ListAbastecimento[i].SqVeiculo;
+				D._3tnAddParametro("@nu_cnpj", SqlDbType.VarChar, this.nuCnpj);
+				D._3tnAddParametro("@dt_ano", SqlDbType.VarChar, this.dtAno);
+				D._3tnAddParametro("@sq_abastecimento", SqlDbType.Int, this.sqAbastecimento);
+				D._3tnAddParametro("@sq_veiculo", SqlDbType.Int, this.sqVeiculo);
+				D._3tnExecProcedure("dbo.pe_Abastecimento");
+				#endregion
 			}
 		}
 
@@ -434,10 +444,11 @@ namespace AspectProgramming.Objects
 		/// Descrição: Sobrecarga do Método (Faz uma consulta filtrando o máximo possível). 
 		/// Programador: Paulo Henrique 
 		/// </summary> 
+		[ExceptionHandling.SqlException]
 		public static SqlDataReader ConsultarReader(string busca, Hashtable keys)
 		{
-			try
-			{
+			//try
+			//{
 				clsAcessoDados D = new clsAcessoDados();
 				D._3tnAddParametro("@busca", SqlDbType.VarChar, busca);
 				foreach (object iKey in keys.Keys)
@@ -445,11 +456,11 @@ namespace AspectProgramming.Objects
 					D._3tnAddParametro("@" + iKey.ToString(), keys[iKey].ToString());
 				}
 				return D._3tnGetDataReader("dbo.pc_Abastecimento");
-			}
-			catch (Exception ex)
-			{
-				throw new Exception(ex.Message);
-			}
+			//}
+			//catch (Exception ex)
+			//{
+			//	throw new Exception(ex.Message);
+			//}
 		}
 
 		#region 3tecnos
@@ -458,10 +469,12 @@ namespace AspectProgramming.Objects
 		/// Descrição: Sobrecarga do Método (Faz uma consulta filtrando o máximo possível). 
 		/// Programador: Rogerio Cardoso 
 		/// </summary> 
+
+		[ExceptionHandling.SqlException]
 		public static DataTable ConsultarCompleto(string busca, Hashtable keys)
 		{
-			try
-			{
+			//try
+			//{
 				clsAcessoDados D = new clsAcessoDados();
 				D._3tnAddParametro("@busca", SqlDbType.VarChar, busca);
 				foreach (object iKey in keys.Keys)
@@ -469,13 +482,18 @@ namespace AspectProgramming.Objects
 					D._3tnAddParametro("@" + iKey.ToString(), keys[iKey].ToString());
 				}
 				return D._3tnGetDataTable("dbo.pd_Frota_AbastecimentoCompleto");
-			}
-			catch (Exception ex)
-			{
-				throw new Exception(ex.Message);
-			}
+			//}
+			//catch (Exception ex)
+			//{
+			//	throw new Exception(ex.Message);
+			//}
 		}
 
+		[ExceptionHandling.NullException]
+		public void Teste()
+		{
+			throw new NullReferenceException();
+		}
 		#endregion 3tecnos
 	} //Fim da Classe 
 }//Fim do Namespace 
