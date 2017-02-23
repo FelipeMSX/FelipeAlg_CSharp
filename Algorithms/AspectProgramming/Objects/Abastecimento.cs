@@ -305,12 +305,13 @@ namespace AspectProgramming.Objects
 		/// <summary> 
 		/// Descrição: Exclusão em Massa. 
 		/// Programador: Paulo Henrique 
-		/// </summary> 
+		/// </summary> ]
+		 
 		[OnTransationAspect]
 		[ExceptionHandling.SqlException]
 		public void Excluir(List<Abastecimento> ListAbastecimento)
 		{
-			//clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados(clsAcessoDados.Conexao.ABERTA);
+			clsAcessoDados D = (acessoDados != null) ? acessoDados : new clsAcessoDados(clsAcessoDados.Conexao.ABERTA);
 			//try
 			//{
 			//	D.IniciarTransacao();
