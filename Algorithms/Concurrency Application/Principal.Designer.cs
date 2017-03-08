@@ -39,35 +39,35 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.gbTaskNormal = new System.Windows.Forms.GroupBox();
-			this.rbIncCount = new System.Windows.Forms.RadioButton();
-			this.rbSetPerson = new System.Windows.Forms.RadioButton();
-			this.rbGetPerson = new System.Windows.Forms.RadioButton();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.gbTaskBloqueante = new System.Windows.Forms.GroupBox();
-			this.radioButton4 = new System.Windows.Forms.RadioButton();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
-			this.radioButton6 = new System.Windows.Forms.RadioButton();
 			this.gbAcessarDados = new System.Windows.Forms.GroupBox();
+			this.radioButton12 = new System.Windows.Forms.RadioButton();
 			this.radioButton7 = new System.Windows.Forms.RadioButton();
 			this.radioButton8 = new System.Windows.Forms.RadioButton();
 			this.radioButton9 = new System.Windows.Forms.RadioButton();
-			this.radioButton10 = new System.Windows.Forms.RadioButton();
-			this.rbGetCount = new System.Windows.Forms.RadioButton();
-			this.radioButton12 = new System.Windows.Forms.RadioButton();
-			this.btnLancarNormal = new System.Windows.Forms.Button();
-			this.lbSleepNormal = new System.Windows.Forms.Label();
+			this.gbTaskBloqueante = new System.Windows.Forms.GroupBox();
+			this.mskSleepBloquante = new System.Windows.Forms.MaskedTextBox();
 			this.lbSleepBloquante = new System.Windows.Forms.Label();
 			this.btnLancarBloqueante = new System.Windows.Forms.Button();
-			this.mskSleepBloquante = new System.Windows.Forms.MaskedTextBox();
+			this.radioButton10 = new System.Windows.Forms.RadioButton();
+			this.radioButton4 = new System.Windows.Forms.RadioButton();
+			this.radioButton5 = new System.Windows.Forms.RadioButton();
+			this.radioButton6 = new System.Windows.Forms.RadioButton();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.gbTaskNormal = new System.Windows.Forms.GroupBox();
 			this.mskSleepNormal = new System.Windows.Forms.MaskedTextBox();
+			this.lbSleepNormal = new System.Windows.Forms.Label();
+			this.btnLancarNormal = new System.Windows.Forms.Button();
+			this.rbGetCount = new System.Windows.Forms.RadioButton();
+			this.rbGetPerson = new System.Windows.Forms.RadioButton();
+			this.rbSetPerson = new System.Windows.Forms.RadioButton();
+			this.rbIncCount = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
-			this.gbTaskNormal.SuspendLayout();
-			this.gbTaskBloqueante.SuspendLayout();
 			this.gbAcessarDados.SuspendLayout();
+			this.gbTaskBloqueante.SuspendLayout();
+			this.gbTaskNormal.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -156,7 +156,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(819, 359);
+			this.tabControl1.Size = new System.Drawing.Size(655, 359);
 			this.tabControl1.TabIndex = 8;
 			// 
 			// tabPage1
@@ -187,130 +187,10 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(811, 333);
+			this.tabPage2.Size = new System.Drawing.Size(647, 333);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Lock Study";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// gbTaskNormal
-			// 
-			this.gbTaskNormal.Controls.Add(this.mskSleepNormal);
-			this.gbTaskNormal.Controls.Add(this.lbSleepNormal);
-			this.gbTaskNormal.Controls.Add(this.btnLancarNormal);
-			this.gbTaskNormal.Controls.Add(this.rbGetCount);
-			this.gbTaskNormal.Controls.Add(this.rbGetPerson);
-			this.gbTaskNormal.Controls.Add(this.rbSetPerson);
-			this.gbTaskNormal.Controls.Add(this.rbIncCount);
-			this.gbTaskNormal.Location = new System.Drawing.Point(4, 6);
-			this.gbTaskNormal.Name = "gbTaskNormal";
-			this.gbTaskNormal.Size = new System.Drawing.Size(200, 200);
-			this.gbTaskNormal.TabIndex = 0;
-			this.gbTaskNormal.TabStop = false;
-			this.gbTaskNormal.Text = "Task Normal";
-			// 
-			// rbIncCount
-			// 
-			this.rbIncCount.AutoSize = true;
-			this.rbIncCount.Location = new System.Drawing.Point(9, 20);
-			this.rbIncCount.Name = "rbIncCount";
-			this.rbIncCount.Size = new System.Drawing.Size(107, 17);
-			this.rbIncCount.TabIndex = 0;
-			this.rbIncCount.TabStop = true;
-			this.rbIncCount.Text = "Incrementar valor";
-			this.rbIncCount.UseVisualStyleBackColor = true;
-			// 
-			// rbSetPerson
-			// 
-			this.rbSetPerson.AutoSize = true;
-			this.rbSetPerson.Location = new System.Drawing.Point(9, 43);
-			this.rbSetPerson.Name = "rbSetPerson";
-			this.rbSetPerson.Size = new System.Drawing.Size(95, 17);
-			this.rbSetPerson.TabIndex = 1;
-			this.rbSetPerson.TabStop = true;
-			this.rbSetPerson.Text = "Atribuir Pessoa";
-			this.rbSetPerson.UseVisualStyleBackColor = true;
-			// 
-			// rbGetPerson
-			// 
-			this.rbGetPerson.AutoSize = true;
-			this.rbGetPerson.Location = new System.Drawing.Point(9, 66);
-			this.rbGetPerson.Name = "rbGetPerson";
-			this.rbGetPerson.Size = new System.Drawing.Size(101, 17);
-			this.rbGetPerson.TabIndex = 2;
-			this.rbGetPerson.TabStop = true;
-			this.rbGetPerson.Text = "Acessar Pessoa";
-			this.rbGetPerson.UseVisualStyleBackColor = true;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(6, 209);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(48, 13);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Console:";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(4, 225);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox1.Size = new System.Drawing.Size(804, 101);
-			this.textBox1.TabIndex = 4;
-			// 
-			// gbTaskBloqueante
-			// 
-			this.gbTaskBloqueante.Controls.Add(this.mskSleepBloquante);
-			this.gbTaskBloqueante.Controls.Add(this.lbSleepBloquante);
-			this.gbTaskBloqueante.Controls.Add(this.btnLancarBloqueante);
-			this.gbTaskBloqueante.Controls.Add(this.radioButton10);
-			this.gbTaskBloqueante.Controls.Add(this.radioButton4);
-			this.gbTaskBloqueante.Controls.Add(this.radioButton5);
-			this.gbTaskBloqueante.Controls.Add(this.radioButton6);
-			this.gbTaskBloqueante.Location = new System.Drawing.Point(210, 6);
-			this.gbTaskBloqueante.Name = "gbTaskBloqueante";
-			this.gbTaskBloqueante.Size = new System.Drawing.Size(227, 200);
-			this.gbTaskBloqueante.TabIndex = 6;
-			this.gbTaskBloqueante.TabStop = false;
-			this.gbTaskBloqueante.Text = "Task Bloqueante";
-			// 
-			// radioButton4
-			// 
-			this.radioButton4.AutoSize = true;
-			this.radioButton4.Location = new System.Drawing.Point(9, 64);
-			this.radioButton4.Name = "radioButton4";
-			this.radioButton4.Size = new System.Drawing.Size(187, 17);
-			this.radioButton4.TabIndex = 2;
-			this.radioButton4.TabStop = true;
-			this.radioButton4.Text = "Atribuir pessoa com lock de objeto";
-			this.radioButton4.UseVisualStyleBackColor = true;
-			// 
-			// radioButton5
-			// 
-			this.radioButton5.AutoSize = true;
-			this.radioButton5.Location = new System.Drawing.Point(9, 42);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(217, 17);
-			this.radioButton5.TabIndex = 1;
-			this.radioButton5.TabStop = true;
-			this.radioButton5.Text = "Incrementar contador com lock instância";
-			this.radioButton5.UseVisualStyleBackColor = true;
-			// 
-			// radioButton6
-			// 
-			this.radioButton6.AutoSize = true;
-			this.radioButton6.Location = new System.Drawing.Point(9, 20);
-			this.radioButton6.Name = "radioButton6";
-			this.radioButton6.Size = new System.Drawing.Size(195, 17);
-			this.radioButton6.TabIndex = 0;
-			this.radioButton6.TabStop = true;
-			this.radioButton6.Text = "Incrementar contador com lock type";
-			this.radioButton6.UseVisualStyleBackColor = true;
 			// 
 			// gbAcessarDados
 			// 
@@ -324,6 +204,17 @@
 			this.gbAcessarDados.TabIndex = 7;
 			this.gbAcessarDados.TabStop = false;
 			this.gbAcessarDados.Text = "Acessar Dados";
+			// 
+			// radioButton12
+			// 
+			this.radioButton12.AutoSize = true;
+			this.radioButton12.Location = new System.Drawing.Point(11, 89);
+			this.radioButton12.Name = "radioButton12";
+			this.radioButton12.Size = new System.Drawing.Size(164, 17);
+			this.radioButton12.TabIndex = 3;
+			this.radioButton12.TabStop = true;
+			this.radioButton12.Text = "Acessar tipo pessoa qualquer";
+			this.radioButton12.UseVisualStyleBackColor = true;
 			// 
 			// radioButton7
 			// 
@@ -358,57 +249,28 @@
 			this.radioButton9.Text = "Acessar contador";
 			this.radioButton9.UseVisualStyleBackColor = true;
 			// 
-			// radioButton10
+			// gbTaskBloqueante
 			// 
-			this.radioButton10.AutoSize = true;
-			this.radioButton10.Location = new System.Drawing.Point(9, 86);
-			this.radioButton10.Name = "radioButton10";
-			this.radioButton10.Size = new System.Drawing.Size(200, 17);
-			this.radioButton10.TabIndex = 3;
-			this.radioButton10.TabStop = true;
-			this.radioButton10.Text = "Atribuir pessoa com lock de instância";
-			this.radioButton10.UseVisualStyleBackColor = true;
+			this.gbTaskBloqueante.Controls.Add(this.mskSleepBloquante);
+			this.gbTaskBloqueante.Controls.Add(this.lbSleepBloquante);
+			this.gbTaskBloqueante.Controls.Add(this.btnLancarBloqueante);
+			this.gbTaskBloqueante.Controls.Add(this.radioButton10);
+			this.gbTaskBloqueante.Controls.Add(this.radioButton4);
+			this.gbTaskBloqueante.Controls.Add(this.radioButton5);
+			this.gbTaskBloqueante.Controls.Add(this.radioButton6);
+			this.gbTaskBloqueante.Location = new System.Drawing.Point(210, 6);
+			this.gbTaskBloqueante.Name = "gbTaskBloqueante";
+			this.gbTaskBloqueante.Size = new System.Drawing.Size(227, 200);
+			this.gbTaskBloqueante.TabIndex = 6;
+			this.gbTaskBloqueante.TabStop = false;
+			this.gbTaskBloqueante.Text = "Task Bloqueante";
 			// 
-			// rbGetCount
+			// mskSleepBloquante
 			// 
-			this.rbGetCount.AutoSize = true;
-			this.rbGetCount.Location = new System.Drawing.Point(9, 89);
-			this.rbGetCount.Name = "rbGetCount";
-			this.rbGetCount.Size = new System.Drawing.Size(109, 17);
-			this.rbGetCount.TabIndex = 3;
-			this.rbGetCount.TabStop = true;
-			this.rbGetCount.Text = "Acessar Contador";
-			this.rbGetCount.UseVisualStyleBackColor = true;
-			// 
-			// radioButton12
-			// 
-			this.radioButton12.AutoSize = true;
-			this.radioButton12.Location = new System.Drawing.Point(11, 89);
-			this.radioButton12.Name = "radioButton12";
-			this.radioButton12.Size = new System.Drawing.Size(164, 17);
-			this.radioButton12.TabIndex = 3;
-			this.radioButton12.TabStop = true;
-			this.radioButton12.Text = "Acessar tipo pessoa qualquer";
-			this.radioButton12.UseVisualStyleBackColor = true;
-			// 
-			// btnLancarNormal
-			// 
-			this.btnLancarNormal.Location = new System.Drawing.Point(134, 171);
-			this.btnLancarNormal.Name = "btnLancarNormal";
-			this.btnLancarNormal.Size = new System.Drawing.Size(61, 23);
-			this.btnLancarNormal.TabIndex = 4;
-			this.btnLancarNormal.Text = "Lançar";
-			this.btnLancarNormal.UseVisualStyleBackColor = true;
-			this.btnLancarNormal.Click += new System.EventHandler(this.btnLancarNormal_Click);
-			// 
-			// lbSleepNormal
-			// 
-			this.lbSleepNormal.AutoSize = true;
-			this.lbSleepNormal.Location = new System.Drawing.Point(58, 151);
-			this.lbSleepNormal.Name = "lbSleepNormal";
-			this.lbSleepNormal.Size = new System.Drawing.Size(34, 13);
-			this.lbSleepNormal.TabIndex = 6;
-			this.lbSleepNormal.Text = "Sleep";
+			this.mskSleepBloquante.Location = new System.Drawing.Point(121, 148);
+			this.mskSleepBloquante.Name = "mskSleepBloquante";
+			this.mskSleepBloquante.Size = new System.Drawing.Size(100, 20);
+			this.mskSleepBloquante.TabIndex = 10;
 			// 
 			// lbSleepBloquante
 			// 
@@ -428,12 +290,87 @@
 			this.btnLancarBloqueante.Text = "Lançar";
 			this.btnLancarBloqueante.UseVisualStyleBackColor = true;
 			// 
-			// mskSleepBloquante
+			// radioButton10
 			// 
-			this.mskSleepBloquante.Location = new System.Drawing.Point(121, 148);
-			this.mskSleepBloquante.Name = "mskSleepBloquante";
-			this.mskSleepBloquante.Size = new System.Drawing.Size(100, 20);
-			this.mskSleepBloquante.TabIndex = 10;
+			this.radioButton10.AutoSize = true;
+			this.radioButton10.Location = new System.Drawing.Point(9, 86);
+			this.radioButton10.Name = "radioButton10";
+			this.radioButton10.Size = new System.Drawing.Size(200, 17);
+			this.radioButton10.TabIndex = 3;
+			this.radioButton10.TabStop = true;
+			this.radioButton10.Text = "Atribuir pessoa com lock de instância";
+			this.radioButton10.UseVisualStyleBackColor = true;
+			// 
+			// radioButton4
+			// 
+			this.radioButton4.AutoSize = true;
+			this.radioButton4.Location = new System.Drawing.Point(9, 64);
+			this.radioButton4.Name = "radioButton4";
+			this.radioButton4.Size = new System.Drawing.Size(187, 17);
+			this.radioButton4.TabIndex = 2;
+			this.radioButton4.TabStop = true;
+			this.radioButton4.Text = "Atribuir pessoa com lock de objeto";
+			this.radioButton4.UseVisualStyleBackColor = true;
+			// 
+			// radioButton5
+			// 
+			this.radioButton5.AutoSize = true;
+			this.radioButton5.Location = new System.Drawing.Point(9, 42);
+			this.radioButton5.Name = "radioButton5";
+			this.radioButton5.Size = new System.Drawing.Size(217, 17);
+			this.radioButton5.TabIndex = 1;
+			this.radioButton5.TabStop = true;
+			this.radioButton5.Text = "Incrementar contador com lock instância";
+			this.radioButton5.UseVisualStyleBackColor = true;
+			// 
+			// radioButton6
+			// 
+			this.radioButton6.AutoSize = true;
+			this.radioButton6.Location = new System.Drawing.Point(9, 20);
+			this.radioButton6.Name = "radioButton6";
+			this.radioButton6.Size = new System.Drawing.Size(195, 17);
+			this.radioButton6.TabIndex = 0;
+			this.radioButton6.TabStop = true;
+			this.radioButton6.Text = "Incrementar contador com lock type";
+			this.radioButton6.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(6, 209);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(48, 13);
+			this.label2.TabIndex = 5;
+			this.label2.Text = "Console:";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.textBox1.Location = new System.Drawing.Point(4, 225);
+			this.textBox1.Multiline = true;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.textBox1.Size = new System.Drawing.Size(640, 101);
+			this.textBox1.TabIndex = 4;
+			// 
+			// gbTaskNormal
+			// 
+			this.gbTaskNormal.Controls.Add(this.mskSleepNormal);
+			this.gbTaskNormal.Controls.Add(this.lbSleepNormal);
+			this.gbTaskNormal.Controls.Add(this.btnLancarNormal);
+			this.gbTaskNormal.Controls.Add(this.rbGetCount);
+			this.gbTaskNormal.Controls.Add(this.rbGetPerson);
+			this.gbTaskNormal.Controls.Add(this.rbSetPerson);
+			this.gbTaskNormal.Controls.Add(this.rbIncCount);
+			this.gbTaskNormal.Location = new System.Drawing.Point(4, 6);
+			this.gbTaskNormal.Name = "gbTaskNormal";
+			this.gbTaskNormal.Size = new System.Drawing.Size(200, 200);
+			this.gbTaskNormal.TabIndex = 0;
+			this.gbTaskNormal.TabStop = false;
+			this.gbTaskNormal.Text = "Task Normal";
 			// 
 			// mskSleepNormal
 			// 
@@ -442,11 +379,74 @@
 			this.mskSleepNormal.Size = new System.Drawing.Size(100, 20);
 			this.mskSleepNormal.TabIndex = 11;
 			// 
+			// lbSleepNormal
+			// 
+			this.lbSleepNormal.AutoSize = true;
+			this.lbSleepNormal.Location = new System.Drawing.Point(58, 151);
+			this.lbSleepNormal.Name = "lbSleepNormal";
+			this.lbSleepNormal.Size = new System.Drawing.Size(34, 13);
+			this.lbSleepNormal.TabIndex = 6;
+			this.lbSleepNormal.Text = "Sleep";
+			// 
+			// btnLancarNormal
+			// 
+			this.btnLancarNormal.Location = new System.Drawing.Point(134, 171);
+			this.btnLancarNormal.Name = "btnLancarNormal";
+			this.btnLancarNormal.Size = new System.Drawing.Size(61, 23);
+			this.btnLancarNormal.TabIndex = 4;
+			this.btnLancarNormal.Text = "Lançar";
+			this.btnLancarNormal.UseVisualStyleBackColor = true;
+			this.btnLancarNormal.Click += new System.EventHandler(this.btnLancarNormal_Click);
+			// 
+			// rbGetCount
+			// 
+			this.rbGetCount.AutoSize = true;
+			this.rbGetCount.Location = new System.Drawing.Point(9, 89);
+			this.rbGetCount.Name = "rbGetCount";
+			this.rbGetCount.Size = new System.Drawing.Size(109, 17);
+			this.rbGetCount.TabIndex = 3;
+			this.rbGetCount.TabStop = true;
+			this.rbGetCount.Text = "Acessar Contador";
+			this.rbGetCount.UseVisualStyleBackColor = true;
+			// 
+			// rbGetPerson
+			// 
+			this.rbGetPerson.AutoSize = true;
+			this.rbGetPerson.Location = new System.Drawing.Point(9, 66);
+			this.rbGetPerson.Name = "rbGetPerson";
+			this.rbGetPerson.Size = new System.Drawing.Size(101, 17);
+			this.rbGetPerson.TabIndex = 2;
+			this.rbGetPerson.TabStop = true;
+			this.rbGetPerson.Text = "Acessar Pessoa";
+			this.rbGetPerson.UseVisualStyleBackColor = true;
+			// 
+			// rbSetPerson
+			// 
+			this.rbSetPerson.AutoSize = true;
+			this.rbSetPerson.Location = new System.Drawing.Point(9, 43);
+			this.rbSetPerson.Name = "rbSetPerson";
+			this.rbSetPerson.Size = new System.Drawing.Size(95, 17);
+			this.rbSetPerson.TabIndex = 1;
+			this.rbSetPerson.TabStop = true;
+			this.rbSetPerson.Text = "Atribuir Pessoa";
+			this.rbSetPerson.UseVisualStyleBackColor = true;
+			// 
+			// rbIncCount
+			// 
+			this.rbIncCount.AutoSize = true;
+			this.rbIncCount.Location = new System.Drawing.Point(9, 20);
+			this.rbIncCount.Name = "rbIncCount";
+			this.rbIncCount.Size = new System.Drawing.Size(107, 17);
+			this.rbIncCount.TabIndex = 0;
+			this.rbIncCount.TabStop = true;
+			this.rbIncCount.Text = "Incrementar valor";
+			this.rbIncCount.UseVisualStyleBackColor = true;
+			// 
 			// Principal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(819, 359);
+			this.ClientSize = new System.Drawing.Size(655, 359);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Principal";
 			this.Text = "Concorrência Estudo";
@@ -455,12 +455,12 @@
 			this.tabPage1.PerformLayout();
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
-			this.gbTaskNormal.ResumeLayout(false);
-			this.gbTaskNormal.PerformLayout();
-			this.gbTaskBloqueante.ResumeLayout(false);
-			this.gbTaskBloqueante.PerformLayout();
 			this.gbAcessarDados.ResumeLayout(false);
 			this.gbAcessarDados.PerformLayout();
+			this.gbTaskBloqueante.ResumeLayout(false);
+			this.gbTaskBloqueante.PerformLayout();
+			this.gbTaskNormal.ResumeLayout(false);
+			this.gbTaskNormal.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
