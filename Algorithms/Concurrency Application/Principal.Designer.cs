@@ -45,23 +45,19 @@
 			this.radioButton8 = new System.Windows.Forms.RadioButton();
 			this.radioButton9 = new System.Windows.Forms.RadioButton();
 			this.gbTaskBloqueante = new System.Windows.Forms.GroupBox();
-			this.mskSleepBloquante = new System.Windows.Forms.MaskedTextBox();
-			this.lbSleepBloquante = new System.Windows.Forms.Label();
 			this.btnLancarBloqueante = new System.Windows.Forms.Button();
 			this.radioButton10 = new System.Windows.Forms.RadioButton();
 			this.radioButton4 = new System.Windows.Forms.RadioButton();
 			this.radioButton5 = new System.Windows.Forms.RadioButton();
 			this.radioButton6 = new System.Windows.Forms.RadioButton();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtConsoleLock = new System.Windows.Forms.TextBox();
 			this.gbTaskNormal = new System.Windows.Forms.GroupBox();
-			this.mskSleepNormal = new System.Windows.Forms.MaskedTextBox();
-			this.lbSleepNormal = new System.Windows.Forms.Label();
-			this.btnLancarNormal = new System.Windows.Forms.Button();
 			this.rbGetCount = new System.Windows.Forms.RadioButton();
 			this.rbGetPerson = new System.Windows.Forms.RadioButton();
 			this.rbSetPerson = new System.Windows.Forms.RadioButton();
 			this.rbIncCount = new System.Windows.Forms.RadioButton();
+			this.btnLancarNormal = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -172,7 +168,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(811, 333);
+			this.tabPage1.Size = new System.Drawing.Size(647, 333);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Main";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -182,7 +178,7 @@
 			this.tabPage2.Controls.Add(this.gbAcessarDados);
 			this.tabPage2.Controls.Add(this.gbTaskBloqueante);
 			this.tabPage2.Controls.Add(this.label2);
-			this.tabPage2.Controls.Add(this.textBox1);
+			this.tabPage2.Controls.Add(this.txtConsoleLock);
 			this.tabPage2.Controls.Add(this.gbTaskNormal);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
@@ -251,8 +247,6 @@
 			// 
 			// gbTaskBloqueante
 			// 
-			this.gbTaskBloqueante.Controls.Add(this.mskSleepBloquante);
-			this.gbTaskBloqueante.Controls.Add(this.lbSleepBloquante);
 			this.gbTaskBloqueante.Controls.Add(this.btnLancarBloqueante);
 			this.gbTaskBloqueante.Controls.Add(this.radioButton10);
 			this.gbTaskBloqueante.Controls.Add(this.radioButton4);
@@ -265,22 +259,6 @@
 			this.gbTaskBloqueante.TabStop = false;
 			this.gbTaskBloqueante.Text = "Task Bloqueante";
 			// 
-			// mskSleepBloquante
-			// 
-			this.mskSleepBloquante.Location = new System.Drawing.Point(121, 148);
-			this.mskSleepBloquante.Name = "mskSleepBloquante";
-			this.mskSleepBloquante.Size = new System.Drawing.Size(100, 20);
-			this.mskSleepBloquante.TabIndex = 10;
-			// 
-			// lbSleepBloquante
-			// 
-			this.lbSleepBloquante.AutoSize = true;
-			this.lbSleepBloquante.Location = new System.Drawing.Point(84, 151);
-			this.lbSleepBloquante.Name = "lbSleepBloquante";
-			this.lbSleepBloquante.Size = new System.Drawing.Size(34, 13);
-			this.lbSleepBloquante.TabIndex = 9;
-			this.lbSleepBloquante.Text = "Sleep";
-			// 
 			// btnLancarBloqueante
 			// 
 			this.btnLancarBloqueante.Location = new System.Drawing.Point(160, 171);
@@ -289,6 +267,7 @@
 			this.btnLancarBloqueante.TabIndex = 7;
 			this.btnLancarBloqueante.Text = "Lançar";
 			this.btnLancarBloqueante.UseVisualStyleBackColor = true;
+			this.btnLancarBloqueante.Click += new System.EventHandler(this.btnLancarBloqueante_Click);
 			// 
 			// radioButton10
 			// 
@@ -343,23 +322,21 @@
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Console:";
 			// 
-			// textBox1
+			// txtConsoleLock
 			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.txtConsoleLock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBox1.Location = new System.Drawing.Point(4, 225);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.textBox1.Size = new System.Drawing.Size(640, 101);
-			this.textBox1.TabIndex = 4;
+			this.txtConsoleLock.Location = new System.Drawing.Point(4, 225);
+			this.txtConsoleLock.Multiline = true;
+			this.txtConsoleLock.Name = "txtConsoleLock";
+			this.txtConsoleLock.ReadOnly = true;
+			this.txtConsoleLock.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+			this.txtConsoleLock.Size = new System.Drawing.Size(640, 101);
+			this.txtConsoleLock.TabIndex = 4;
 			// 
 			// gbTaskNormal
 			// 
-			this.gbTaskNormal.Controls.Add(this.mskSleepNormal);
-			this.gbTaskNormal.Controls.Add(this.lbSleepNormal);
 			this.gbTaskNormal.Controls.Add(this.btnLancarNormal);
 			this.gbTaskNormal.Controls.Add(this.rbGetCount);
 			this.gbTaskNormal.Controls.Add(this.rbGetPerson);
@@ -371,32 +348,6 @@
 			this.gbTaskNormal.TabIndex = 0;
 			this.gbTaskNormal.TabStop = false;
 			this.gbTaskNormal.Text = "Task Normal";
-			// 
-			// mskSleepNormal
-			// 
-			this.mskSleepNormal.Location = new System.Drawing.Point(95, 148);
-			this.mskSleepNormal.Name = "mskSleepNormal";
-			this.mskSleepNormal.Size = new System.Drawing.Size(100, 20);
-			this.mskSleepNormal.TabIndex = 11;
-			// 
-			// lbSleepNormal
-			// 
-			this.lbSleepNormal.AutoSize = true;
-			this.lbSleepNormal.Location = new System.Drawing.Point(58, 151);
-			this.lbSleepNormal.Name = "lbSleepNormal";
-			this.lbSleepNormal.Size = new System.Drawing.Size(34, 13);
-			this.lbSleepNormal.TabIndex = 6;
-			this.lbSleepNormal.Text = "Sleep";
-			// 
-			// btnLancarNormal
-			// 
-			this.btnLancarNormal.Location = new System.Drawing.Point(134, 171);
-			this.btnLancarNormal.Name = "btnLancarNormal";
-			this.btnLancarNormal.Size = new System.Drawing.Size(61, 23);
-			this.btnLancarNormal.TabIndex = 4;
-			this.btnLancarNormal.Text = "Lançar";
-			this.btnLancarNormal.UseVisualStyleBackColor = true;
-			this.btnLancarNormal.Click += new System.EventHandler(this.btnLancarNormal_Click);
 			// 
 			// rbGetCount
 			// 
@@ -441,6 +392,16 @@
 			this.rbIncCount.TabStop = true;
 			this.rbIncCount.Text = "Incrementar valor";
 			this.rbIncCount.UseVisualStyleBackColor = true;
+			// 
+			// btnLancarNormal
+			// 
+			this.btnLancarNormal.Location = new System.Drawing.Point(134, 171);
+			this.btnLancarNormal.Name = "btnLancarNormal";
+			this.btnLancarNormal.Size = new System.Drawing.Size(61, 23);
+			this.btnLancarNormal.TabIndex = 4;
+			this.btnLancarNormal.Text = "Lançar";
+			this.btnLancarNormal.UseVisualStyleBackColor = true;
+			this.btnLancarNormal.Click += new System.EventHandler(this.btnLancarNormal_Click);
 			// 
 			// Principal
 			// 
@@ -491,16 +452,12 @@
 		private System.Windows.Forms.RadioButton radioButton5;
 		private System.Windows.Forms.RadioButton radioButton6;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtConsoleLock;
 		private System.Windows.Forms.RadioButton radioButton10;
 		private System.Windows.Forms.RadioButton radioButton12;
 		private System.Windows.Forms.RadioButton rbGetCount;
-		private System.Windows.Forms.Label lbSleepBloquante;
 		private System.Windows.Forms.Button btnLancarBloqueante;
-		private System.Windows.Forms.Label lbSleepNormal;
 		private System.Windows.Forms.Button btnLancarNormal;
-		private System.Windows.Forms.MaskedTextBox mskSleepBloquante;
-		private System.Windows.Forms.MaskedTextBox mskSleepNormal;
 	}
 }
 
