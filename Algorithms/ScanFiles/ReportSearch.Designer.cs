@@ -33,19 +33,21 @@
 			this.txtDirectory = new System.Windows.Forms.TextBox();
 			this.dataGridViewResult = new System.Windows.Forms.DataGridView();
 			this.nm_file = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.nu_threadId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtMatch = new System.Windows.Forms.TextBox();
 			this.btnSearch = new System.Windows.Forms.Button();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.tsTotal = new System.Windows.Forms.ToolStripLabel();
+			this.buttonClear = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnDirectory
 			// 
-			this.btnDirectory.Location = new System.Drawing.Point(510, 26);
+			this.btnDirectory.Location = new System.Drawing.Point(388, 26);
 			this.btnDirectory.Name = "btnDirectory";
 			this.btnDirectory.Size = new System.Drawing.Size(75, 23);
 			this.btnDirectory.TabIndex = 0;
@@ -62,7 +64,7 @@
 			this.txtDirectory.Location = new System.Drawing.Point(13, 27);
 			this.txtDirectory.Name = "txtDirectory";
 			this.txtDirectory.ReadOnly = true;
-			this.txtDirectory.Size = new System.Drawing.Size(491, 20);
+			this.txtDirectory.Size = new System.Drawing.Size(369, 20);
 			this.txtDirectory.TabIndex = 1;
 			// 
 			// dataGridViewResult
@@ -73,11 +75,17 @@
 			this.dataGridViewResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-			this.nm_file});
+			this.nm_file,
+			this.nu_threadId});
 			this.dataGridViewResult.Location = new System.Drawing.Point(13, 105);
 			this.dataGridViewResult.Name = "dataGridViewResult";
-			this.dataGridViewResult.Size = new System.Drawing.Size(570, 150);
+			this.dataGridViewResult.ShowCellErrors = false;
+			this.dataGridViewResult.ShowCellToolTips = false;
+			this.dataGridViewResult.ShowEditingIcon = false;
+			this.dataGridViewResult.ShowRowErrors = false;
+			this.dataGridViewResult.Size = new System.Drawing.Size(369, 150);
 			this.dataGridViewResult.TabIndex = 2;
+			this.dataGridViewResult.VirtualMode = true;
 			// 
 			// nm_file
 			// 
@@ -86,6 +94,13 @@
 			this.nm_file.HeaderText = "Nome do Arquivo";
 			this.nm_file.Name = "nm_file";
 			this.nm_file.ReadOnly = true;
+			// 
+			// nu_threadId
+			// 
+			this.nu_threadId.DataPropertyName = "nu_threadId";
+			this.nu_threadId.HeaderText = "Thread ID";
+			this.nu_threadId.Name = "nu_threadId";
+			this.nu_threadId.ReadOnly = true;
 			// 
 			// label1
 			// 
@@ -109,12 +124,13 @@
 			// 
 			this.txtMatch.Location = new System.Drawing.Point(13, 79);
 			this.txtMatch.Name = "txtMatch";
-			this.txtMatch.Size = new System.Drawing.Size(491, 20);
+			this.txtMatch.Size = new System.Drawing.Size(369, 20);
 			this.txtMatch.TabIndex = 5;
+			this.txtMatch.Text = "funcionario";
 			// 
 			// btnSearch
 			// 
-			this.btnSearch.Location = new System.Drawing.Point(510, 78);
+			this.btnSearch.Location = new System.Drawing.Point(388, 78);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(75, 23);
 			this.btnSearch.TabIndex = 6;
@@ -129,7 +145,7 @@
 			this.tsTotal});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 262);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(597, 25);
+			this.toolStrip1.Size = new System.Drawing.Size(593, 25);
 			this.toolStrip1.TabIndex = 7;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -138,11 +154,22 @@
 			this.tsTotal.Name = "tsTotal";
 			this.tsTotal.Size = new System.Drawing.Size(0, 22);
 			// 
+			// buttonClear
+			// 
+			this.buttonClear.Location = new System.Drawing.Point(469, 79);
+			this.buttonClear.Name = "buttonClear";
+			this.buttonClear.Size = new System.Drawing.Size(75, 23);
+			this.buttonClear.TabIndex = 8;
+			this.buttonClear.Text = "Clear";
+			this.buttonClear.UseVisualStyleBackColor = true;
+			this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+			// 
 			// formReportSearch
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(597, 287);
+			this.ClientSize = new System.Drawing.Size(593, 287);
+			this.Controls.Add(this.buttonClear);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.txtMatch);
@@ -151,6 +178,7 @@
 			this.Controls.Add(this.dataGridViewResult);
 			this.Controls.Add(this.txtDirectory);
 			this.Controls.Add(this.btnDirectory);
+			this.DoubleBuffered = true;
 			this.Name = "formReportSearch";
 			this.RightToLeftLayout = true;
 			this.Text = "Escaneador de relatórios";
@@ -171,9 +199,11 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtMatch;
 		private System.Windows.Forms.Button btnSearch;
-		private System.Windows.Forms.DataGridViewTextBoxColumn nm_file;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripLabel tsTotal;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nm_file;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nu_threadId;
+		private System.Windows.Forms.Button buttonClear;
 	}
 }
 

@@ -40,28 +40,40 @@
 			this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
 			this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
 			this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-			this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-			this.btnConnect = new DevComponents.DotNetBar.ButtonX();
-			this.comboBoxDataBase = new System.Windows.Forms.ComboBox();
-			this.bindingSourceDataBase = new System.Windows.Forms.BindingSource(this.components);
+			this.tabMain = new DevComponents.DotNetBar.TabControlPanel();
+			this.circularProgress = new DevComponents.DotNetBar.Controls.CircularProgress();
+			this.buttonTaskTest = new DevComponents.DotNetBar.ButtonX();
+			this.labelProcessamento = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.labal1 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtDoor = new System.Windows.Forms.TextBox();
+			this.mskAddressIP = new System.Windows.Forms.MaskedTextBox();
+			this.groupBoxLogin = new System.Windows.Forms.GroupBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtUser = new System.Windows.Forms.TextBox();
-			this.mskAddressIP = new System.Windows.Forms.MaskedTextBox();
-			this.txtDoor = new System.Windows.Forms.TextBox();
-			this.label5 = new System.Windows.Forms.Label();
+			this.btnConnect = new DevComponents.DotNetBar.ButtonX();
 			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.labal1 = new System.Windows.Forms.Label();
 			this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
+			this.tabControlSelectDataBase = new DevComponents.DotNetBar.TabControlPanel();
+			this.labelInfoPanel2 = new System.Windows.Forms.Label();
+			this.comboBoxDataBase = new System.Windows.Forms.ComboBox();
+			this.bindingSourceDataBase = new System.Windows.Forms.BindingSource(this.components);
+			this.label5 = new System.Windows.Forms.Label();
+			this.tabItem2 = new DevComponents.DotNetBar.TabItem(this.components);
 			this.errorProvidermskAddress = new System.Windows.Forms.ErrorProvider(this.components);
+			this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceConnection)).BeginInit();
 			this.panelExBottom.SuspendLayout();
 			this.panelMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
 			this.tabControl1.SuspendLayout();
-			this.tabControlPanel1.SuspendLayout();
+			this.tabMain.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			this.groupBoxLogin.SuspendLayout();
+			this.tabControlSelectDataBase.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceDataBase)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvidermskAddress)).BeginInit();
 			this.SuspendLayout();
@@ -212,7 +224,7 @@
 			this.labelItem1.Name = "labelItem1";
 			this.labelItem1.PaddingBottom = 5;
 			this.labelItem1.PaddingTop = 5;
-			this.labelItem1.Text = "Configuração";
+			this.labelItem1.Text = "Conexão";
 			this.labelItem1.TextAlignment = System.Drawing.StringAlignment.Center;
 			// 
 			// labelItem2
@@ -244,7 +256,8 @@
 			this.tabControl1.ColorScheme.TabPanelBackground = System.Drawing.Color.White;
 			this.tabControl1.ColorScheme.TabPanelBackground2 = System.Drawing.Color.White;
 			this.tabControl1.ColorScheme.TabPanelBorder = System.Drawing.Color.White;
-			this.tabControl1.Controls.Add(this.tabControlPanel1);
+			this.tabControl1.Controls.Add(this.tabMain);
+			this.tabControl1.Controls.Add(this.tabControlSelectDataBase);
 			this.tabControl1.Location = new System.Drawing.Point(148, -25);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
@@ -253,70 +266,167 @@
 			this.tabControl1.TabIndex = 1;
 			this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
 			this.tabControl1.Tabs.Add(this.tabItem1);
+			this.tabControl1.Tabs.Add(this.tabItem2);
 			this.tabControl1.Text = "tabControl1";
 			// 
-			// tabControlPanel1
+			// tabMain
 			// 
-			this.tabControlPanel1.Controls.Add(this.btnConnect);
-			this.tabControlPanel1.Controls.Add(this.comboBoxDataBase);
-			this.tabControlPanel1.Controls.Add(this.txtPassword);
-			this.tabControlPanel1.Controls.Add(this.txtUser);
-			this.tabControlPanel1.Controls.Add(this.mskAddressIP);
-			this.tabControlPanel1.Controls.Add(this.txtDoor);
-			this.tabControlPanel1.Controls.Add(this.label5);
-			this.tabControlPanel1.Controls.Add(this.label4);
-			this.tabControlPanel1.Controls.Add(this.label3);
-			this.tabControlPanel1.Controls.Add(this.label2);
-			this.tabControlPanel1.Controls.Add(this.label1);
-			this.tabControlPanel1.Controls.Add(this.labal1);
-			this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-			this.tabControlPanel1.Name = "tabControlPanel1";
-			this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-			this.tabControlPanel1.Size = new System.Drawing.Size(454, 328);
-			this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.White;
-			this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.White;
-			this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.White;
-			this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+			this.tabMain.Controls.Add(this.buttonX1);
+			this.tabMain.Controls.Add(this.circularProgress);
+			this.tabMain.Controls.Add(this.buttonTaskTest);
+			this.tabMain.Controls.Add(this.labelProcessamento);
+			this.tabMain.Controls.Add(this.groupBox1);
+			this.tabMain.Controls.Add(this.groupBoxLogin);
+			this.tabMain.Controls.Add(this.btnConnect);
+			this.tabMain.Controls.Add(this.label4);
+			this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabMain.Location = new System.Drawing.Point(0, 26);
+			this.tabMain.Name = "tabMain";
+			this.tabMain.Padding = new System.Windows.Forms.Padding(1);
+			this.tabMain.Size = new System.Drawing.Size(454, 328);
+			this.tabMain.Style.BackColor1.Color = System.Drawing.Color.White;
+			this.tabMain.Style.BackColor2.Color = System.Drawing.Color.White;
+			this.tabMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.tabMain.Style.BorderColor.Color = System.Drawing.Color.White;
+			this.tabMain.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
-			this.tabControlPanel1.Style.GradientAngle = 90;
-			this.tabControlPanel1.TabIndex = 1;
-			this.tabControlPanel1.TabItem = this.tabItem1;
+			this.tabMain.Style.GradientAngle = 90;
+			this.tabMain.TabIndex = 1;
+			this.tabMain.TabItem = this.tabItem1;
 			// 
-			// btnConnect
+			// circularProgress
 			// 
-			this.btnConnect.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.btnConnect.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnConnect.Location = new System.Drawing.Point(82, 167);
-			this.btnConnect.Name = "btnConnect";
-			this.btnConnect.Size = new System.Drawing.Size(75, 23);
-			this.btnConnect.TabIndex = 20;
-			this.btnConnect.Text = "Conectar";
-			this.btnConnect.TextColor = System.Drawing.Color.Black;
-			this.btnConnect.ThemeAware = true;
-			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+			this.circularProgress.BackColor = System.Drawing.Color.White;
 			// 
-			// comboBoxDataBase
 			// 
-			this.comboBoxDataBase.DataSource = this.bindingSourceDataBase;
-			this.comboBoxDataBase.DisplayMember = "Name";
-			this.comboBoxDataBase.FormattingEnabled = true;
-			this.comboBoxDataBase.Location = new System.Drawing.Point(35, 240);
-			this.comboBoxDataBase.Name = "comboBoxDataBase";
-			this.comboBoxDataBase.Size = new System.Drawing.Size(249, 21);
-			this.comboBoxDataBase.TabIndex = 19;
-			this.comboBoxDataBase.SelectedIndexChanged += new System.EventHandler(this.comboBoxDataBase_SelectedIndexChanged);
-			this.comboBoxDataBase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxDataBase_KeyDown);
 			// 
-			// bindingSourceDataBase
+			this.circularProgress.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.circularProgress.Location = new System.Drawing.Point(422, 302);
+			this.circularProgress.Name = "circularProgress";
+			this.circularProgress.ProgressColor = System.Drawing.Color.SeaGreen;
+			this.circularProgress.ProgressTextColor = System.Drawing.Color.Black;
+			this.circularProgress.Size = new System.Drawing.Size(28, 23);
+			this.circularProgress.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
+			this.circularProgress.TabIndex = 25;
+			this.circularProgress.Value = 6;
+			this.circularProgress.Visible = false;
 			// 
-			this.bindingSourceDataBase.DataSource = typeof(Project_Cadimuns.Model.DataBase);
+			// buttonTaskTest
+			// 
+			this.buttonTaskTest.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.buttonTaskTest.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonTaskTest.Location = new System.Drawing.Point(172, 258);
+			this.buttonTaskTest.Name = "buttonTaskTest";
+			this.buttonTaskTest.Size = new System.Drawing.Size(75, 23);
+			this.buttonTaskTest.TabIndex = 26;
+			this.buttonTaskTest.Text = "Iniciar";
+			this.buttonTaskTest.TextColor = System.Drawing.Color.Black;
+			this.buttonTaskTest.ThemeAware = true;
+			this.buttonTaskTest.Click += new System.EventHandler(this.buttonTaskTest_Click);
+			// 
+			// labelProcessamento
+			// 
+			this.labelProcessamento.AutoSize = true;
+			this.labelProcessamento.BackColor = System.Drawing.Color.White;
+			this.labelProcessamento.Location = new System.Drawing.Point(310, 302);
+			this.labelProcessamento.Name = "labelProcessamento";
+			this.labelProcessamento.Size = new System.Drawing.Size(106, 13);
+			this.labelProcessamento.TabIndex = 23;
+			this.labelProcessamento.Text = "Em processamento...";
+			this.labelProcessamento.Visible = false;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.BackColor = System.Drawing.Color.White;
+			this.groupBox1.Controls.Add(this.labal1);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.txtDoor);
+			this.groupBox1.Controls.Add(this.mskAddressIP);
+			this.groupBox1.Location = new System.Drawing.Point(20, 41);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(308, 76);
+			this.groupBox1.TabIndex = 22;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Endereço";
+			// 
+			// labal1
+			// 
+			this.labal1.AutoSize = true;
+			this.labal1.BackColor = System.Drawing.Color.White;
+			this.labal1.Location = new System.Drawing.Point(3, 35);
+			this.labal1.Name = "labal1";
+			this.labal1.Size = new System.Drawing.Size(53, 13);
+			this.labal1.TabIndex = 0;
+			this.labal1.Text = "Endereço";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.BackColor = System.Drawing.Color.White;
+			this.label3.Location = new System.Drawing.Point(176, 37);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(32, 13);
+			this.label3.TabIndex = 8;
+			this.label3.Text = "Porta";
+			// 
+			// txtDoor
+			// 
+			this.txtDoor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "Port", true));
+			this.txtDoor.Location = new System.Drawing.Point(214, 34);
+			this.txtDoor.MaxLength = 255;
+			this.txtDoor.Name = "txtDoor";
+			this.txtDoor.Size = new System.Drawing.Size(68, 20);
+			this.txtDoor.TabIndex = 15;
+			// 
+			// mskAddressIP
+			// 
+			this.mskAddressIP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "Address", true));
+			this.mskAddressIP.Location = new System.Drawing.Point(63, 34);
+			this.mskAddressIP.Mask = "999.999.999.999";
+			this.mskAddressIP.Name = "mskAddressIP";
+			this.mskAddressIP.Size = new System.Drawing.Size(100, 20);
+			this.mskAddressIP.TabIndex = 16;
+			this.mskAddressIP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskTextBox_KeyDown);
+			this.mskAddressIP.Validating += new System.ComponentModel.CancelEventHandler(this.mskTextBox_Validating);
+			// 
+			// groupBoxLogin
+			// 
+			this.groupBoxLogin.BackColor = System.Drawing.Color.White;
+			this.groupBoxLogin.Controls.Add(this.label1);
+			this.groupBoxLogin.Controls.Add(this.label2);
+			this.groupBoxLogin.Controls.Add(this.txtPassword);
+			this.groupBoxLogin.Controls.Add(this.txtUser);
+			this.groupBoxLogin.Location = new System.Drawing.Point(20, 123);
+			this.groupBoxLogin.Name = "groupBoxLogin";
+			this.groupBoxLogin.Size = new System.Drawing.Size(308, 99);
+			this.groupBoxLogin.TabIndex = 21;
+			this.groupBoxLogin.TabStop = false;
+			this.groupBoxLogin.Text = "Login";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(12, 29);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(43, 13);
+			this.label1.TabIndex = 4;
+			this.label1.Text = "Usuário";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.BackColor = System.Drawing.Color.White;
+			this.label2.Location = new System.Drawing.Point(12, 58);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(38, 13);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Senha";
 			// 
 			// txtPassword
 			// 
 			this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "Password", true));
-			this.txtPassword.Location = new System.Drawing.Point(82, 132);
+			this.txtPassword.Location = new System.Drawing.Point(62, 58);
 			this.txtPassword.MaxLength = 255;
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.PasswordChar = '*';
@@ -326,102 +436,120 @@
 			// txtUser
 			// 
 			this.txtUser.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "UserName", true));
-			this.txtUser.Location = new System.Drawing.Point(82, 100);
+			this.txtUser.Location = new System.Drawing.Point(62, 26);
 			this.txtUser.MaxLength = 255;
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(100, 20);
 			this.txtUser.TabIndex = 17;
 			// 
-			// mskAddressIP
+			// btnConnect
 			// 
-			this.mskAddressIP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "Address", true));
-			this.mskAddressIP.Location = new System.Drawing.Point(82, 55);
-			this.mskAddressIP.Mask = "999.999.999.999";
-			this.mskAddressIP.Name = "mskAddressIP";
-			this.mskAddressIP.Size = new System.Drawing.Size(100, 20);
-			this.mskAddressIP.TabIndex = 16;
-			this.mskAddressIP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mskTextBox_KeyDown);
-			this.mskAddressIP.Validating += new System.ComponentModel.CancelEventHandler(this.mskTextBox_Validating);
-			// 
-			// txtDoor
-			// 
-			this.txtDoor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceConnection, "Port", true));
-			this.txtDoor.Location = new System.Drawing.Point(233, 55);
-			this.txtDoor.MaxLength = 255;
-			this.txtDoor.Name = "txtDoor";
-			this.txtDoor.Size = new System.Drawing.Size(100, 20);
-			this.txtDoor.TabIndex = 15;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.BackColor = System.Drawing.Color.White;
-			this.label5.Location = new System.Drawing.Point(12, 224);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(85, 13);
-			this.label5.TabIndex = 13;
-			this.label5.Text = "Banco de dados";
-			this.label5.Click += new System.EventHandler(this.label5_Click);
+			this.btnConnect.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.btnConnect.BackColor = System.Drawing.Color.Transparent;
+			this.btnConnect.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnConnect.Image = global::Project_Cadimuns.Properties.Resources.database_connect;
+			this.btnConnect.Location = new System.Drawing.Point(266, 228);
+			this.btnConnect.Name = "btnConnect";
+			this.btnConnect.Size = new System.Drawing.Size(62, 40);
+			this.btnConnect.TabIndex = 20;
+			this.btnConnect.TextColor = System.Drawing.Color.Black;
+			this.btnConnect.ThemeAware = true;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.BackColor = System.Drawing.Color.White;
-			this.label4.Location = new System.Drawing.Point(12, 13);
+			this.label4.ForeColor = System.Drawing.Color.Black;
+			this.label4.Location = new System.Drawing.Point(16, 10);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(225, 13);
 			this.label4.TabIndex = 10;
 			this.label4.Text = "Informe a conexão com o servidor SQL Server";
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.BackColor = System.Drawing.Color.White;
-			this.label3.Location = new System.Drawing.Point(195, 58);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(32, 13);
-			this.label3.TabIndex = 8;
-			this.label3.Text = "Porta";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.BackColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(32, 132);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(38, 13);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Senha";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(32, 103);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(43, 13);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "Usuário";
-			// 
-			// labal1
-			// 
-			this.labal1.AutoSize = true;
-			this.labal1.BackColor = System.Drawing.Color.White;
-			this.labal1.Location = new System.Drawing.Point(22, 56);
-			this.labal1.Name = "labal1";
-			this.labal1.Size = new System.Drawing.Size(53, 13);
-			this.labal1.TabIndex = 0;
-			this.labal1.Text = "Endereço";
-			// 
 			// tabItem1
 			// 
-			this.tabItem1.AttachedControl = this.tabControlPanel1;
+			this.tabItem1.AttachedControl = this.tabMain;
 			this.tabItem1.Name = "tabItem1";
 			this.tabItem1.Text = "tabItem1";
+			// 
+			// tabControlSelectDataBase
+			// 
+			this.tabControlSelectDataBase.Controls.Add(this.labelInfoPanel2);
+			this.tabControlSelectDataBase.Controls.Add(this.comboBoxDataBase);
+			this.tabControlSelectDataBase.Controls.Add(this.label5);
+			this.tabControlSelectDataBase.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControlSelectDataBase.Location = new System.Drawing.Point(0, 26);
+			this.tabControlSelectDataBase.Name = "tabControlSelectDataBase";
+			this.tabControlSelectDataBase.Padding = new System.Windows.Forms.Padding(1);
+			this.tabControlSelectDataBase.Size = new System.Drawing.Size(454, 328);
+			this.tabControlSelectDataBase.Style.BackColor1.Color = System.Drawing.Color.White;
+			this.tabControlSelectDataBase.Style.BackColor2.Color = System.Drawing.Color.White;
+			this.tabControlSelectDataBase.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.tabControlSelectDataBase.Style.BorderColor.Color = System.Drawing.Color.White;
+			this.tabControlSelectDataBase.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+			this.tabControlSelectDataBase.Style.GradientAngle = 90;
+			this.tabControlSelectDataBase.TabIndex = 2;
+			this.tabControlSelectDataBase.TabItem = this.tabItem2;
+			// 
+			// labelInfoPanel2
+			// 
+			this.labelInfoPanel2.AutoSize = true;
+			this.labelInfoPanel2.BackColor = System.Drawing.Color.White;
+			this.labelInfoPanel2.ForeColor = System.Drawing.Color.DarkBlue;
+			this.labelInfoPanel2.Location = new System.Drawing.Point(16, 12);
+			this.labelInfoPanel2.Name = "labelInfoPanel2";
+			this.labelInfoPanel2.Size = new System.Drawing.Size(225, 13);
+			this.labelInfoPanel2.TabIndex = 22;
+			this.labelInfoPanel2.Text = "Informe a conexão com o servidor SQL Server";
+			// 
+			// comboBoxDataBase
+			// 
+			this.comboBoxDataBase.DataSource = this.bindingSourceDataBase;
+			this.comboBoxDataBase.DisplayMember = "Name";
+			this.comboBoxDataBase.FormattingEnabled = true;
+			this.comboBoxDataBase.Location = new System.Drawing.Point(40, 73);
+			this.comboBoxDataBase.Name = "comboBoxDataBase";
+			this.comboBoxDataBase.Size = new System.Drawing.Size(249, 21);
+			this.comboBoxDataBase.TabIndex = 21;
+			// 
+			// bindingSourceDataBase
+			// 
+			this.bindingSourceDataBase.DataSource = typeof(Project_Cadimuns.Model.DataBase);
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.BackColor = System.Drawing.Color.White;
+			this.label5.Location = new System.Drawing.Point(17, 57);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(85, 13);
+			this.label5.TabIndex = 20;
+			this.label5.Text = "Banco de dados";
+			// 
+			// tabItem2
+			// 
+			this.tabItem2.AttachedControl = this.tabControlSelectDataBase;
+			this.tabItem2.Name = "tabItem2";
+			this.tabItem2.Text = "tabItem2";
 			// 
 			// errorProvidermskAddress
 			// 
 			this.errorProvidermskAddress.ContainerControl = this;
+			// 
+			// buttonX1
+			// 
+			this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.buttonX1.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonX1.Location = new System.Drawing.Point(103, 258);
+			this.buttonX1.Name = "buttonX1";
+			this.buttonX1.Size = new System.Drawing.Size(63, 23);
+			this.buttonX1.TabIndex = 27;
+			this.buttonX1.Text = "Cancelar";
+			this.buttonX1.TextColor = System.Drawing.Color.Black;
+			this.buttonX1.ThemeAware = true;
+			this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
 			// 
 			// Main
 			// 
@@ -446,8 +574,14 @@
 			this.panelMain.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
 			this.tabControl1.ResumeLayout(false);
-			this.tabControlPanel1.ResumeLayout(false);
-			this.tabControlPanel1.PerformLayout();
+			this.tabMain.ResumeLayout(false);
+			this.tabMain.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.groupBoxLogin.ResumeLayout(false);
+			this.groupBoxLogin.PerformLayout();
+			this.tabControlSelectDataBase.ResumeLayout(false);
+			this.tabControlSelectDataBase.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceDataBase)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvidermskAddress)).EndInit();
 			this.ResumeLayout(false);
@@ -463,7 +597,7 @@
 		private DevComponents.DotNetBar.ButtonX buttonBack;
 		private DevComponents.DotNetBar.ButtonX buttonNext;
 		private DevComponents.DotNetBar.TabControl tabControl1;
-		private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
+		private DevComponents.DotNetBar.TabControlPanel tabMain;
 		private DevComponents.DotNetBar.TabItem tabItem1;
 		private System.Windows.Forms.Label labal1;
 		private System.Windows.Forms.Label label2;
@@ -474,15 +608,24 @@
 		private DevComponents.DotNetBar.LabelItem labelItem2;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.ErrorProvider errorProvidermskAddress;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.MaskedTextBox mskAddressIP;
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.TextBox txtUser;
 		private System.Windows.Forms.TextBox txtDoor;
-		private System.Windows.Forms.ComboBox comboBoxDataBase;
 		private System.Windows.Forms.BindingSource bindingSourceConnection;
 		private DevComponents.DotNetBar.ButtonX btnConnect;
 		private System.Windows.Forms.BindingSource bindingSourceDataBase;
+		private DevComponents.DotNetBar.TabControlPanel tabControlSelectDataBase;
+		private System.Windows.Forms.Label labelInfoPanel2;
+		private System.Windows.Forms.ComboBox comboBoxDataBase;
+		private System.Windows.Forms.Label label5;
+		private DevComponents.DotNetBar.TabItem tabItem2;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox groupBoxLogin;
+		private DevComponents.DotNetBar.Controls.CircularProgress circularProgress;
+		private System.Windows.Forms.Label labelProcessamento;
+		private DevComponents.DotNetBar.ButtonX buttonTaskTest;
+		private DevComponents.DotNetBar.ButtonX buttonX1;
 	}
 }
 

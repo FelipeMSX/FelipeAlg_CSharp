@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +21,8 @@ namespace Project_Cadimuns
 
 		ModelContainer modelContainer = new ModelContainer();
 		Connection connection;
+
+		SqlConnection myConnection = null;
 		public Main()
 		{
 			InitializeComponent();
@@ -57,60 +60,12 @@ namespace Project_Cadimuns
 
 		}
 
-		private void comboBoxDataBase_KeyDown(object sender, KeyEventArgs e)
-		{
-			e.SuppressKeyPress = true;
-		}
 
-		private void btnConnect_Click(object sender, EventArgs e)
-		{
-			connection.Port = "88";
-			bindingSourceConnection.EndEdit();
-			modelContainer.SaveChanges();
-
-		}
 
 		private void Main_Load(object sender, EventArgs e)
 		{
 			connection = (Connection)bindingSourceConnection.AddNew();
-
-			SqlConnection MyConnection;
-
-			String IP;
-			String userName;
-			string password;
-			string database;
-			//MyConnection = new SqlConnection("Data Source=ServerName;Initial Catalog=DataBaseName;User id=UserName;Password=Secret;");
-			MyConnection = new SqlConnection("Data Source=187.33.29.42;User id=usr_contabilis;Password=q1w2e3r4t5;");
-			SqlDataReader dataReader;
-			MyConnection.Open();
-
-			SqlCommand command = new SqlCommand("SELECT * FROM Sys.Databases", MyConnection);
-			dataReader = command.ExecuteReader();
-
-			List<String> dataBaseNames = new List<string>();
-			int i = 1;
-			while (dataReader.Read())
-			{
-				DataBase dataBase = new DataBase();
-				dataBase.Id = i++;
-				dataBase.Name = dataReader["name"].ToString();
-				dataBase.TableId = int.Parse(dataReader["database_id"].ToString());
-				bindingSourceDataBase.Add(dataBase);
-
-			}
-
-
-
-			//while (dataReader.Read())
-			//{
-			//	MessageBox.Show(dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2));
-			//}
-			dataReader.Close();
-			command.Dispose();
-			MyConnection.Close();
 		}
-
 		private void bindingSourceConnection_AddingNew(object sender, AddingNewEventArgs e)
 		{
 
@@ -135,5 +90,105 @@ namespace Project_Cadimuns
 		{
 
 		}
+		private void comboBoxDataBase_KeyDown(object sender, KeyEventArgs e)
+		{
+			e.SuppressKeyPress = true;
+		}
+
+		private void btnConnect_Click(object sender, EventArgs e)
+		{
+			TestConnection();
+			//connection.Port = "88";
+			//bindingSourceConnection.EndEdit();
+			//modelContainer.SaveChanges();
+			//modelContainer.ConnectionSet.Add(connection);
+
+		}
+
+		public void TestConnection()
+		{
+			connection.Address = connection.Address.Replace(',', '.');
+			//MyConnection = new SqlConnection("Data Source=ServerName;Initial Catalog=DataBaseName;User id=UserName;Password=Secret;");
+			myConnection = new SqlConnection($"Data Source={connection.Address};User id={connection.UserName};Password={connection.Password};");
+			Task result = myConnection.OpenAsync();
+			result.ContinueWith((task) =>
+			{
+				if (task.Exception.InnerException != null)
+				{
+					MessageBox.Show("Um erro ocorreu ao tentar estabelecer a conexão com o banco de dados.", "Tentativa de conexão", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+				}
+			});
+		}
+		Task animationProgress;
+		CancellationTokenSource cancellationTokenProgress;
+		public void configureTaskAnimation()
+		{
+			cancellationTokenProgress = new CancellationTokenSource();
+			cancellationTokenProgress.CancelAfter(TimeSpan.FromSeconds(10));
+			cancellationTokenProgress.Token.Register(DisableAnimation);
+			circularProgress.Visible = true;
+			circularProgress.Value = 0;
+			labelProcessamento.Visible = true;
+	
+			animationProgress = new Task(() => 
+			{
+				int increment = 1;
+				while (!cancellationTokenProgress.IsCancellationRequested)
+				{
+					circularProgress.Value += increment;			
+					Thread.Sleep(10);
+					if (circularProgress.Value == 100)
+						circularProgress.Value = 0;
+					//	increment = -1;
+					//if (circularProgress.Value == 0)
+					//	increment = 1;
+				}
+			}, cancellationTokenProgress.Token);
+			animationProgress.Start();
+		}
+
+		public void DisableAnimation()
+		{
+			labelProcessamento.Visible = false;
+			circularProgress.Visible = false;
+		}
+
+		private void buttonTaskTest_Click(object sender, EventArgs e)
+		{
+
+			configureTaskAnimation();
+		}
+
+		private void buttonX1_Click(object sender, EventArgs e)
+		{
+			cancellationTokenProgress.Cancel();
+		}
 	}
+	//SqlDataReader dataReader;
+	//SqlCommand command = new SqlCommand("SELECT * FROM Sys.Databases", MyConnection);
+	//dataReader = command.ExecuteReader();
+
+	//List<String> dataBaseNames = new List<string>();
+	//int i = 1;
+	//while (dataReader.Read())
+	//{
+	//	DataBase dataBase = new DataBase();
+	//	dataBase.Id = i++;
+	//	dataBase.Name = dataReader["name"].ToString();
+	//	dataBase.TableId = int.Parse(dataReader["database_id"].ToString());
+	//	bindingSourceDataBase.Add(dataBase);
+
+	//}
+
+
+
+	////while (dataReader.Read())
+	////{
+	////	MessageBox.Show(dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2));
+	////}
+	//dataReader.Close();
+	//command.Dispose();
+	//MyConnection.Close();
+
+
 }
