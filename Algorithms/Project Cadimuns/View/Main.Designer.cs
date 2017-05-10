@@ -29,27 +29,14 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-			this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-			this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-			this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+			this.panelTop = new DevComponents.DotNetBar.PanelEx();
 			this.bindingSourceConnection = new System.Windows.Forms.BindingSource(this.components);
-			this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-			this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-			this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-			this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.panelExBottom = new DevComponents.DotNetBar.PanelEx();
-			this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-			this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+			this.buttonBack = new DevComponents.DotNetBar.ButtonX();
+			this.buttonNext = new DevComponents.DotNetBar.ButtonX();
 			this.buttonCancel = new DevComponents.DotNetBar.ButtonX();
-			this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-			this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
+			this.panelMain = new DevComponents.DotNetBar.PanelEx();
+			this.itemPanelSteps = new DevComponents.DotNetBar.ItemPanel();
 			this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
 			this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
 			this.tabControl1 = new DevComponents.DotNetBar.TabControl();
@@ -68,14 +55,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.labal1 = new System.Windows.Forms.Label();
 			this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
-			this.regularExpressionValidator1 = new DevComponents.DotNetBar.Validator.RegularExpressionValidator();
 			this.errorProvidermskAddress = new System.Windows.Forms.ErrorProvider(this.components);
-			this.panelEx1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-			this.bindingNavigator1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceConnection)).BeginInit();
 			this.panelExBottom.SuspendLayout();
-			this.panelEx3.SuspendLayout();
+			this.panelMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
 			this.tabControl1.SuspendLayout();
 			this.tabControlPanel1.SuspendLayout();
@@ -83,153 +66,38 @@
 			((System.ComponentModel.ISupportInitialize)(this.errorProvidermskAddress)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// panelEx1
+			// panelTop
 			// 
-			this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
-			this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelEx1.Controls.Add(this.bindingNavigator1);
-			this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelEx1.Location = new System.Drawing.Point(0, 0);
-			this.panelEx1.Name = "panelEx1";
-			this.panelEx1.Size = new System.Drawing.Size(600, 61);
-			this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelEx1.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
-			this.panelEx1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.DoubleLine;
-			this.panelEx1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-			this.panelEx1.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
-			this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-			this.panelEx1.Style.GradientAngle = 90;
-			this.panelEx1.TabIndex = 0;
-			// 
-			// bindingNavigator1
-			// 
-			this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-			this.bindingNavigator1.BindingSource = this.bindingSourceConnection;
-			this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-			this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-			this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.bindingNavigatorMoveFirstItem,
-			this.bindingNavigatorMovePreviousItem,
-			this.bindingNavigatorSeparator,
-			this.bindingNavigatorPositionItem,
-			this.bindingNavigatorCountItem,
-			this.bindingNavigatorSeparator1,
-			this.bindingNavigatorMoveNextItem,
-			this.bindingNavigatorMoveLastItem,
-			this.bindingNavigatorSeparator2,
-			this.bindingNavigatorAddNewItem,
-			this.bindingNavigatorDeleteItem});
-			this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-			this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-			this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-			this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-			this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-			this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-			this.bindingNavigator1.Name = "bindingNavigator1";
-			this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-			this.bindingNavigator1.Size = new System.Drawing.Size(600, 25);
-			this.bindingNavigator1.TabIndex = 0;
-			this.bindingNavigator1.Text = "bindingNavigator1";
-			// 
-			// bindingNavigatorAddNewItem
-			// 
-			this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-			this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-			this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorAddNewItem.Text = "Add new";
+			this.panelTop.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panelTop.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelTop.Location = new System.Drawing.Point(0, 0);
+			this.panelTop.Name = "panelTop";
+			this.panelTop.Size = new System.Drawing.Size(600, 61);
+			this.panelTop.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panelTop.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
+			this.panelTop.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.panelTop.Style.Border = DevComponents.DotNetBar.eBorderType.DoubleLine;
+			this.panelTop.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
+			this.panelTop.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
+			this.panelTop.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+			this.panelTop.Style.GradientAngle = 90;
+			this.panelTop.TabIndex = 0;
 			// 
 			// bindingSourceConnection
 			// 
+			this.bindingSourceConnection.DataSource = typeof(Project_Cadimuns.Model.Connection);
 			this.bindingSourceConnection.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingSourceConnection_AddingNew);
 			this.bindingSourceConnection.BindingComplete += new System.Windows.Forms.BindingCompleteEventHandler(this.bindingSourceConnection_BindingComplete);
 			this.bindingSourceConnection.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.bindingSourceConnection_DataError);
 			this.bindingSourceConnection.CurrentChanged += new System.EventHandler(this.bindingSourceConnection_CurrentChanged);
 			// 
-			// bindingNavigatorCountItem
-			// 
-			this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-			this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-			this.bindingNavigatorCountItem.Text = "of {0}";
-			this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-			// 
-			// bindingNavigatorDeleteItem
-			// 
-			this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-			this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-			this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorDeleteItem.Text = "Delete";
-			// 
-			// bindingNavigatorMoveFirstItem
-			// 
-			this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-			this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-			this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMoveFirstItem.Text = "Move first";
-			// 
-			// bindingNavigatorMovePreviousItem
-			// 
-			this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-			this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-			this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-			// 
-			// bindingNavigatorSeparator
-			// 
-			this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-			this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorPositionItem
-			// 
-			this.bindingNavigatorPositionItem.AccessibleName = "Position";
-			this.bindingNavigatorPositionItem.AutoSize = false;
-			this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-			this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-			this.bindingNavigatorPositionItem.Text = "0";
-			this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-			// 
-			// bindingNavigatorSeparator1
-			// 
-			this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-			this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-			// 
-			// bindingNavigatorMoveNextItem
-			// 
-			this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-			this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-			this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMoveNextItem.Text = "Move next";
-			// 
-			// bindingNavigatorMoveLastItem
-			// 
-			this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-			this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-			this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-			this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-			this.bindingNavigatorMoveLastItem.Text = "Move last";
-			// 
-			// bindingNavigatorSeparator2
-			// 
-			this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-			this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-			// 
 			// panelExBottom
 			// 
 			this.panelExBottom.CanvasColor = System.Drawing.SystemColors.Control;
 			this.panelExBottom.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelExBottom.Controls.Add(this.buttonX2);
-			this.panelExBottom.Controls.Add(this.buttonX1);
+			this.panelExBottom.Controls.Add(this.buttonBack);
+			this.panelExBottom.Controls.Add(this.buttonNext);
 			this.panelExBottom.Controls.Add(this.buttonCancel);
 			this.panelExBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelExBottom.Location = new System.Drawing.Point(0, 390);
@@ -247,29 +115,29 @@
 			this.panelExBottom.Style.GradientAngle = 90;
 			this.panelExBottom.TabIndex = 1;
 			// 
-			// buttonX2
+			// buttonBack
 			// 
-			this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.buttonX2.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonX2.Location = new System.Drawing.Point(318, 18);
-			this.buttonX2.Name = "buttonX2";
-			this.buttonX2.Size = new System.Drawing.Size(75, 23);
-			this.buttonX2.TabIndex = 2;
-			this.buttonX2.Text = "Voltar";
-			this.buttonX2.TextColor = System.Drawing.Color.Black;
-			this.buttonX2.ThemeAware = true;
+			this.buttonBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.buttonBack.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonBack.Location = new System.Drawing.Point(318, 18);
+			this.buttonBack.Name = "buttonBack";
+			this.buttonBack.Size = new System.Drawing.Size(75, 23);
+			this.buttonBack.TabIndex = 2;
+			this.buttonBack.Text = "Voltar";
+			this.buttonBack.TextColor = System.Drawing.Color.Black;
+			this.buttonBack.ThemeAware = true;
 			// 
-			// buttonX1
+			// buttonNext
 			// 
-			this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.buttonX1.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonX1.Location = new System.Drawing.Point(399, 18);
-			this.buttonX1.Name = "buttonX1";
-			this.buttonX1.Size = new System.Drawing.Size(75, 23);
-			this.buttonX1.TabIndex = 1;
-			this.buttonX1.Text = "Avançar";
-			this.buttonX1.TextColor = System.Drawing.Color.Black;
-			this.buttonX1.ThemeAware = true;
+			this.buttonNext.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+			this.buttonNext.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonNext.Location = new System.Drawing.Point(399, 18);
+			this.buttonNext.Name = "buttonNext";
+			this.buttonNext.Size = new System.Drawing.Size(75, 23);
+			this.buttonNext.TabIndex = 1;
+			this.buttonNext.Text = "Avançar";
+			this.buttonNext.TextColor = System.Drawing.Color.Black;
+			this.buttonNext.ThemeAware = true;
 			// 
 			// buttonCancel
 			// 
@@ -283,58 +151,58 @@
 			this.buttonCancel.TextColor = System.Drawing.Color.Black;
 			this.buttonCancel.ThemeAware = true;
 			// 
-			// panelEx3
+			// panelMain
 			// 
-			this.panelEx3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-			this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.panelEx3.Controls.Add(this.itemPanel1);
-			this.panelEx3.Controls.Add(this.tabControl1);
-			this.panelEx3.Location = new System.Drawing.Point(-2, 61);
-			this.panelEx3.Name = "panelEx3";
-			this.panelEx3.Size = new System.Drawing.Size(604, 329);
-			this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelEx3.Style.BackColor1.Color = System.Drawing.Color.White;
-			this.panelEx3.Style.BackColor2.Color = System.Drawing.Color.White;
-			this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-			this.panelEx3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-			this.panelEx3.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.None;
-			this.panelEx3.Style.ForeColor.Color = System.Drawing.Color.Gray;
-			this.panelEx3.Style.GradientAngle = 90;
-			this.panelEx3.TabIndex = 2;
+			this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panelMain.CanvasColor = System.Drawing.SystemColors.Control;
+			this.panelMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+			this.panelMain.Controls.Add(this.itemPanelSteps);
+			this.panelMain.Controls.Add(this.tabControl1);
+			this.panelMain.Location = new System.Drawing.Point(-2, 61);
+			this.panelMain.Name = "panelMain";
+			this.panelMain.Size = new System.Drawing.Size(604, 329);
+			this.panelMain.Style.Alignment = System.Drawing.StringAlignment.Center;
+			this.panelMain.Style.BackColor1.Color = System.Drawing.Color.White;
+			this.panelMain.Style.BackColor2.Color = System.Drawing.Color.White;
+			this.panelMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+			this.panelMain.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
+			this.panelMain.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.None;
+			this.panelMain.Style.ForeColor.Color = System.Drawing.Color.Gray;
+			this.panelMain.Style.GradientAngle = 90;
+			this.panelMain.TabIndex = 2;
 			// 
-			// itemPanel1
+			// itemPanelSteps
 			// 
-			this.itemPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.itemPanelSteps.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			// 
 			// 
 			// 
-			this.itemPanel1.BackgroundStyle.BackColor = System.Drawing.Color.White;
-			this.itemPanel1.BackgroundStyle.BackColor2 = System.Drawing.Color.White;
-			this.itemPanel1.BackgroundStyle.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.itemPanel1.BackgroundStyle.BorderBottomWidth = 1;
-			this.itemPanel1.BackgroundStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-			this.itemPanel1.BackgroundStyle.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-			this.itemPanel1.BackgroundStyle.BorderLeftColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionBackground;
-			this.itemPanel1.BackgroundStyle.BorderRightWidth = 1;
-			this.itemPanel1.BackgroundStyle.Class = "ItemPanel";
-			this.itemPanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-			this.itemPanel1.ContainerControlProcessDialogKey = true;
-			this.itemPanel1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-			this.labelItem1,
-			this.labelItem2});
-			this.itemPanel1.ItemSpacing = 0;
-			this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-			this.itemPanel1.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
-			this.itemPanel1.Location = new System.Drawing.Point(1, -2);
-			this.itemPanel1.Name = "itemPanel1";
-			this.itemPanel1.Size = new System.Drawing.Size(147, 332);
-			this.itemPanel1.TabIndex = 0;
-			this.itemPanel1.Text = "itemPanel1";
+			this.itemPanelSteps.BackgroundStyle.BackColor = System.Drawing.Color.White;
+			this.itemPanelSteps.BackgroundStyle.BackColor2 = System.Drawing.Color.White;
+			this.itemPanelSteps.BackgroundStyle.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.itemPanelSteps.BackgroundStyle.BorderBottomWidth = 1;
+			this.itemPanelSteps.BackgroundStyle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
+			this.itemPanelSteps.BackgroundStyle.BorderColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
+			this.itemPanelSteps.BackgroundStyle.BorderLeftColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarCaptionBackground;
+			this.itemPanelSteps.BackgroundStyle.BorderRightWidth = 1;
+			this.itemPanelSteps.BackgroundStyle.Class = "ItemPanel";
+			this.itemPanelSteps.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+			this.itemPanelSteps.ContainerControlProcessDialogKey = true;
+			this.itemPanelSteps.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.labelItem1,
+            this.labelItem2});
+			this.itemPanelSteps.ItemSpacing = 0;
+			this.itemPanelSteps.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+			this.itemPanelSteps.LicenseKey = "F962CEC7-CD8F-4911-A9E9-CAB39962FC1F";
+			this.itemPanelSteps.Location = new System.Drawing.Point(1, -2);
+			this.itemPanelSteps.Name = "itemPanelSteps";
+			this.itemPanelSteps.Size = new System.Drawing.Size(147, 332);
+			this.itemPanelSteps.TabIndex = 0;
+			this.itemPanelSteps.Text = "itemPanel1";
 			// 
 			// labelItem1
 			// 
@@ -410,8 +278,8 @@
 			this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.White;
 			this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.White;
-			this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-			| DevComponents.DotNetBar.eBorderSide.Bottom)));
+			this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
 			this.tabControlPanel1.Style.GradientAngle = 90;
 			this.tabControlPanel1.TabIndex = 1;
 			this.tabControlPanel1.TabItem = this.tabItem1;
@@ -443,7 +311,7 @@
 			// 
 			// bindingSourceDataBase
 			// 
-
+			this.bindingSourceDataBase.DataSource = typeof(Project_Cadimuns.Model.DataBase);
 			// 
 			// txtPassword
 			// 
@@ -551,12 +419,6 @@
 			this.tabItem1.Name = "tabItem1";
 			this.tabItem1.Text = "tabItem1";
 			// 
-			// regularExpressionValidator1
-			// 
-			this.regularExpressionValidator1.ErrorMessage = "Your error message here.";
-			this.regularExpressionValidator1.HighlightColor = DevComponents.DotNetBar.Validator.eHighlightColor.Red;
-			this.regularExpressionValidator1.ValidationExpression = "\\S{5,5}";
-			// 
 			// errorProvidermskAddress
 			// 
 			this.errorProvidermskAddress.ContainerControl = this;
@@ -567,9 +429,9 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(600, 443);
-			this.Controls.Add(this.panelEx3);
+			this.Controls.Add(this.panelMain);
 			this.Controls.Add(this.panelExBottom);
-			this.Controls.Add(this.panelEx1);
+			this.Controls.Add(this.panelTop);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
@@ -579,14 +441,9 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Projeto Cadimuns";
 			this.Load += new System.EventHandler(this.Main_Load);
-			this.panelEx1.ResumeLayout(false);
-			this.panelEx1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-			this.bindingNavigator1.ResumeLayout(false);
-			this.bindingNavigator1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.bindingSourceConnection)).EndInit();
 			this.panelExBottom.ResumeLayout(false);
-			this.panelEx3.ResumeLayout(false);
+			this.panelMain.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
 			this.tabControl1.ResumeLayout(false);
 			this.tabControlPanel1.ResumeLayout(false);
@@ -599,12 +456,12 @@
 
 		#endregion
 
-		private DevComponents.DotNetBar.PanelEx panelEx1;
+		private DevComponents.DotNetBar.PanelEx panelTop;
 		private DevComponents.DotNetBar.PanelEx panelExBottom;
-		private DevComponents.DotNetBar.PanelEx panelEx3;
+		private DevComponents.DotNetBar.PanelEx panelMain;
 		private DevComponents.DotNetBar.ButtonX buttonCancel;
-		private DevComponents.DotNetBar.ButtonX buttonX2;
-		private DevComponents.DotNetBar.ButtonX buttonX1;
+		private DevComponents.DotNetBar.ButtonX buttonBack;
+		private DevComponents.DotNetBar.ButtonX buttonNext;
 		private DevComponents.DotNetBar.TabControl tabControl1;
 		private DevComponents.DotNetBar.TabControlPanel tabControlPanel1;
 		private DevComponents.DotNetBar.TabItem tabItem1;
@@ -612,11 +469,10 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label3;
-		private DevComponents.DotNetBar.ItemPanel itemPanel1;
+		private DevComponents.DotNetBar.ItemPanel itemPanelSteps;
 		private DevComponents.DotNetBar.LabelItem labelItem1;
 		private DevComponents.DotNetBar.LabelItem labelItem2;
 		private System.Windows.Forms.Label label4;
-		private DevComponents.DotNetBar.Validator.RegularExpressionValidator regularExpressionValidator1;
 		private System.Windows.Forms.ErrorProvider errorProvidermskAddress;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.MaskedTextBox mskAddressIP;
@@ -627,18 +483,6 @@
 		private System.Windows.Forms.BindingSource bindingSourceConnection;
 		private DevComponents.DotNetBar.ButtonX btnConnect;
 		private System.Windows.Forms.BindingSource bindingSourceDataBase;
-		private System.Windows.Forms.BindingNavigator bindingNavigator1;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-		private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-		private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-		private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-		private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
 	}
 }
 

@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using _3tn.Dados;
-using _3tn.Util;
+using _3tn.Tauro;
 using _3tn.Dominus;
 using AspectProgramming.ExceptionHandling;
 using AspectProgramming.Transaction;

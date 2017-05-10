@@ -1,11 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_Cadimuns
+namespace WindowsFormsApp1
 {
 	static class Program
 	{
@@ -17,7 +16,7 @@ namespace Project_Cadimuns
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Main());
+			Application.Run(new Form1());
 		}
 	}
 }

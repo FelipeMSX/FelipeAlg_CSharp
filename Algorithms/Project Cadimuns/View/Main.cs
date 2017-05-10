@@ -1,4 +1,5 @@
-﻿using DevComponents.DotNetBar.Controls;
+﻿using Algorithms.util;
+using DevComponents.DotNetBar.Controls;
 using Project_Cadimuns.Model;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,7 @@ namespace Project_Cadimuns
 
 		private void mskTextBox_Validating(object sender, CancelEventArgs e)
 		{
-
-			Regex addressIP = new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
+			Regex addressIP = new Regex(RegexExpressions.AddressIP);
 			bool valid = addressIP.IsMatch(mskAddressIP.Text.Replace(",", "."));
 			if (valid)
 			{

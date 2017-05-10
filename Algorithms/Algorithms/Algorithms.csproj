@@ -67,6 +67,7 @@
     <Compile Include="sort\HeapSort.cs" />
     <Compile Include="sort\MergeSort.cs" />
     <Compile Include="sort\QuickSort.cs" />
+    <Compile Include="util\RegexExpressions.cs" />
     <Compile Include="util\Util.cs" />
     <Compile Include="_abstract\LinkedStruct.cs" />
     <Compile Include="_abstract\Node.cs" />
