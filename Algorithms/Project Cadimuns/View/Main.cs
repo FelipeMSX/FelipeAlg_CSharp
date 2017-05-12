@@ -119,7 +119,6 @@ namespace Project_Cadimuns
 				}
 			});
 		}
-		Task animationProgress;
 		CancellationTokenSource cancellationTokenProgress;
 		public void configureTaskAnimation()
 		{
@@ -130,7 +129,8 @@ namespace Project_Cadimuns
 			circularProgress.Value = 0;
 			labelProcessamento.Visible = true;
 	
-			animationProgress = new Task(() => 
+
+			Task animationProgress = new Task(() => 
 			{
 				int increment = 1;
 				while (!cancellationTokenProgress.IsCancellationRequested)

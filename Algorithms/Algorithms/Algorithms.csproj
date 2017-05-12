@@ -57,6 +57,7 @@
     <Compile Include="exception\EmptyCollectionException.cs" />
     <Compile Include="exception\ElementNotFoundException.cs" />
     <Compile Include="exception\ComparerNotSetException.cs" />
+    <Compile Include="extensions\Enum.cs" />
     <Compile Include="node\LinkedDoubleNode.cs" />
     <Compile Include="node\LinkedNode.cs" />
     <Compile Include="node\MultiTreeNode.cs" />
