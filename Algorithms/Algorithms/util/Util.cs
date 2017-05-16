@@ -20,13 +20,6 @@ namespace Algorithms.util
 			E temp = vector[X];
 			vector[X] = vector[Y];
 			vector[Y] = temp;
-			Action methdo = teste;
-			
-		}
-
-		public static void teste()
-		{
-
 		}
 	}
 }
