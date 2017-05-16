@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,6 +22,15 @@ namespace Project_Report
 
 		private void Main_Load(object sender, EventArgs e)
 		{
+			 int max1;
+			 int max2;
+			
+			ThreadPool.GetMaxThreads(out max1,out max2);
+
+			int min1;
+			int min2;
+
+			ThreadPool.GetMinThreads(out min1, out min2);
 			ModelContainer model = new ModelContainer();
 			Relatorio relatorio = new Relatorio();
 			relatorio.sq_relatorio = 1;
@@ -30,6 +40,9 @@ namespace Project_Report
 			object x = model.Database.Connection;
 			model.RelatorioSet.Add(relatorio);
 			model.SaveChanges();
+	
 		}
+
+
 	}
 }
