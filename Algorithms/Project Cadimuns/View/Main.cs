@@ -32,7 +32,6 @@ namespace Project_Cadimuns
 		{
 
 
-
 		}
 
 		private void mskTextBox_Validating(object sender, CancelEventArgs e)
@@ -88,7 +87,7 @@ namespace Project_Cadimuns
 
 		private void bindingSourceConnection_CurrentChanged(object sender, EventArgs e)
 		{
-
+			
 		}
 		private void comboBoxDataBase_KeyDown(object sender, KeyEventArgs e)
 		{

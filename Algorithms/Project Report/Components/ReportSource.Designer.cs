@@ -40,8 +40,8 @@
 			this.panelMain.Name = "panelMain";
 			this.panelMain.Size = new System.Drawing.Size(525, 348);
 			this.panelMain.Style.Alignment = System.Drawing.StringAlignment.Center;
-			this.panelMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-			this.panelMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+			this.panelMain.Style.BackColor1.Color = System.Drawing.Color.White;
+			this.panelMain.Style.BackColor2.Color = System.Drawing.Color.White;
 			this.panelMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
 			this.panelMain.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
 			this.panelMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
