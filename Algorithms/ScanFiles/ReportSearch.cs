@@ -199,5 +199,8 @@ namespace ScanFiles
 		{
 			Reset();
 		}
+
+
+		
 	}
 }
