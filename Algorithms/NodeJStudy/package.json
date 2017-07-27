@@ -1,0 +1,9 @@
+{
+  "name": "node-jstudy",
+  "version": "0.0.0",
+  "description": "NodeJStudy",
+  "main": "server.js",
+  "author": {
+    "name": "felip"
+  }
+}

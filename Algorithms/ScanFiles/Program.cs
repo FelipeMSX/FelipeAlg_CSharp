@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScanFiles.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,15 +9,17 @@ namespace ScanFiles
 {
 	static class Program
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
+       public static  ModelEntityContainer  modelContainer = new ModelEntityContainer();
+        
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
 		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new ReportSearch());
+			Application.Run(new FileSearch());
 		}
 	}
 }

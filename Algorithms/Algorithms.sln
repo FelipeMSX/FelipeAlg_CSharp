@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms_Test", "Algorithms_Test\Algorithms_Test.csproj", "{08C2B542-339F-4895-B32D-B5A730EAFEE0}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Report", "Project Report\Project Report.csproj", "{40ED32B1-EE67-49D0-84AF-A1F49F93277F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms wPatterns", "Algorithms wPatterns\Algorithms wPatterns.csproj", "{C765C059-1F57-4F16-B3EE-08DDC9158D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMPP_Study", "XMPP_Study\XMPP_Study.csproj", "{C8A716F4-89CE-4A86-84E2-8B17A698756D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,6 +127,18 @@ Global
 		{C765C059-1F57-4F16-B3EE-08DDC9158D36}.Release|x64.Build.0 = Release|Any CPU
 		{C765C059-1F57-4F16-B3EE-08DDC9158D36}.Release|x86.ActiveCfg = Release|Any CPU
 		{C765C059-1F57-4F16-B3EE-08DDC9158D36}.Release|x86.Build.0 = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|x64.Build.0 = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|x64.ActiveCfg = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|x64.Build.0 = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C8A716F4-89CE-4A86-84E2-8B17A698756D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

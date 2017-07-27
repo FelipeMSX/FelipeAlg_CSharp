@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMain" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DataSetFile="DataSetFile.Dataset.Designer.cs" DataSetProject="Algorithms wPatterns" DataSetProjectFolder="XSDFolder" DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMain" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMain" msprop:Generator_UserDSName="DataSetMain">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DirectoryException" msprop:Generator_TableClassName="DirectoryExceptionDataTable" msprop:Generator_TableVarName="tableDirectoryException" msprop:Generator_RowChangedName="DirectoryExceptionRowChanged" msprop:Generator_TablePropName="DirectoryException" msprop:Generator_RowDeletingName="DirectoryExceptionRowDeleting" msprop:Generator_RowChangingName="DirectoryExceptionRowChanging" msprop:Generator_RowEvHandlerName="DirectoryExceptionRowChangeEventHandler" msprop:Generator_RowDeletedName="DirectoryExceptionRowDeleted" msprop:Generator_RowClassName="DirectoryExceptionRow" msprop:Generator_UserTableName="DirectoryException" msprop:Generator_RowEvArgName="DirectoryExceptionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Veiculo" msprop:Generator_TableClassName="VeiculoDataTable" msprop:Generator_TableVarName="tableVeiculo" msprop:Generator_TablePropName="Veiculo" msprop:Generator_RowDeletingName="VeiculoRowDeleting" msprop:Generator_RowChangingName="VeiculoRowChanging" msprop:Generator_RowEvHandlerName="VeiculoRowChangeEventHandler" msprop:Generator_RowDeletedName="VeiculoRowDeleted" msprop:Generator_UserTableName="Veiculo" msprop:Generator_RowChangedName="VeiculoRowChanged" msprop:Generator_RowEvArgName="VeiculoRowChangeEvent" msprop:Generator_RowClassName="VeiculoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa" type="xs:string" minOccurs="0" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="DataDeCompra" msprop:Generator_ColumnVarNameInTable="columnDataDeCompra" msprop:Generator_ColumnPropNameInRow="DataDeCompra" msprop:Generator_ColumnPropNameInTable="DataDeCompraColumn" msprop:Generator_UserColumnName="DataDeCompra" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
