@@ -25,6 +25,7 @@ namespace ScanFiles
 		{
             DataSetMain d = new DataSetMain();
 
+        
          
 		}
 		public FileSearch()
@@ -121,12 +122,49 @@ namespace ScanFiles
 		}
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
-			Reset();
+
+			//Reset();
 		}
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
           GetAllFiles(txtDirectory.Text);
+        }
+
+        private void wcMaster1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void FileSearch_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //webCamView1.buttonCapturar_Click(null, null);
+            webCamView1.OnCaptureImage += WebCamView1_OnCaptureImage;
+        }
+
+        private void WebCamView1_OnCaptureImage(object sender, _3tn.Tauro.Components.WCMaster.WebCamEventArgs e)
+        {
+            pictureBox1.Image = e.Image;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            webCamView1.Start();
+        }
+
+        private void FileSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

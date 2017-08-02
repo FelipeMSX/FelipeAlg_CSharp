@@ -32,35 +32,29 @@
             this.btnDirectory = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.txtDirectory = new System.Windows.Forms.TextBox();
-            this.dataGridViewResult = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extensionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileInfoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsTotal = new System.Windows.Forms.ToolStripLabel();
-            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelTop = new DevComponents.DotNetBar.PanelEx();
-            this.panelExBottom = new DevComponents.DotNetBar.PanelEx();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.fileTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.directoryExceptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonSearch = new DevComponents.DotNetBar.ButtonX();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fileTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fileTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.webCamView1 = new _3tn.Tauro.Components.WCMaster.WebCamView();
+            this.cutImage1 = new _3tn.Tauro.Components.CutImage();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
-            this.panelExBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directoryExceptionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDirectory
             // 
-            this.btnDirectory.Location = new System.Drawing.Point(388, 81);
+            this.btnDirectory.Location = new System.Drawing.Point(388, 26);
             this.btnDirectory.Name = "btnDirectory";
             this.btnDirectory.Size = new System.Drawing.Size(75, 23);
             this.btnDirectory.TabIndex = 0;
@@ -74,84 +68,18 @@
             // 
             // txtDirectory
             // 
-            this.txtDirectory.Location = new System.Drawing.Point(13, 82);
+            this.txtDirectory.Location = new System.Drawing.Point(13, 27);
             this.txtDirectory.Name = "txtDirectory";
             this.txtDirectory.ReadOnly = true;
             this.txtDirectory.Size = new System.Drawing.Size(369, 20);
             this.txtDirectory.TabIndex = 1;
             this.txtDirectory.Text = "C:\\WorkDir\\3Tecnos\\Workspaces\\ERP Contabilis\\Felipe\\Contabilis";
             // 
-            // dataGridViewResult
-            // 
-            this.dataGridViewResult.AllowUserToDeleteRows = false;
-            this.dataGridViewResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewResult.AutoGenerateColumns = false;
-            this.dataGridViewResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.pathDataGridViewTextBoxColumn,
-            this.extensionDataGridViewTextBoxColumn,
-            this.fileInfoDataGridViewTextBoxColumn});
-            this.dataGridViewResult.DataSource = this.fileTypeBindingSource;
-            this.dataGridViewResult.Location = new System.Drawing.Point(12, 108);
-            this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.ReadOnly = true;
-            this.dataGridViewResult.ShowCellErrors = false;
-            this.dataGridViewResult.ShowCellToolTips = false;
-            this.dataGridViewResult.ShowEditingIcon = false;
-            this.dataGridViewResult.ShowRowErrors = false;
-            this.dataGridViewResult.Size = new System.Drawing.Size(554, 263);
-            this.dataGridViewResult.TabIndex = 2;
-            this.dataGridViewResult.VirtualMode = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // extensionDataGridViewTextBoxColumn
-            // 
-            this.extensionDataGridViewTextBoxColumn.DataPropertyName = "Extension";
-            this.extensionDataGridViewTextBoxColumn.HeaderText = "Extension";
-            this.extensionDataGridViewTextBoxColumn.Name = "extensionDataGridViewTextBoxColumn";
-            this.extensionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fileInfoDataGridViewTextBoxColumn
-            // 
-            this.fileInfoDataGridViewTextBoxColumn.DataPropertyName = "FileInfo";
-            this.fileInfoDataGridViewTextBoxColumn.HeaderText = "FileInfo";
-            this.fileInfoDataGridViewTextBoxColumn.Name = "fileInfoDataGridViewTextBoxColumn";
-            this.fileInfoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fileTypeBindingSource
-            // 
-            this.fileTypeBindingSource.DataSource = typeof(ScanFiles.Model.FileType);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gadugi", 8F);
-            this.label2.Location = new System.Drawing.Point(12, 64);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(254, 14);
             this.label2.TabIndex = 4;
@@ -162,9 +90,9 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsTotal});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 464);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 468);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(578, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(808, 25);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -173,100 +101,80 @@
             this.tsTotal.Name = "tsTotal";
             this.tsTotal.Size = new System.Drawing.Size(0, 22);
             // 
-            // bindingSource
+            // button1
             // 
-            this.bindingSource.DataSource = typeof(ScanFiles.Model.FileType);
+            this.button1.Location = new System.Drawing.Point(86, 416);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Capturar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // panelTop
+            // button2
             // 
-            this.panelTop.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelTop.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(578, 61);
-            this.panelTop.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelTop.Style.BackColor1.Color = System.Drawing.SystemColors.Control;
-            this.panelTop.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelTop.Style.Border = DevComponents.DotNetBar.eBorderType.DoubleLine;
-            this.panelTop.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-            this.panelTop.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
-            this.panelTop.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelTop.Style.GradientAngle = 90;
-            this.panelTop.TabIndex = 9;
+            this.button2.Location = new System.Drawing.Point(86, 387);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Start";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panelExBottom
+            // pictureBox1
             // 
-            this.panelExBottom.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelExBottom.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelExBottom.Controls.Add(this.comboBox1);
-            this.panelExBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelExBottom.Location = new System.Drawing.Point(0, 411);
-            this.panelExBottom.Name = "panelExBottom";
-            this.panelExBottom.Size = new System.Drawing.Size(578, 53);
-            this.panelExBottom.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelExBottom.Style.BackColor1.Color = System.Drawing.Color.White;
-            this.panelExBottom.Style.BackColor2.Color = System.Drawing.Color.White;
-            this.panelExBottom.Style.BackgroundImagePosition = DevComponents.DotNetBar.eBackgroundImagePosition.CenterLeft;
-            this.panelExBottom.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelExBottom.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(192)))), ((int)(((byte)(199)))));
-            this.panelExBottom.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.Top;
-            this.panelExBottom.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelExBottom.Style.GradientAngle = 90;
-            this.panelExBottom.TabIndex = 10;
+            this.pictureBox1.Location = new System.Drawing.Point(598, 87);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 253);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // webCamView1
             // 
-            this.comboBox1.DataSource = this.fileTypeBindingSource1;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.webCamView1.Location = new System.Drawing.Point(206, 56);
+            this.webCamView1.Name = "webCamView1";
+            this.webCamView1.Size = new System.Drawing.Size(386, 383);
+            this.webCamView1.TabIndex = 13;
             // 
-            // fileTypeBindingSource1
+            // cutImage1
             // 
-            this.fileTypeBindingSource1.DataSource = typeof(ScanFiles.Model.FileType);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSearch.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearch.Location = new System.Drawing.Point(469, 81);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 1;
-            this.buttonSearch.Text = "Procurar";
-            this.buttonSearch.TextColor = System.Drawing.Color.Black;
-            this.buttonSearch.ThemeAware = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.cutImage1.AreaCropImage = new System.Drawing.Size(162, 213);
+            this.cutImage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
+            this.cutImage1.ImageCrop = null;
+            this.cutImage1.Location = new System.Drawing.Point(24, 87);
+            this.cutImage1.ModePreview = false;
+            this.cutImage1.Name = "cutImage1";
+            this.cutImage1.Size = new System.Drawing.Size(176, 253);
+            this.cutImage1.TabIndex = 8;
             // 
             // FileSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(578, 489);
-            this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.panelExBottom);
-            this.Controls.Add(this.panelTop);
+            this.ClientSize = new System.Drawing.Size(808, 493);
+            this.Controls.Add(this.webCamView1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cutImage1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridViewResult);
             this.Controls.Add(this.txtDirectory);
             this.Controls.Add(this.btnDirectory);
             this.DoubleBuffered = true;
             this.Name = "FileSearch";
             this.RightToLeftLayout = true;
             this.Text = "Escaneador de relatórios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.FileSearch_Load);
+            this.Shown += new System.EventHandler(this.FileSearch_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
-            this.panelExBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.directoryExceptionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileTypeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,23 +184,18 @@
 		private System.Windows.Forms.Button btnDirectory;
 		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
 		private System.Windows.Forms.TextBox txtDirectory;
-		private System.Windows.Forms.DataGridView dataGridViewResult;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripLabel tsTotal;
         private System.Windows.Forms.BindingSource bindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pathDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn extensionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileInfoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource fileTypeBindingSource;
-        private DevComponents.DotNetBar.PanelEx panelTop;
-        private DevComponents.DotNetBar.PanelEx panelExBottom;
-        private DevComponents.DotNetBar.ButtonX buttonSearch;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource directoryExceptionBindingSource;
         private System.Windows.Forms.BindingSource fileTypeBindingSource1;
+        private _3tn.Tauro.Components.CutImage cutImage1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private _3tn.Tauro.Components.WCMaster.WebCamView webCamView1;
     }
 }
 
