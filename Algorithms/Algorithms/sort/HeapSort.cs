@@ -1,7 +1,7 @@
 ﻿using Algorithms._interface;
+using Algorithms.exception;
 using Algorithms.util;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Algorithms.sort
@@ -12,7 +12,7 @@ namespace Algorithms.sort
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E"></typeparam>
-   public class HeapSort<E> : IDefaultComparator<E>
+    public class HeapSort<E> : IDefaultComparator<E>
     {
         public Comparison<E> Comparator { get; set; }
 
@@ -23,119 +23,116 @@ namespace Algorithms.sort
         public enum Build { Max, Min };
 
         /// <summary>
-        /// Indica como o heap foi construído. Max ou Min.
+        /// Indica como o heap deverá ser construído. Max ou Min.
         /// </summary>
         public Build Operation { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+    
         /// <param name="comparator">Define a forma que os elementos serão comparados na lista</param>
-        /// <param name="build">Indica como o heap foi construído.</param>
+        /// <param name="build">A forma que o heap será construído.</param>
         public HeapSort(Comparison<E> comparator, Build build)
-		{
-			Comparator = comparator;
+        {
+            Comparator = comparator;
             Operation = build;
-		}
+        }
 
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="comparator">Define a forma que os elementos serão comparados na lista</param>
-        public HeapSort(Comparison<E> comparator) : this(comparator, Build.Max){}
+        public HeapSort(Comparison<E> comparator) : this(comparator, Build.Max) { }
 
         /// <summary>
         /// Ordena os elementos de um vetor utilizando o algoritmo do HeapSort
         /// </summary>
-        /// <param name="list"></param>
+        /// <param name="list">Lista de elementos.</param>
 		public void Sort(IList<E> list)
-		{
-			Heapsort(list);
-		}
-
-		private void Heapsort(IList<E> list)
-		{
-			BuildMinHeap(list, list.Count);
-			int i;
-			for (i = list.Count - 1; i > 0; i--)
-			{
-				Util.SwapItem(list, 0, i);
-				MinHeapify(list, 0, i);
-			}
-		}
-
-		private void MinHeapify(IList<E> input, int i, int position)
-		{
-			int P = i;
-			int leftPosition = Left(i);
-			int rightPosition = Right(i);
-
-            // leftPosition < position. Verfica o filho esquerdo existe, verificando se não extrapola os limites do vetor.
-            // Se o filho esquerdo for maior que o pai é necessário trocar.
-            if (leftPosition < position && Comparator(input[leftPosition], input[P]) >= 0)
-				P = leftPosition;
-
-            // rightPosition < position. Verfica o filho direito existe, verificando se não extrapola os limites do vetor.
-            // Se o filho direito for maior que o pai é necessário trocar.
-            if (rightPosition < position && Comparator(input[rightPosition], input[P]) >= 0)
-				P = rightPosition;
-
-			if (P != i)
-			{
-				Util.SwapItem(input, i, P);
-				MinHeapify(input, P, position);
-			}
-
-		}
-
-		private void BuildMinHeap(IList<E> vector, int position)
-		{
-			for (int i = position / 2 ; i > 0; i--)
-				MinHeapify(vector, i, position);
-		}
-
-
-        private void MaxHeapify(IList<E> input, int i, int position)
         {
-            int P = i;
-            int E = Left(i);
-            int D = Right(i);
+            //validações
+            if (Comparator == null)
+                throw new ComparerNotSetException();
+            if (list == null)
+                throw new NullObjectException();
 
-            if (E < position && Comparator(input[E], input[P]) >= 0)
-                P = E;
+            Heapsort(list);
+        }
 
-            if (D < position && Comparator(input[D], input[P]) >= 0)
-                P = D;
 
-            if (P != i)
+        private void Heapsort(IList<E> list)
+        {
+            BuildHeap(list, list.Count);
+            for (int i = list.Count - 1; i > 0; i--)
             {
-                Util.SwapItem(input, i, P);
-                MaxHeapify(input, P, position);
+                Util.SwapItem(list, 0, i);
+                Heapify(list, 0, i);
             }
-
         }
 
-        private void BuildMaxHeap(IList<E> vector, int position)
+        /// <summary>
+        /// Sub-rotina utilizada para construiro heapMin. Vefirificando se o nó pai possui filhos maiores que ele.
+        /// Caso o pai tenha filho com nó maior é necessário efetuar a troca.
+        /// </summary>
+        /// <param name="list">Lista de objetos para ordenação.</param>
+        /// <param name="currentPosition">Posição do item a ser analisado.</param>
+        /// <param name="listLength">Tamanho da lista Ou o limite superior.</param>
+        private void Heapify(IList<E> list, int currentPosition, int listLength)
         {
-            for (int i = position / 2 - 1; i >= 0; i--)
-                MaxHeapify(vector, i, position);
+            int leftPosition = Left(currentPosition);
+            int rightPosition = Right(currentPosition);
+
+            if (Operation == Build.Min)
+            {
+                // leftPosition < position. Verifica se não extrapola os limites do vetor.
+                // Se o filho esquerdo for maior que o pai é necessário trocar.
+                if (leftPosition < listLength && Comparator(list[leftPosition], list[currentPosition]) <= 0)
+                    Realocate(list, currentPosition, leftPosition, listLength);
+
+                // rightPosition < position. Verifica se não extrapola os limites do vetor.
+                // Se o filho direito for maior que o pai é necessário trocar.
+                if (rightPosition < listLength && Comparator(list[rightPosition], list[currentPosition]) <= 0)
+                    Realocate(list, currentPosition, rightPosition, listLength);
+            }
+            else
+            {
+                // leftPosition > position. Verifica se não extrapola os limites do vetor.
+                // Se o filho esquerdo for menor que o pai é necessário trocar.
+                if (leftPosition < listLength && Comparator(list[leftPosition], list[currentPosition]) >= 0)
+                    Realocate(list, currentPosition, leftPosition, listLength);
+
+                // rightPosition > position. Verifica se não extrapola os limites do vetor.
+                // Se o filho direito for maior que o pai é necessário trocar.
+                if (rightPosition < listLength && Comparator(list[rightPosition], list[currentPosition]) >= 0)
+                    Realocate(list, currentPosition, rightPosition, listLength);
+            }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="currentPosition"></param>
+        /// <param name="swapPosition"></param>
+        /// <param name="listLength"></param>
+        private void Realocate(IList<E> list, int currentPosition, int swapPosition, int listLength)
+        {
+            Util.SwapItem(list, currentPosition, swapPosition);
+            Heapify(list, swapPosition, listLength);
+        }
 
-        private int Father(int i)
-		{
-			return (i - 1) / 2;
-		}
+        /// <summary>
+        /// Constrói o heap a partir da lista.
+        /// </summary>
+		private void BuildHeap(IList<E> list, int listLength)
+        {
+            for (int i = (listLength / 2) - 1; i >= 0; i--)
+                Heapify(list, i, listLength);
+        }
 
-		private int Left(int i)
-		{
-			return 2 * i + 1;
-		}
+        private int Left(int i)
+        {
+            return 2 * i + 1;
+        }
 
-		private int Right(int i)
-		{
-			return 2 * i + 2;
-		}
-
-	}
+        private int Right(int i)
+        {
+            return 2 * i + 2;
+        }
+   }
 }

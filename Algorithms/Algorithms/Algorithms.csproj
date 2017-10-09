@@ -107,6 +107,7 @@
     <Compile Include="exception\ElementNotFoundException.cs" />
     <Compile Include="exception\ComparerNotSetException.cs" />
     <Compile Include="extensions\Enum.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="node\LinkedDoubleNode.cs" />
     <Compile Include="node\LinkedNode.cs" />
     <Compile Include="node\TreeSearchNode.cs" />
