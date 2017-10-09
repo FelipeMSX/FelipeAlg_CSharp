@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Algorithms.node;
 
-namespace Algorithms_Test
+namespace AlgorithmsTests
 {
 	public class ObjectTest
 	{

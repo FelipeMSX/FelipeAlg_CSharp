@@ -1,0 +1,11 @@
+﻿Todos os testes foram escritos seguindo o padrão AAA. Disponível em: 
+https://gillesleblanc.wordpress.com/2012/03/09/aaa-pattern-in-c/
+https://www.typemock.com/unit-test-patterns-for-net
+
+
+Referências Principais
+https://msdn.microsoft.com/en-us/library/hh694602.aspx
+
+
+Observações**
+	1: Testes devem ser feitos sobre os métodos públicos.

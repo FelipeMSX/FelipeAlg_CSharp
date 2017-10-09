@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Project_Cadimuns</RootNamespace>
     <AssemblyName>Project Cadimuns</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -196,7 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">
-      <Project>{12386036-C2BE-45FA-B678-5E57EA8979DA}</Project>
+      <Project>{12386036-c2be-45fa-b678-5e57ea8979da}</Project>
       <Name>Algorithms</Name>
     </ProjectReference>
   </ItemGroup>

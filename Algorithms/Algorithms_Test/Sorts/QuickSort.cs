@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Algorithms_Test.sort
+namespace AlgorithmsTests.Sorts
 {
 	[TestClass]
 	public class QuickSort

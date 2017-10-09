@@ -5,7 +5,7 @@ using Algorithms.search;
 using System.Collections;
 using Algorithms.node;
 
-namespace Algorithms_Test.search
+namespace AlgorithmsTests.search
 {
 	[TestClass]
 	public class TSearch

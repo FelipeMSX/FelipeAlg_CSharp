@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Algorithms.exception;
-using Algorithms_Test;
+using AlgorithmsTests;
 
 namespace Algorithms._struct.Tests
 {

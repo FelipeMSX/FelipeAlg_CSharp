@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Algorithms.exception;
+﻿using Algorithms._interface;
+using System;
 
 namespace Algorithms.sort
 {
 
-	/*
+    /*
 	Descrição:
 		- Aceita valores iguais.
         - O pivô é o elemento do meio.
         - Ordem Crescente.
 	*/
-	class QuickSort<E>
-	{
-		private Comparison<E> Comparator { get; set; }
+    class QuickSort<E> : IDefaultComparator<E>
+    {
+		public Comparison<E> Comparator { get; set; }
 		
 		QuickSort(Comparison<E> comparator)
 		{

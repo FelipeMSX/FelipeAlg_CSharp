@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Algorithms.sort;
 
-namespace Algorithms_Test.sort
+namespace AlgorithmsTests.Sorts
 {
 	[TestClass]
 	public class MergeSort

@@ -42,7 +42,8 @@
             this.fileTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fileTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.webCamView1 = new _3tn.Tauro.Components.WCMaster.WebCamView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.cutImage1 = new _3tn.Tauro.Components.CutImage();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.directoryExceptionBindingSource)).BeginInit();
@@ -129,12 +130,19 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // webCamView1
+            // button3
             // 
-            this.webCamView1.Location = new System.Drawing.Point(206, 56);
-            this.webCamView1.Name = "webCamView1";
-            this.webCamView1.Size = new System.Drawing.Size(386, 383);
-            this.webCamView1.TabIndex = 13;
+            this.button3.Location = new System.Drawing.Point(86, 458);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Put Image";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // cutImage1
             // 
@@ -146,6 +154,7 @@
             this.cutImage1.Name = "cutImage1";
             this.cutImage1.Size = new System.Drawing.Size(176, 253);
             this.cutImage1.TabIndex = 8;
+            this.cutImage1.Load += new System.EventHandler(this.cutImage1_Load);
             // 
             // FileSearch
             // 
@@ -153,7 +162,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(808, 493);
-            this.Controls.Add(this.webCamView1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -195,7 +204,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private _3tn.Tauro.Components.WCMaster.WebCamView webCamView1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
