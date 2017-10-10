@@ -99,45 +99,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="exception\ValueNotValidException.cs" />
-    <Compile Include="exception\NullObjectException.cs" />
-    <Compile Include="exception\FullCollectionException.cs" />
-    <Compile Include="exception\EqualsElementException.cs" />
-    <Compile Include="exception\EmptyCollectionException.cs" />
-    <Compile Include="exception\ElementNotFoundException.cs" />
-    <Compile Include="exception\ComparerNotSetException.cs" />
-    <Compile Include="extensions\Enum.cs" />
+    <Compile Include="Exceptions\ValueNotValidException.cs" />
+    <Compile Include="Exceptions\NullObjectException.cs" />
+    <Compile Include="Exceptions\FullCollectionException.cs" />
+    <Compile Include="Exceptions\EqualsElementException.cs" />
+    <Compile Include="Exceptions\EmptyCollectionException.cs" />
+    <Compile Include="Exceptions\ElementNotFoundException.cs" />
+    <Compile Include="Exceptions\ComparerNotSetException.cs" />
+    <Compile Include="Extensions\Enum.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="node\LinkedDoubleNode.cs" />
-    <Compile Include="node\LinkedNode.cs" />
-    <Compile Include="node\TreeSearchNode.cs" />
+    <Compile Include="Nodes\LinkedDoubleNode.cs" />
+    <Compile Include="Nodes\LinkedNode.cs" />
+    <Compile Include="Nodes\TreeSearchNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="search\Search.cs" />
-    <Compile Include="sort\HeapSort.cs" />
-    <Compile Include="sort\MergeSort.cs" />
-    <Compile Include="sort\QuickSort.cs" />
-    <Compile Include="util\RegexExpressions.cs" />
-    <Compile Include="util\Util.cs" />
-    <Compile Include="_abstract\LinkedStruct.cs" />
-    <Compile Include="_abstract\Node.cs" />
-    <Compile Include="_abstract\Queue_Stack.cs" />
-    <Compile Include="_abstract\SearchTree.cs" />
-    <Compile Include="_abstract\StaticStruct.cs" />
-    <Compile Include="_interface\ICommon.cs" />
-    <Compile Include="_interface\IDefaultComparator.cs" />
-    <Compile Include="_struct\BinaryTree.cs" />
-    <Compile Include="_struct\LinkedList.cs" />
-    <Compile Include="_struct\OrderedLinkedList.cs" />
-    <Compile Include="_struct\StaticPriorityQueue.cs" />
-    <Compile Include="_struct\StaticQueue.cs" />
-    <Compile Include="_struct\StaticStack.cs" />
+    <Compile Include="Searchs\Search.cs" />
+    <Compile Include="Sorts\HeapSort.cs" />
+    <Compile Include="Sorts\MergeSort.cs" />
+    <Compile Include="Sorts\QuickSort.cs" />
+    <Compile Include="Utils\RegexExpressions.cs" />
+    <Compile Include="Utils\ListFunctions.cs" />
+    <Compile Include="Abstracts\LinkedStruct.cs" />
+    <Compile Include="Abstracts\Node.cs" />
+    <Compile Include="Abstracts\Queue_Stack.cs" />
+    <Compile Include="Abstracts\SearchTree.cs" />
+    <Compile Include="Abstracts\StaticStruct.cs" />
+    <Compile Include="Interfaces\ICommon.cs" />
+    <Compile Include="Interfaces\IDefaultComparator.cs" />
+    <Compile Include="Structs\BinaryTree.cs" />
+    <Compile Include="Structs\LinkedList.cs" />
+    <Compile Include="Structs\OrderedLinkedList.cs" />
+    <Compile Include="Structs\StaticPriorityQueue.cs" />
+    <Compile Include="Structs\StaticQueue.cs" />
+    <Compile Include="Structs\StaticStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="study\" />
+    <Folder Include="Study\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

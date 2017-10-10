@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithms._struct;
+using Algorithms.Structs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithms.exception;
+using Algorithms.Exceptions;
 using AlgorithmsTests;
 
-namespace Algorithms._struct.Tests
+namespace Algorithms.Structs.Tests
 {
 	[TestClass()]
 	

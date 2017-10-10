@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Algorithms.Exceptions;
+using Algorithms.Sorts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithms.sort;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AlgorithmsTests.Sorts
 {
@@ -16,7 +15,6 @@ namespace AlgorithmsTests.Sorts
         {
             vector = new int[] { 100, 40, 20, 30, 4, -500, 0, 20, -25, 25 };
         } 
-
 
         [TestMethod, TestCategory("Heapsort")]
         public void Sort_VectorNumbers_CrescentOrderedList()
@@ -84,28 +82,31 @@ namespace AlgorithmsTests.Sorts
             Assert.IsTrue(isOrdered, "A ordem da lista deveria estar decrescente!");
         }
 
-        public void Sort_EmptyList_A()
+
+        [TestMethod, TestCategory("Heapsort"), ExpectedException(typeof(NullObjectException))]
+        public void Sort_NullValue_Exception()
         {
             //Arrange
             HeapSort<int> heapsort = new HeapSort<int>((x, y) => x.CompareTo(y), HeapSort<int>.Build.Min);
 
             //Act
-            heapsort.Sort(vector);
+            heapsort.Sort(null);
 
             //Assert
-            // Assert.AreEqual("New messages: 5", result);
+            Assert.Inconclusive();
         }
 
-        public void Sort_NullValue_A()
+        [TestMethod, TestCategory("Heapsort"), ExpectedException(typeof(ComparerNotSetException))]
+        public void Sort_EmptyComparator_Exception()
         {
             //Arrange
-            HeapSort<int> heapsort = new HeapSort<int>((x, y) => x.CompareTo(y), HeapSort<int>.Build.Min);
+            HeapSort<int> heapsort = new HeapSort<int>(null);
 
             //Act
             heapsort.Sort(vector);
 
             //Assert
-            // Assert.AreEqual("New messages: 5", result);
+            Assert.Inconclusive();
         }
 
     }

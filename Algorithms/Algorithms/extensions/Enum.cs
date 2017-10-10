@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Algorithms.extensions
+namespace Algorithms.Extensions
 {
 
-	public static class EnumExtensions
+    public static class EnumExtensions
 	{
 		public static string Description(this Enum val)
 		{

@@ -1,4 +1,4 @@
-﻿using Algorithms.util;
+﻿using Algorithms.Utils;
 using DevComponents.DotNetBar.Controls;
 using Project_Cadimuns.Model;
 using System;

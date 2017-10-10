@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Algorithms;
-using Algorithms.search;
+using Algorithms.Searchs;
 using System.Collections;
-using Algorithms.node;
+using Algorithms.Nodes;
 
 namespace AlgorithmsTests.search
 {
