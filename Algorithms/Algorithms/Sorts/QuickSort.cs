@@ -1,4 +1,5 @@
-﻿using Algorithms.Interfaces;
+﻿using Algorithms.Exceptions;
+using Algorithms.Interfaces;
 using Algorithms.Utils;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,13 @@ namespace Algorithms.Sorts
         /// <param name="list">Lista de elementos para ordenação.</param>
 		public void Sort(IList<E> list)
 		{
-			Quicksort(list, 0, list.Count -1);
+            //validações
+            if (Comparator == null)
+                throw new ComparerNotSetException();
+            if (list == null)
+                throw new NullObjectException();
+
+            Quicksort(list, 0, list.Count -1);
 		}
 
 		private void Quicksort(IList<E> list, int init, int end)

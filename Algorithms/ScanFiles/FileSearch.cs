@@ -152,10 +152,10 @@ namespace ScanFiles
             // webCamView1.OnCaptureImage += WebCamView1_OnCaptureImage;
         }
 
-        private void WebCamView1_OnCaptureImage(object sender, _3tn.Tauro.Components.WebcamView.WebCamEventArgs e)
-        {
-            pictureBox1.Image = e.Image;
-        }
+        //private void WebCamView1_OnCaptureImage(object sender, _3tn.Tauro.Components.WebcamView.WebCamEventArgs e)
+        //{
+        //    pictureBox1.Image = e.Image;
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {

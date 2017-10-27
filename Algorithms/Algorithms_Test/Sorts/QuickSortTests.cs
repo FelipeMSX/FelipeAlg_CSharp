@@ -1,4 +1,5 @@
-﻿using Algorithms.Sorts;
+﻿using Algorithms.Exceptions;
+using Algorithms.Sorts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -7,13 +8,11 @@ namespace AlgorithmsTests.Sorts
     [TestClass]
 	public class QuickSortTests
 	{
-        private string[] vector;
         private int[] vectorInteger;
         [TestInitialize]
         public void Initialize()
         {
-            vector = new String[] { "100", "40", "20", "30", "4", "500", "20", "25", "25" };
-            vectorInteger = new int[] { 100, 40, 20, 30, 4, 500, 20, 25, 25 };
+            vectorInteger = new int[] { 100,-10, 40, 20, 30, 4, 500, 20, 25, 25, -20 };
         }
 
         [TestMethod]
@@ -28,12 +27,40 @@ namespace AlgorithmsTests.Sorts
 
             //Assert
             bool isOrdered = true;
-            for (int i = 0; i < vector.Length - 1; i++)
+            for (int i = 0; i < vectorInteger.Length - 1; i++)
             {
-                isOrdered = vector[i].CompareTo(vector[i + 1]) <= 0;
+                isOrdered = vectorInteger[i].CompareTo(vectorInteger[i + 1]) <= 0;
                 if (!isOrdered)
                     break;
             }
+
+            Assert.IsTrue(isOrdered, "A ordem da lista deveria estar crescente!");
+        }
+
+        [TestMethod, TestCategory("QuickSort"), ExpectedException(typeof(NullObjectException))]
+        public void Sort_NullValue_Exception()
+        {
+            //Arrange
+            MergeSort<int> quicksort = new MergeSort<int>((x, y) => x.CompareTo(y));
+
+            //Act
+            quicksort.Sort(null);
+
+            //Assert
+            Assert.Inconclusive();
+        }
+
+        [TestMethod, TestCategory("QuickSort"), ExpectedException(typeof(ComparerNotSetException))]
+        public void Sort_EmptyComparator_Exception()
+        {
+            //Arrange
+            MergeSort<int> quicksort = new MergeSort<int>(null);
+
+            //Act
+            quicksort.Sort(vectorInteger);
+
+            //Assert
+            Assert.Inconclusive();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Algorithms.Interfaces;
+﻿using Algorithms.Exceptions;
+using Algorithms.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -34,7 +35,13 @@ namespace Algorithms.Sorts
 		/// <param name="list">Vetor com os objetos genéricos.</param>
 		public void Sort(IList<E> list)
 		{
-			Mergesort(list, list.Count);
+            //validações
+            if (Comparator == null)
+                throw new ComparerNotSetException();
+            if (list == null)
+                throw new NullObjectException();
+
+            Mergesort(list, list.Count);
 		}
 
 		private void Mergesort(IList<E> list, int length)
