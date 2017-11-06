@@ -11,9 +11,6 @@ namespace AlgorithmsTests.search
 	public class TSearch
 	{
  
-		/// <summary>
-		/// 
-		/// </summary>
 		[TestMethod]
 		[TestCategory("Search")]
 		

@@ -108,6 +108,5 @@ namespace AlgorithmsTests.Sorts
             //Assert
             Assert.Inconclusive();
         }
-
     }
 }

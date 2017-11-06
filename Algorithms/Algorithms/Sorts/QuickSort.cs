@@ -13,6 +13,9 @@ namespace Algorithms.Sorts
         - O pivô é o elemento do meio.
         - Ordem Crescente.
 	*/
+
+    /// <author>Felipe Morais</author>
+    /// <email>felipemsx18@gmail.com</email>
     public class QuickSort<E> : IDefaultComparator<E>
     {
 		public Comparison<E> Comparator { get; set; }
@@ -27,7 +30,9 @@ namespace Algorithms.Sorts
         /// <para>Aceita valores iguais e ordem crescente.</para>
         /// </summary>
         /// <param name="list">Lista de elementos para ordenação.</param>
-		public void Sort(IList<E> list)
+        /// <exception cref="ComparerNotSetException"/>
+        /// <exception cref="NullObjectException"/>
+        public void Sort(IList<E> list)
 		{
             //validações
             if (Comparator == null)

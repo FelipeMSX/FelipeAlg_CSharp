@@ -1,10 +1,17 @@
 ﻿using Algorithms.Exceptions;
 using Algorithms.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace Algorithms.Searchs
 {
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="E"></typeparam>
+    /// <author>Felipe Morais</author>
+	/// <email>felipemsx18@gmail.com</email>
     public class Search<E> : IDefaultComparator<E>
 	{
 		public Comparison<E> Comparator { get; set; }
@@ -21,7 +28,7 @@ namespace Algorithms.Searchs
 		/// <param name="orderedArray">Array com itens ordenados.</param>
 		/// <param name="item">Objeto almejado.</param>
 		/// <returns>Retorna o objeto caso exista, caso contrário, valor padrão do objeto.</returns>
-		public E BinarySearch(E[] orderedArray, E item)
+		public E BinarySearch(IList<E> orderedArray, E item)
 		{
 			if (Comparator == null)
 				throw new ComparerNotSetException();

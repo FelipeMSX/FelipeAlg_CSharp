@@ -46,6 +46,8 @@ namespace Algorithms.Sorts
         /// Ordena os elementos de um vetor utilizando o algoritmo do HeapSort
         /// </summary>
         /// <param name="list">Lista de elementos.</param>
+        /// <exception cref="ComparerNotSetException"/>
+        /// <exception cref="NullObjectException"/>
 		public void Sort(IList<E> list)
         {
             //validações
