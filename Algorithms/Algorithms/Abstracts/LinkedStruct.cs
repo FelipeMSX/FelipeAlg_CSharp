@@ -46,7 +46,7 @@ namespace Algorithms.Abstacts
 		/// <summary>
 		/// Remove todos os objetos da coleção.
 		/// </summary>
-		public void DisposeAll()
+		public void DisposeCollection()
 		{
 			Head	= null;
 			Length	= 0;

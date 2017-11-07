@@ -11,12 +11,12 @@ namespace Algorithms.Abstacts
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public abstract class StaticStruct<E> : ICommon<E>, IDefaultComparator<E>
+	public abstract class StaticStruct<E> : ICommon<E>, IDefaultComparator<E>, IClearCollection
 	{
 		/// <summary>
 		/// Constante que define um valor inicial padrão para a coleção.
 		/// </summary>
-		public readonly int MAXSIZEDEFAULT = 100;
+		protected int MAXSIZEDEFAULT { get; } = 100;
 
 		/// <summary>
 		/// Fornece um método de comparação para os objetos da coleção.
@@ -39,13 +39,13 @@ namespace Algorithms.Abstacts
 		/// Controla o crescimento da coleção, definindo um limite a ela.
 		/// </summary>
 		/// <exception cref="ValueNotValidException">Valor não pode ser menor que o atual.</exception>
-		public int MaxSize
+		protected int MaxSize
 		{
 			get { return maxSize; }
 			set
 			{
 				if (value < maxSize)
-					throw new ValueNotValidException("max size can't be less than current!");
+					throw new ValueNotValidException("Max size can't be less than current!");
 				maxSize = value;
 			}
 		}
@@ -59,14 +59,6 @@ namespace Algorithms.Abstacts
 		/// Define se a coleção deve se expandir ao atingir a capacidade máxima.
 		/// </summary>
 		public bool Resizable { get; set; }
-
-		public StaticStruct()
-		{
-			MaxSize		= MAXSIZEDEFAULT;
-			ResizeValue = MAXSIZEDEFAULT;
-			Vector		= new E[MaxSize];
-			Resizable	= true;
-		}
 
 		/// <summary>
 		/// 
@@ -83,19 +75,34 @@ namespace Algorithms.Abstacts
 			Comparator	= comparator;
 		}
 
-		/// <summary>
-		/// Remove todos os objetos da coleção.
-		/// </summary>
-		public void DisposeAll()
+        public StaticStruct(): this(100, true,null)
+        {
+        }
+
+
+        /// <summary>
+        /// Remove todos os objetos da coleção. Por fim, inutiliza a coleção.
+        /// </summary>
+        public void DisposeCollection()
 		{
-			Vector = new E[MaxSize];
+            Vector = null;
 			Length = 0;
 		}
 
-		/// <summary>
-		/// Informa se a coleção está vazia.
-		/// </summary>
-		public bool Empty() => Length == 0;
+
+        /// <summary>
+        /// Remove todos os objetos da coleção.
+        /// </summary>
+        public void ClearCollection()
+        {
+            Vector = new E[MaxSize];
+            Length = 0;
+        }
+
+        /// <summary>
+        /// Informa se a coleção está vazia.
+        /// </summary>
+        public bool Empty() => Length == 0;
 
 		/// <summary>
 		/// Informa se a coleção está cheia.
@@ -113,7 +120,7 @@ namespace Algorithms.Abstacts
 		public E Last() => Empty() ? default(E) : Vector[Length - 1];
 
 		/// <summary>
-		/// Percorre a coleção até encontrar o objeto. Somente retorna o objeto não o remove.
+		/// Percorre a coleção até encontrar o objeto. Somente retorna o objeto não o remove. É necessário definir um Comparator a coleção.
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">Caso a coleção esteja vazia. </exception>
 		/// <exception cref="ComparerNotSetException">Caso a coleção não tenha um comparator definido.</exception>
@@ -137,7 +144,7 @@ namespace Algorithms.Abstacts
 		/// <summary>
 		/// Aumenta a capacidade da coleção de acordo com o ResizeValue.
 		/// </summary>
-		/// <exception cref="FullCollectionException">A coleção não pode aumentar sua capacidade</exception>
+		/// <exception cref="FullCollectionException">A coleção não foi configurada para aumentar dinamicamente seu tamanho a medida do necessário.</exception>
 		protected void IncreaseCapacity()
 		{
 			if (!Resizable)

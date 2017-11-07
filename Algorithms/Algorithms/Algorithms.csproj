@@ -108,6 +108,7 @@
     <Compile Include="Exceptions\ComparerNotSetException.cs" />
     <Compile Include="Extensions\Enum.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Interfaces\IClearCollection.cs" />
     <Compile Include="Nodes\LinkedDoubleNode.cs" />
     <Compile Include="Nodes\LinkedNode.cs" />
     <Compile Include="Nodes\TreeSearchNode.cs" />

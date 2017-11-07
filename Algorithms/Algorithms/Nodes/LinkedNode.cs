@@ -20,7 +20,7 @@
 		}
 
 		/// <summary>
-		/// 
+		/// Construtor padrão que inicializa o objeto.
 		/// </summary>
 		/// <param name="obj">Objeto genérico que será armazenado no node.</param>
 		public LinkedNode(E obj) : base(obj)

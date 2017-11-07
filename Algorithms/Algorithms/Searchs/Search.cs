@@ -32,9 +32,9 @@ namespace Algorithms.Searchs
 		{
 			if (Comparator == null)
 				throw new ComparerNotSetException();
-
+            
 			int left = 0;
-			int right = orderedArray.Length - 1;
+			int right = orderedArray.Count - 1;
 			int mid = 0;
 
 			while (left <= right)

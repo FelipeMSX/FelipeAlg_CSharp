@@ -4,14 +4,20 @@ using Algorithms.Exceptions;
 
 namespace Algorithms.Structs
 {
-	/// <summary>
-	///  Estrutura de dados que representa uma pilha.
-	/// </summary>
-	/// <author>Felipe Morais</author>
-	/// <email>felipemsx18@gmail.com</email>
-	/// <typeparam name="E">Tipo de Objeto da pilha.</typeparam>
-	public class StaticStack<E> : Queue_Stack<E> 
+    /// <summary>
+    ///  Estrutura de dados que representa uma pilha.
+    ///  <para>Características</para>
+    ///  <para>1* Os objetos são colocados no final do vetor.</para>
+    ///  <para>2*Ao retirada do objeto é feita no final do vetor.</para>
+    /// </summary>
+    /// <author>Felipe Morais</author>
+    /// <email>felipemsx18@gmail.com</email>
+    /// <typeparam name="E">Tipo de Objeto da pilha.</typeparam>
+    public class StaticStack<E> : Queue_Stack<E> 
 	{
+        /// <summary>
+        /// Inicializa a coleção com o tamanho padrão de 100, e por padrão seu tamanho é reajustável.
+        /// </summary>
 		public StaticStack() : base()
 		{
 		}
@@ -21,17 +27,19 @@ namespace Algorithms.Structs
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
 		public StaticStack(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
 		{
+
 		}
 
 
 		/// <summary>
-		/// 
+		///  Coloca um objeto
 		/// </summary>
 		/// <exception cref="NullObjectException">Objeto não pode ser nulo.</exception>
 		/// <exception cref="FullCollectionException">A pilha está cheia e não aceita está configurada para ser redimensionada.</exception>
 		/// <param name="obj">Objeto a ser inserido na coleção.</param>
 		public override void Push(E obj)
 		{
+            //Validações
 			if (obj == null)
 				throw new NullObjectException();
 			if (Full())
@@ -41,7 +49,7 @@ namespace Algorithms.Structs
 		}
 
 		/// <summary>
-		/// 
+		///  Remove o primeiro objeto da coleção.
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">Não existe elemento para remover na pilha.</exception>
 		/// <returns></returns>
