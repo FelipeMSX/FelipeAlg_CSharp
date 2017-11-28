@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{12386036-C2BE-45FA-B678-5E57EA8979DA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Algorithms</RootNamespace>
     <AssemblyName>Algorithms</AssemblyName>
@@ -88,7 +88,13 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ProjetoCondominioModel">
+      <HintPath>..\..\..\..\MyTeamSystem\ProjetoCondominio\EntityFramework\ClassLibrary2\bin\Release\ProjetoCondominioModel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -112,7 +118,6 @@
     <Compile Include="Nodes\LinkedDoubleNode.cs" />
     <Compile Include="Nodes\LinkedNode.cs" />
     <Compile Include="Nodes\TreeSearchNode.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Searchs\Search.cs" />
     <Compile Include="Sorts\HeapSort.cs" />

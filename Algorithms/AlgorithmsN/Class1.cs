@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace AlgorithmsN
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-		}
-	}
+    public class Class1
+    {
+    }
 }

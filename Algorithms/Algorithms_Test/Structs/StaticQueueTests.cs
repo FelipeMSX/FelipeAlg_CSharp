@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Algorithms.Structs;
+using AlgorithmsTests;
 
 namespace Algorithms_Test.Structs
 {
@@ -7,33 +9,72 @@ namespace Algorithms_Test.Structs
     public class StaticQueueTests
     {
 
-        private StaticQueue
+        private StaticQueue<ObjectTest> _staticQueue;
         [TestInitialize]
         public void Initialize()
         {
-         
+            _staticQueue = new StaticQueue<ObjectTest>();
         }
 
-        [TestMethod, TestCategory("Heapsort")]
-        public void Sort_VectorNumbers_CrescentOrderedList()
+        [TestMethod, TestCategory("StaticQueue")]
+        public void Push_CommonObject_CrescentOrderedList()
         {
             //Arrange
-            HeapSort<int> heapsort = new HeapSort<int>((x, y) => x.CompareTo(y), HeapSort<int>.Build.Max);
 
             //Act
-            heapsort.Sort(vector);
+ 
+            //Assert
+
+        }
+
+        public void Push_OneObject_NoEmptyList()
+        {
+            //Arrange
+
+            //Act
 
             //Assert
-            bool isOrdered = true;
-            for (int i = 0; i < vector.Length - 1; i++)
-            {
-                isOrdered = vector[i] <= vector[i + 1];
-                if (!isOrdered)
-                    break;
-            }
 
+        }
 
-            Assert.IsTrue(isOrdered, "A ordem do vetor deveria estar crescente!");
+        public void Push_NullValue_Exception()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+        }
+
+        public void Push_ObjectInFullCollection_Exception()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+        }
+
+        public void Retrieve_ObjectAfterInsert_Object()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+        }
+
+        public void Retrieve_ObjectAfterRemove_Object()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
         }
     }
 }
