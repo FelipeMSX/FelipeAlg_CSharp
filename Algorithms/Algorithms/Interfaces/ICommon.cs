@@ -6,6 +6,5 @@
 		E First();
 		E Last();
 		E Retrive(E obj);	
-		void DisposeCollection();
 	}
 }
