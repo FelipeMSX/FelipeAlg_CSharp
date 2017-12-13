@@ -2,7 +2,7 @@
 
 namespace Algorithms.Nodes
 {
-	public class TreeSearchNode<E> : Node<E>
+	public class TreeSearchNode<E> : NodeBase<E>
 	{
 		/// <summary>
 		/// Representa um ponteiro para um node anterior.

@@ -12,8 +12,8 @@ namespace Algorithms.Abstacts
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Objeto armazenado pela coleção.</typeparam>
 	/// <typeparam name="T">Tipo do node utilizado na coleção.</typeparam>
-	public abstract class LinkedStruct<E, T> : ICommon<E>, IEnumerable<E>, IDefaultComparator<E>
-		where T : Node<E>
+	public abstract class LinkedListBase<E, T> : ICommon<E>, IEnumerable<E>, IDefaultComparator<E>
+		where T : NodeBase<E>
 	{
 
 		/// <summary>

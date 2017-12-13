@@ -8,17 +8,17 @@ namespace Algorithms.Abstacts
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public abstract class Queue_Stack<E> : StaticStruct<E>
+	public abstract class QueueStackBase<E> : ArrayBase<E>
 	{
 
 		public abstract void Push(E obj);
 		public abstract E Pop();
 
-		public Queue_Stack() : base()
+		protected QueueStackBase() : base()
 		{
 		}
-		
-		public Queue_Stack(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
+
+        protected QueueStackBase(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
 		{
 		}
 	}

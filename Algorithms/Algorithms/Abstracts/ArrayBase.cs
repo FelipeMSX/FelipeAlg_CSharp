@@ -11,7 +11,7 @@ namespace Algorithms.Abstacts
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public abstract class StaticStruct<E> : ICommon<E>, IDefaultComparator<E>, IClearCollection
+	public abstract class ArrayBase<E> : ICommon<E>, IDefaultComparator<E>, IClearCollection
 	{
 		/// <summary>
 		/// Constante que define um valor inicial padrão para a coleção.
@@ -66,7 +66,7 @@ namespace Algorithms.Abstacts
 		/// <param name="maxSize">Valor máximo de itens que a coleção pode armazenar.</param>
 		/// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-		public StaticStruct(int maxSize, bool resizable = true, Comparison<E> comparator = null)
+		protected ArrayBase(int maxSize, bool resizable = true, Comparison<E> comparator = null)
 		{
 			MaxSize		= maxSize;
 			ResizeValue = MAXSIZEDEFAULT;
@@ -75,7 +75,7 @@ namespace Algorithms.Abstacts
 			Comparator	= comparator;
 		}
 
-        public StaticStruct(): this(100, true,null)
+        protected ArrayBase(): this(100, true,null)
         {
         }
 

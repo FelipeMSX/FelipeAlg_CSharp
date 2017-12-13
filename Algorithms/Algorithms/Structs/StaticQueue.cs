@@ -10,7 +10,7 @@ namespace Algorithms.Structs
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public class StaticQueue<E> : Queue_Stack<E>
+	public class StaticQueue<E> : QueueStackBase<E>
 	{
 
 		public StaticQueue() : base()

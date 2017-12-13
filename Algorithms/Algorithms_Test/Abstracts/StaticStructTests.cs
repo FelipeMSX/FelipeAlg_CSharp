@@ -12,19 +12,19 @@ namespace Algorithms_Test.Abstracts
         [TestMethod]
         public void Retrive_EmptyList_EmptyCollectionException()
         {
-            StaticStruct<ObjectTest> staticStruct = Substitute.For<StaticStruct<ObjectTest>>();
+            ArrayBase<ObjectTest> staticStruct = Substitute.For<ArrayBase<ObjectTest>>();
         }
 
         [TestMethod]
         public void Retrive_ComparerNotSet_ComparerNotSetException()
         {
-            StaticStruct<ObjectTest> staticStruct = Substitute.For<StaticStruct<ObjectTest>>();
+            ArrayBase<ObjectTest> staticStruct = Substitute.For<ArrayBase<ObjectTest>>();
         }
 
         [TestMethod]
         public void Retrive_ComparerNotSet_ObjectNotFound()
         {
-            StaticStruct<ObjectTest> staticStruct = Substitute.For<StaticStruct<ObjectTest>>();
+            ArrayBase<ObjectTest> staticStruct = Substitute.For<ArrayBase<ObjectTest>>();
         }
     }
 }

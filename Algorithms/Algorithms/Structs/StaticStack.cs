@@ -13,7 +13,7 @@ namespace Algorithms.Structs
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E">Tipo de Objeto da pilha.</typeparam>
-    public class StaticStack<E> : Queue_Stack<E> 
+    public class StaticStack<E> : QueueStackBase<E> 
 	{
         /// <summary>
         /// Inicializa a coleção com o tamanho padrão de 100, e por padrão seu tamanho é reajustável.

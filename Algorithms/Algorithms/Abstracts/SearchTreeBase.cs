@@ -6,7 +6,7 @@ using Algorithms.Nodes;
 
 namespace Algorithms.Abstacts
 {
-	public abstract class SearchTree<E, T> : IEnumerable<E>, IDefaultComparator<E>
+	public abstract class SearchTreeBase<E, T> : IEnumerable<E>, IDefaultComparator<E>
 		where T : TreeSearchNode<E>
 	{
 		protected T Root { get; set;}

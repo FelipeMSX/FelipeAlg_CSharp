@@ -11,7 +11,7 @@ namespace Algorithms.Structs
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de objeto da lista.</typeparam>
-	public class LinkedList<E> : LinkedStruct<E, LinkedNode<E>>
+	public class LinkedList<E> : LinkedListBase<E, LinkedNode<E>>
 	{
 
 		public LinkedList() : base()

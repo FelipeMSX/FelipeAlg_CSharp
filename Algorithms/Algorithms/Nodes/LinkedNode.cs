@@ -8,7 +8,7 @@
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E"></typeparam>
-	public class LinkedNode<E> : Node<E>
+	public class LinkedNode<E> : NodeBase<E>
 	{
 		/// <summary>
 		/// Representa um ponteiro para um node posterior.

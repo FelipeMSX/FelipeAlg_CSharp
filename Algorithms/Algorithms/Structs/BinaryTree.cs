@@ -8,7 +8,7 @@ using Algorithms.Nodes;
 
 namespace Algorithms.Structs
 {
-	public class BinaryTree<E> : SearchTree<E, TreeSearchNode<E>>
+	public class BinaryTree<E> : SearchTreeBase<E, TreeSearchNode<E>>
 	{
 
 
