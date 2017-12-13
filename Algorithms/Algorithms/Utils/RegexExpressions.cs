@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Utils
 {
-	public class RegexExpressions
+	public static class RegexExpressions
 	{
 		public const String AddressIP= @"^\d{3}\.\d{3}\.\d{3}\.\d{1,3}$";
 		public const String CPF = @"^\d{3}\.\d{3}\.\d{3}\-\d{2}$";

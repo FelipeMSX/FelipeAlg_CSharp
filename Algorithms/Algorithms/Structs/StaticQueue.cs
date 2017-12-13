@@ -38,7 +38,7 @@ namespace Algorithms.Structs
 				throw new FullCollectionException();
 
 			IncreaseCapacity();
-			Vector[MaxSize++] = obj;
+			Vector[Length++] = obj;
 		}
 
 		/// <summary>
