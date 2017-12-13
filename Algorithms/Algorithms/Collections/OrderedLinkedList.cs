@@ -2,7 +2,7 @@
 using Algorithms.Exceptions;
 using Algorithms.Nodes;
 
-namespace Algorithms.Structs
+namespace Algorithms.Collections
 {
 	/// <summary>
 	/// Classe que define uma estrutura de dados do tipo lista ordenada.

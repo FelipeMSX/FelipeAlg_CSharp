@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Algorithms.Structs;
+using Algorithms.Collections;
 using AlgorithmsTests;
 
-namespace Algorithms_Test.Structs
+namespace Algorithms_Test.Collections
 {
     [TestClass]
     public class StaticQueueTests

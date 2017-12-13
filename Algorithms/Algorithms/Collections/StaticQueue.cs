@@ -2,7 +2,7 @@
 using Algorithms.Abstacts;
 using Algorithms.Exceptions;
 
-namespace Algorithms.Structs
+namespace Algorithms.Collections
 {
 	/// <summary>
 	/// Estrutura de dados que representa uma fila.

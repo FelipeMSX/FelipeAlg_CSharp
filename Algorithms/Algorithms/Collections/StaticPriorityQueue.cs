@@ -1,8 +1,8 @@
 ﻿using System;
-using Algorithms.Structs;
+using Algorithms.Collections;
 using Algorithms.Exceptions;
 
-namespace Algorithms.Structs
+namespace Algorithms.Collections
 {
 	/// <summary>
 	/// Classe que define uma estrutura de dados do tipo fila de prioridade.

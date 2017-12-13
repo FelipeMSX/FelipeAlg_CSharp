@@ -133,12 +133,12 @@
     <Compile Include="Abstracts\ArrayBase.cs" />
     <Compile Include="Interfaces\ICommon.cs" />
     <Compile Include="Interfaces\IDefaultComparator.cs" />
-    <Compile Include="Structs\BinaryTree.cs" />
-    <Compile Include="Structs\LinkedList.cs" />
-    <Compile Include="Structs\OrderedLinkedList.cs" />
-    <Compile Include="Structs\StaticPriorityQueue.cs" />
-    <Compile Include="Structs\StaticQueue.cs" />
-    <Compile Include="Structs\StaticStack.cs" />
+    <Compile Include="Collections\BinaryTree.cs" />
+    <Compile Include="Collections\LinkedList.cs" />
+    <Compile Include="Collections\OrderedLinkedList.cs" />
+    <Compile Include="Collections\StaticPriorityQueue.cs" />
+    <Compile Include="Collections\StaticQueue.cs" />
+    <Compile Include="Collections\StaticStack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

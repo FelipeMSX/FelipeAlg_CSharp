@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Algorithms.Abstacts;
 using Algorithms.Nodes;
 
-namespace Algorithms.Structs
+namespace Algorithms.Collections
 {
 	public class BinaryTree<E> : SearchTreeBase<E, TreeSearchNode<E>>
 	{

@@ -107,8 +107,8 @@
     <Compile Include="Sorts\HeapSortTests.cs" />
     <Compile Include="Sorts\MergeSortTests.cs" />
     <Compile Include="Sorts\QuickSortTests.cs" />
-    <Compile Include="Structs\StaticQueueTests.cs" />
-    <Compile Include="Structs\StaticStackTests.cs" />
+    <Compile Include="Collections\StaticQueueTests.cs" />
+    <Compile Include="Collections\StaticStackTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">
