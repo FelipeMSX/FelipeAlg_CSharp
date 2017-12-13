@@ -34,10 +34,15 @@ namespace Algorithms.Collections
 			//Validações
 			if (obj == null)
 				throw new NullObjectException();
+            else
 			if (Full() && !Resizable)
 				throw new FullCollectionException();
+            else
+            if (Full() && Resizable)
+            {
+                IncreaseCapacity();
+            }
 
-			IncreaseCapacity();
 			Vector[Length++] = obj;
 		}
 

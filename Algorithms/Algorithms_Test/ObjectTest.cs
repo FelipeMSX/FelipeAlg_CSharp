@@ -2,8 +2,8 @@
 {
     public class ObjectTest 
     {
-        private string Name { get; set; }
-        private int Id { get; set; }
+        public string Name { get; set; }
+        public int Id { get; set; }
 
         public ObjectTest()
         {

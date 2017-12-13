@@ -28,10 +28,22 @@ namespace Algorithms.Abstacts
 		/// </summary>
 		protected E[] Vector { get; set; }
 
-		/// <summary>
-		/// Obtém o tamanho atual da coleção.
-		/// </summary>
-		public int Length { get; protected set; }
+        /// <summary>
+        /// Indexador utilizado na coleção para auxiliar.
+        /// </summary>
+        /// <param name="i">Índice da coleção</param>
+        /// <returns></returns>
+        public E this[int i]
+        {
+            get { return Vector[i]; }
+            set { Vector[i] = value; }
+        }
+
+
+        /// <summary>
+        /// Obtém o tamanho atual da coleção.
+        /// </summary>
+        public int Length { get; protected set; }
 
 		private int maxSize;
 
@@ -39,10 +51,10 @@ namespace Algorithms.Abstacts
 		/// Controla o crescimento da coleção, definindo um limite a ela.
 		/// </summary>
 		/// <exception cref="ValueNotValidException">Valor não pode ser menor que o atual.</exception>
-		protected int MaxSize
+		public int MaxSize
 		{
 			get { return maxSize; }
-			set
+			protected set
 			{
 				if (value < maxSize)
 					throw new ValueNotValidException("Max size can't be less than current!");
@@ -70,7 +82,7 @@ namespace Algorithms.Abstacts
 		{
 			MaxSize		= maxSize;
 			ResizeValue = MAXSIZEDEFAULT;
-			Vector		= new E[MaxSize];
+			Vector		= new E[maxSize];
 			Resizable	= resizable;
 			Comparator	= comparator;
 		}
