@@ -2,9 +2,9 @@
 {
 	interface ICommon<E>
 	{
-		bool Empty();
+        bool Empty();
 		E First();
 		E Last();
-		E Retrive(E obj);	
-	}
+		E Retrive(E obj);
+    }
 }

@@ -26,19 +26,7 @@ namespace Algorithms.Abstacts
 		/// <summary>
 		/// Vetor que armazena os objetos genéricos da coleção.
 		/// </summary>
-		protected E[] Vector { get; set; }
-
-        /// <summary>
-        /// Indexador utilizado na coleção para auxiliar.
-        /// </summary>
-        /// <param name="i">Índice da coleção</param>
-        /// <returns></returns>
-        public E this[int i]
-        {
-            get { return Vector[i]; }
-            set { Vector[i] = value; }
-        }
-
+		public E[] Vector { get; protected set; }
 
         /// <summary>
         /// Obtém o tamanho atual da coleção.
@@ -140,8 +128,6 @@ namespace Algorithms.Abstacts
 		/// <returns></returns>
 		public E Retrive(E obj)
 		{
-			if (Empty())
-				throw new EmptyCollectionException();
 			if (Comparator == null)
 				throw new ComparerNotSetException();
 

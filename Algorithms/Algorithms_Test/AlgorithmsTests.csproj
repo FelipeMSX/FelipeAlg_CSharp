@@ -101,6 +101,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Abstracts\ArrayBaseTests.cs" />
+    <Compile Include="Collections\StaticPriorityQueueTests.cs" />
     <Compile Include="Study\Aula03Tests.cs" />
     <Compile Include="ObjectTest.cs" />
     <Compile Include="Searchs\Search.cs" />
