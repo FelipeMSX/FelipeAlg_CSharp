@@ -20,7 +20,7 @@ namespace Algorithms.Collections
 		/// <param name="maxsize">Valor máximo de itens que a coleção pode armazenar.</param>
 		/// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-		public StaticQueue(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base(maxsize, resizable, comparator)
+		public StaticQueue(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null) : base(maxsize, resizable ,allowEqualsElements, comparator)
 		{
 		}
 		/// <summary>
@@ -38,7 +38,7 @@ namespace Algorithms.Collections
 			if (Full() && !Resizable)
 				throw new FullCollectionException();
             else
-            if (Full() && Resizable)
+            if (Full())
             {
                 IncreaseCapacity();
             }
@@ -58,13 +58,14 @@ namespace Algorithms.Collections
 
 			E obj = Vector[0];
 
-			//Desloca os itens
-			for (int i = 0; i < Length; i++)
+            Length--;
+            //Desloca os itens
+            for (int i = 0; i < Length; i++)
 			{
 				Vector[i] = Vector[i + 1];
 			}
 
-			Length--;
+
 			return obj;
 		}
 	}

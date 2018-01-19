@@ -25,11 +25,11 @@ namespace Algorithms.Collections
 		/// <param name="maxsize">Valor máximo de itens que a coleção pode armazenar.</param>
 		/// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-		public StaticStack(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
+		public StaticStack(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null) 
+            : base (maxsize, resizable, allowEqualsElements, comparator)
 		{
 
 		}
-
 
 		/// <summary>
 		///  Coloca um objeto

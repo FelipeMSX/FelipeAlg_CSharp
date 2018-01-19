@@ -18,7 +18,8 @@ namespace Algorithms.Abstacts
 		{
 		}
 
-        protected QueueStackBase(int maxsize, bool resizable = true, Comparison<E> comparator = null) : base (maxsize, resizable, comparator)
+        protected QueueStackBase(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null) 
+            : base (maxsize, resizable, allowEqualsElements, comparator)
 		{
 		}
 	}

@@ -100,8 +100,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Abstracts\ArrayBaseTests.cs" />
-    <Compile Include="Collections\StaticPriorityQueueTests.cs" />
+    <Compile Include="Abstracts\ArrayBase.cs" />
     <Compile Include="Study\Aula03Tests.cs" />
     <Compile Include="ObjectTest.cs" />
     <Compile Include="Searchs\Search.cs" />
@@ -124,6 +123,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

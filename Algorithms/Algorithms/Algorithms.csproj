@@ -115,7 +115,6 @@
     <Compile Include="Exceptions\ComparerNotSetException.cs" />
     <Compile Include="Extensions\Enum.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Interfaces\IClearCollection.cs" />
     <Compile Include="Nodes\LinkedDoubleNode.cs" />
     <Compile Include="Nodes\LinkedNode.cs" />
     <Compile Include="Nodes\TreeSearchNode.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="Collections\BinaryTree.cs" />
     <Compile Include="Collections\LinkedList.cs" />
     <Compile Include="Collections\OrderedLinkedList.cs" />
-    <Compile Include="Collections\StaticPriorityQueue.cs" />
     <Compile Include="Collections\StaticQueue.cs" />
     <Compile Include="Collections\StaticStack.cs" />
   </ItemGroup>

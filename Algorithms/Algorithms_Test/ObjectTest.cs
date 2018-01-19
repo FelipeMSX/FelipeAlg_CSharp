@@ -1,4 +1,6 @@
-﻿namespace AlgorithmsTests
+﻿using System;
+
+namespace AlgorithmsTests
 {
     public class ObjectTest 
     {
@@ -15,5 +17,19 @@
             Name = name;
             Id = id;
         }
+
+        public static Comparison<ObjectTest> ComparisonObjectTest = ((x, y) =>
+        {
+            if (x.Id > y.Id)
+                return 1;
+            else
+            if (x.Id < y.Id)
+                return -1;
+            else
+                return 0;
+
+        });
     }
+
+
 }

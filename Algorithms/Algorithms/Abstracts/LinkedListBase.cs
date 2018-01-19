@@ -36,6 +36,7 @@ namespace Algorithms.Abstacts
 		public abstract E First();
 		public abstract E Last();
 		public abstract E Retrive(E obj);
+
 		public abstract IEnumerator<E> GetEnumerator();
 
 		IEnumerator IEnumerable.GetEnumerator()
@@ -56,6 +57,10 @@ namespace Algorithms.Abstacts
 		/// Informa se a coleção está vazia.
 		/// </summary>
 		public bool Empty() => Length == 0;
-		
-	}
+
+        public void ClearCollection()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
