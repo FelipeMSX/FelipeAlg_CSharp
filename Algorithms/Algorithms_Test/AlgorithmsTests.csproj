@@ -103,7 +103,7 @@
     <Compile Include="Abstracts\ArrayBase.cs" />
     <Compile Include="Study\Aula03Tests.cs" />
     <Compile Include="ObjectTest.cs" />
-    <Compile Include="Searchs\Search.cs" />
+    <Compile Include="Searchs\SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorts\HeapSortTests.cs" />
     <Compile Include="Sorts\MergeSortTests.cs" />

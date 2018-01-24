@@ -8,8 +8,16 @@ using Algorithms.Nodes;
 namespace AlgorithmsTests.search
 {
 	[TestClass]
-	public class TSearch
+	public class SearchTests
 	{
+        /*Técnica utilizada para geração dos testes: Caixa Preta - Particionamento de equivalência.
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
  
 		[TestMethod]
 		[TestCategory("Search")]
