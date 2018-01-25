@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.Interfaces;
+using System;
 
 namespace AlgorithmsTests
 {
@@ -16,19 +17,21 @@ namespace AlgorithmsTests
         {
             Name = name;
             Id = id;
+            
         }
 
-        public static Comparison<ObjectTest> ComparisonObjectTest = ((x, y) =>
-        {
-            if (x.Id > y.Id)
-                return 1;
-            else
-            if (x.Id < y.Id)
-                return -1;
-            else
-                return 0;
+        public static IDefaultComparator<ObjectTest> d =>   (IDefaultComparator <ObjectTest>){ };
+        //public delegate DefaultComparison = (IDefaultComparator<ObjectTest>) ((x, y) =>
+        //{
+        //    if (x.Id > y.Id)
+        //        return 1;
+        //    else
+        //    if (x.Id < y.Id)
+        //        return -1;
+        //    else
+        //        return 0;
 
-        });
+        //});
     }
 
 

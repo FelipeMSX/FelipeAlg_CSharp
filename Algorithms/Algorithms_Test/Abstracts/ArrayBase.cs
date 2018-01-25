@@ -16,11 +16,12 @@ namespace Algorithms_Test.Abstracts
         //{
         // }
 
+        
         [TestMethod, TestCategory("StaticQueue")]
         public void Push_ThreeObjects_LengthEqualsThree()
         {
             //Arrange --Configurado no Initialize
-            _arrayBase = new StaticQueue<ObjectTest>(100, true,true, ObjectTest.ComparisonObjectTest);
+            _arrayBase = new StaticQueue<ObjectTest>(100, true,true, ObjectTest.DefaultComparison);
 
             //Act
             //_staticQueue.Push(new ObjectTest("AAAA", 2));

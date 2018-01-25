@@ -11,24 +11,26 @@ namespace Algorithms.Searchs
     /// </summary>
     /// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
-    public static class Search
+    public class Search : ISearch
 	{
-
-		/// <summary>
-		/// Utiliza a busca binária para encontrar um objeto no vetor.
-		/// O vetor deve estar ordenado para funcionar.
-		/// </summary>
-		/// <param name="orderedArray">Array com itens ordenados.</param>
-		/// <param name="item">Objeto almejado.</param>
-		/// <returns>Retorna o objeto caso exista, caso contrário, valor padrão do objeto.</returns>
-		public static E BinarySearch<E>(IList<E> orderedArray, E item, IDefaultComparator<E> comparator)
+        /// <summary>
+        /// Utiliza a busca binária para encontrar um objeto no vetor.
+        /// O vetor deve estar ordenado para funcionar.
+        /// </summary>
+        /// <param name="orderedArray">Array com itens ordenados.</param>
+        /// <param name="item">Objeto almejado.</param>
+        /// <returns>Retorna o objeto caso exista, caso contrário, valor padrão do objeto.</returns>
+        public E BinarySearch<E>(IList<E> orderedArray, E item, IDefaultComparator<E> comparator)
 		{
             //Validações
 			if (comparator == null)
 				throw new ComparerNotSetException();
 
             if (item == null)
-                throw new ValueNotValidException("The item can't be a null value!");
+                throw new NullObjectException("The item can't be a null value!");
+
+            if (orderedArray == null)
+                throw new NullObjectException("The item can't be a null value!");
 
             int left = 0;
 			int right = orderedArray.Count - 1;
@@ -52,8 +54,7 @@ namespace Algorithms.Searchs
 			}
 			return default(E);
 		}
-
-		private static int MidValue(int left, int right)
+		private  int MidValue(int left, int right)
 		{
 			return left + (right - left) / 2;
 		}

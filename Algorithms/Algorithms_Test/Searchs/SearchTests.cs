@@ -4,52 +4,54 @@ using Algorithms;
 using Algorithms.Searchs;
 using System.Collections;
 using Algorithms.Nodes;
+using Algorithms.Interfaces;
+using Algorithms.Exceptions;
+using System.Collections.Generic;
 
 namespace AlgorithmsTests.search
 {
 	[TestClass]
 	public class SearchTests
 	{
-        /*Técnica utilizada para geração dos testes: Caixa Preta - Particionamento de equivalência.
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         */
- 
-		[TestMethod]
-		[TestCategory("Search")]
-		
-		public void TestBinarySearch()
-		{
- 
-			LinkedDoubleNode<String> n = new LinkedDoubleNode<string>();
-			//Definindo o delegate com lambda expression.
-			Search<int> s = new Search<int>((x, y) => x.CompareTo(y));
-			
 
-			int[] numbers = new int[] { 1, 2, 3, 4, 5 };
+        private ISearch search;
 
-			//Testando para um objeto que existe no limite esquerdo.
-			{
-				int result = s.BinarySearch(numbers, 1);
-				Assert.IsTrue(result == 1,"É esperado encontrar o objeto 1");
-			}
+        [TestInitialize]
+        public void SetUp()
+        {
+            search = new Search();
+        }
+        #region WhiteboxTests
 
-			//Testandop para um objeto no limite direito.
-			{
-				int result = s.BinarySearch(numbers, 5);
-				Assert.IsTrue(result == 5, "É esperado encontrar o objeto 5");
-			}
+        /// <summary>
+        /// Técnica: Caminho de Decisão 
+        /// </summary>
+        [TestMethod, TestCategory("Search"), ExpectedException(typeof(ComparerNotSetException))]
+        public void BinarySearch_ComparerIsNull_Exception()
+        {
+            //Arrange - feito no SetUp
+            List<int> list = new List<int>();
+            //Act
+            search.BinarySearch(list, 1, null);
+            //Assert
+            Assert.Inconclusive("An exception was expected!");
+        }
 
-			//Testando para um objeto que não está presente na lista.
-			{
-				int result = s.BinarySearch(numbers, 15);
-				Assert.IsTrue(result == default(int), "É esperado encontrar o objeto");
-			}
+        /// <summary>
+        /// Técnica: Caminho de Decisão 
+        /// </summary>
+        [TestMethod, TestCategory("Search"), ExpectedException(typeof(ComparerNotSetException))]
+        public void BinarySearch_ListIsNull_Exception()
+        {
+            //Arrange - feito no SetUp
+            List<ObjectTest> list = new List<ObjectTest>();
+            ObjectTest objectTest = new ObjectTest();
+            //Act
+            search.BinarySearch(null, objectTest, ObjectTest.DefaultComparison);
+            //Assert
+            Assert.Inconclusive("An exception was expected!");
+        }
+        #endregion
 
-		}
-	}
+    }
 }
