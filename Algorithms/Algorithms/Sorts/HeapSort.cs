@@ -126,12 +126,12 @@ namespace Algorithms.Sorts
                 Heapify(list, i, listLength);
         }
 
-        private int Left(int i)
+        private static int Left(int i)
         {
             return 2 * i + 1;
         }
 
-        private int Right(int i)
+        private static int Right(int i)
         {
             return 2 * i + 2;
         }

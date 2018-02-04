@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Algorithms.Abstacts;
 using Algorithms.Exceptions;
 using Algorithms.Nodes;
@@ -6,7 +7,7 @@ using Algorithms.Nodes;
 namespace Algorithms.Collections
 {
 	/// <summary>
-	/// Classe que define uma estrutura de dados do tipo lista.
+	/// Classe que define uma estrutura de dados do tipo lista encadeada.
 	/// </summary>
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
@@ -14,10 +15,14 @@ namespace Algorithms.Collections
 	public class LinkedList<E> : LinkedListBase<E, LinkedNode<E>>
 	{
 
-		public LinkedList() : base()
+        public LinkedList(Comparison<E> comparator) : base()
+        {
+            Head = new LinkedNode<E>();
+            Comparator = comparator;
+        }
+
+        public LinkedList() : this(null)
 		{
-			
-			Head = new LinkedNode<E>();
 		}
 
 		/// <summary>
@@ -32,10 +37,9 @@ namespace Algorithms.Collections
 
 			LinkedNode<E> newNode;
 			newNode = new LinkedNode<E>(obj);
+
 			if (Empty())
-			{
 				Head.Next = newNode;
-			}
 			else
 			{
 				LinkedNode<E> searchNode = Head.Next;
@@ -67,35 +71,45 @@ namespace Algorithms.Collections
 			if (Comparator == null)
 				throw new ComparerNotSetException();
 
-			//Caso a coleção contenha somente um elemento.
+			//Remoção na cabeça da coleção.
 			if (Comparator(Head.Next.Value, obj) == 0)
-			{
-				LinkedNode<E> temp = Head.Next;
-				Head.Next = temp.Next;
-				Length--;
-				return temp.Value;
-				//Caso quando a coleção possui vários elementos e é preciso procurar o elemento.
-			}
+                return RemoveNodeFromList(Head);
+            //Caso quando a coleção possui vários elementos e é preciso procurar o elemento.
 			else
 			{
-				LinkedNode<E> search = Head.Next;
-				LinkedNode<E> previous = Head.Next;
+                LinkedNode<E> previous = SearchPreviousPosition(obj);
 
-				while (previous.HasNext())
-				{
-					if (Comparator(search.Value, obj) == 0)
-					{
-						previous.Next = search.Next;
-						search.Next = null;
-						Length--;
-						return search.Value;
-					}
-					previous = search;
-					search = search.Next;
-				}
-				throw new ElementNotFoundException();
-			}
+                if (previous != null)
+                    return RemoveNodeFromList(previous);
+                else
+                    throw new ElementNotFoundException();
+            }
 		}
+
+        private E RemoveNodeFromList(LinkedNode<E> previousNode)
+        {
+            LinkedNode<E> current = previousNode.Next;
+            previousNode.Next     = current.Next; 
+            current.Next          = null;
+            Length--;
+            return current.Value;
+        }
+
+        private LinkedNode<E> SearchPreviousPosition( E objectKey)
+        {
+            LinkedNode<E> search = Head.Next;
+            LinkedNode<E> previous = Head.Next;
+
+            while (previous.HasNext())
+            {
+                if (Comparator(search.Value, objectKey) == 0)
+                    return previous;
+
+                previous = search;
+                search = search.Next;
+            }
+            return null;
+        }
 
 		/// <summary>
 		/// Recupera um objeto da coleção sem removê-lo.
@@ -112,11 +126,12 @@ namespace Algorithms.Collections
 				throw new ComparerNotSetException();
 
 			LinkedNode<E> current = Head.Next;
-			while (current != null && Comparator(current.Value, obj) != 0)
+			while (current.HasNext() && Comparator(current.Value, obj) != 0)
 			{
 				current = current.Next;
 			}
-			return current.Value;
+           
+			return Comparator(current.Value, obj) == 0 ? current.Value : default(E);
 		}
 
 		/// <summary>
@@ -154,12 +169,22 @@ namespace Algorithms.Collections
 		/// </summary>
 		public override IEnumerator<E> GetEnumerator()
 		{
-			LinkedNode<E> current = Head.Next;
-			while (current != null)
+			LinkedNode<E> current = Head;
+			while (current.HasNext())
 			{
-				yield return current.Value;
-				current = current.Next;
+                current = current.Next;
+                yield return current.Value;
+				
 			}
 		}
-	}
+
+        /// <summary>
+        /// Remove todos os elementos da coleção.
+        /// </summary>
+        public override void Clear()
+        {
+            Head.Next   = null;
+            Length      = 0;
+        }
+    }
 }

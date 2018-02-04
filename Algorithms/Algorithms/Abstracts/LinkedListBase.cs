@@ -26,41 +26,28 @@ namespace Algorithms.Abstacts
 		/// </summary>
 		public int Length { get; protected set; }
 
-		/// <summary>
-		/// Fornece um método de comparação para os objetos da coleção.
-		/// </summary>
-		public Comparison<E> Comparator { get; set; }
+        /// <summary>
+        /// Informa se a coleção está vazia.
+        /// </summary>
+        public bool Empty() => Length == 0;
+
+        /// <summary>
+        /// Fornece um método de comparação para os objetos da coleção.
+        /// </summary>
+        public Comparison<E> Comparator { get; set; }
 
 		public abstract void Insert(E obj);
 		public abstract E Remove(E obj);
 		public abstract E First();
 		public abstract E Last();
 		public abstract E Retrive(E obj);
+        public abstract void Clear();
 
-		public abstract IEnumerator<E> GetEnumerator();
+        public abstract IEnumerator<E> GetEnumerator();
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
 			throw new NotImplementedException();
 		}
-
-		/// <summary>
-		/// Remove todos os objetos da coleção.
-		/// </summary>
-		public void DisposeCollection()
-		{
-			Head	= null;
-			Length	= 0;
-		}
-
-		/// <summary>
-		/// Informa se a coleção está vazia.
-		/// </summary>
-		public bool Empty() => Length == 0;
-
-        public void ClearCollection()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

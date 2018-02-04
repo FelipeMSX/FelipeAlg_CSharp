@@ -89,7 +89,7 @@ namespace Algorithms.Abstacts
         /// <summary>
         /// Remove todos os objetos da coleção.
         /// </summary>
-        public void ClearCollection()
+        public void Clear()
         {
             Vector = new E[MaxSize];
             Length = 0;

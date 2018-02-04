@@ -1,13 +1,13 @@
 ﻿using Algorithms.Interfaces;
 using System;
 
-namespace AlgorithmsTests
+namespace AlgorithmsTests 
 {
-    public class ObjectTest 
+    public class ObjectTest
     {
         public string Name { get; set; }
         public int Id { get; set; }
-
+  
         public ObjectTest()
         {
 
@@ -17,21 +17,21 @@ namespace AlgorithmsTests
         {
             Name = name;
             Id = id;
-            
+
         }
 
-        public static IDefaultComparator<ObjectTest> d =>   (IDefaultComparator <ObjectTest>){ };
-        //public delegate DefaultComparison = (IDefaultComparator<ObjectTest>) ((x, y) =>
-        //{
-        //    if (x.Id > y.Id)
-        //        return 1;
-        //    else
-        //    if (x.Id < y.Id)
-        //        return -1;
-        //    else
-        //        return 0;
 
-        //});
+        public static Comparison<ObjectTest> DefaultComparison = ((x, y) =>
+        {
+            if (x.Id > y.Id)
+                return 1;
+            else
+            if (x.Id < y.Id)
+                return -1;
+            else
+                return 0;
+
+        });
     }
 
 

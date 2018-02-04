@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Interfaces
 {
-    public interface ISearch
+    public interface ISearch<T> : IDefaultComparator<T>
     {
-        E BinarySearch<E>(IList<E> orderedArray, E item, IDefaultComparator<E> comparator);
+        T BinarySearch(IList<T> orderedArray, T item);
     }
 }
