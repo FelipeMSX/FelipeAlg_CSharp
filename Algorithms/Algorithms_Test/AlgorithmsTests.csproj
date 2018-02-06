@@ -100,7 +100,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Abstracts\ArrayBase.cs" />
+    <Compile Include="Abstracts\ArrayBaseTests.cs" />
     <Compile Include="Collections\LinkedListTests.cs" />
     <Compile Include="Study\Aula03Tests.cs" />
     <Compile Include="ObjectTest.cs" />

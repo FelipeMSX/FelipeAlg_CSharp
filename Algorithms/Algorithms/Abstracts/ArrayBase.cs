@@ -54,11 +54,6 @@ namespace Algorithms.Abstacts
         public bool AllowEqualsElements { get; protected set; }
 
         /// <summary>
-        /// Ao atingir o valor máximo de itens da coleção esse valor será utilizado para aumentar a capacidade da coleção. 
-        /// </summary>
-        public int ResizeValue { get; set; }
-
-        /// <summary>
         /// Define se a coleção deve se expandir ao atingir a capacidade máxima.
         /// </summary>
         public bool Resizable { get; set; }
@@ -74,7 +69,6 @@ namespace Algorithms.Abstacts
         protected ArrayBase(int maxSize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null)
         {
             MaxSize = maxSize;
-            ResizeValue = DEFAULT_SIZE;
             Vector = new E[maxSize];
             Resizable = resizable;
             Comparator = comparator;
@@ -118,7 +112,6 @@ namespace Algorithms.Abstacts
         /// <summary>
         /// Percorre a coleção até encontrar o objeto. Somente retorna o objeto não o remove. É necessário definir um Comparator a coleção.
         /// </summary>
-        /// <exception cref="EmptyCollectionException">Caso a coleção esteja vazia. </exception>
         /// <exception cref="ComparerNotSetException">Caso a coleção não tenha um comparator definido.</exception>
         /// <param name="obj">Objeto com as keys necessárias para encontrar um objeto na coleção.</param>
         /// <returns></returns>
@@ -142,12 +135,12 @@ namespace Algorithms.Abstacts
         /// Aumenta a capacidade da coleção de acordo com o ResizeValue.
         /// </summary>
         /// <exception cref="FullCollectionException">A coleção não foi configurada para aumentar dinamicamente seu tamanho a medida do necessário.</exception>
-        protected void IncreaseCapacity()
+        public void IncreaseCapacity(int increment)
         {
             if (!Resizable)
                 throw new FullCollectionException();
 
-            MaxSize += ResizeValue;
+            MaxSize += increment;
             E[] temp = new E[MaxSize];
 
             for (int i = 0; i < Length; i++)

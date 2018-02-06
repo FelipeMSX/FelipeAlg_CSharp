@@ -43,7 +43,7 @@ namespace Algorithms.Collections
 			if (obj == null)
 				throw new NullObjectException();
 			if (Full())
-				IncreaseCapacity();
+				IncreaseCapacity(DEFAULT_SIZE);
 
 			Vector[Length++] = obj;
 		}

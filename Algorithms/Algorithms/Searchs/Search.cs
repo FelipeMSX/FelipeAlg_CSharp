@@ -35,12 +35,12 @@ namespace Algorithms.Searchs
         public T BinarySearch(IList<T> orderedArray, T item)
 		{
             //Validações
-			if (Comparator == null)
-				throw new ComparerNotSetException();
-
+            if (Comparator == null)
+                throw new ComparerNotSetException();
+            else
             if (item == null)
                 throw new NullObjectException("The item can't be a null value!");
-
+            else
             if (orderedArray == null)
                 throw new NullObjectException("The item can't be a null value!");
 
