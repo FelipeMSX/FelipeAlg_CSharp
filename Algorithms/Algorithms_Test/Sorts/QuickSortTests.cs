@@ -41,7 +41,7 @@ namespace AlgorithmsTests.Sorts
         public void Sort_NullValue_Exception()
         {
             //Arrange
-            MergeSort<int> quicksort = new MergeSort<int>((x, y) => x.CompareTo(y));
+            QuickSort<int> quicksort = new QuickSort<int>((x, y) => x.CompareTo(y));
 
             //Act
             quicksort.Sort(null);
@@ -54,7 +54,7 @@ namespace AlgorithmsTests.Sorts
         public void Sort_EmptyComparator_Exception()
         {
             //Arrange
-            MergeSort<int> quicksort = new MergeSort<int>(null);
+            QuickSort<int> quicksort = new QuickSort<int>(null);
 
             //Act
             quicksort.Sort(vectorInteger);

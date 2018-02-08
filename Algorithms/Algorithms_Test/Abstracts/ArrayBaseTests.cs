@@ -18,16 +18,7 @@ namespace Algorithms_Test.Abstracts
         private static StaticQueue<int?> CreateQueue(int capacity, bool resizable)
         {
             return new StaticQueue<int?>(capacity, resizable, true,
-                            ((x, y) =>
-                            {
-                                if (x > y)
-                                    return 1;
-                                else
-                                if (x < y)
-                                    return -1;
-                                else
-                                    return 0;
-                            }));
+                            ((x, y) => x.Value.CompareTo(y.Value)));
         }
 
         /// <summary>
