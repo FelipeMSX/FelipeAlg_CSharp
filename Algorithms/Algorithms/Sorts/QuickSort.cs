@@ -92,7 +92,7 @@ namespace Algorithms.Sorts
         /// <param name="init">Posição inicial do vetor.</param>
         /// <param name="end">Posição final da lista.</param>
         /// <returns>Retorna o elemento do meio.</returns>
-		private int DefinePivot(int init, int end)
+		private static int DefinePivot(int init, int end)
 		{
 			return init + (end - init) / 2;
 		}
