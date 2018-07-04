@@ -10,7 +10,7 @@ namespace Algorithms.Collections
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-	public class StaticQueue<E> : QueueStackBase<E>
+	public class StaticQueue<T> : QueueStackBase<T>
 	{
 
 		public StaticQueue() : base()
@@ -20,7 +20,7 @@ namespace Algorithms.Collections
 		/// <param name="maxsize">Valor máximo de itens que a coleção pode armazenar.</param>
 		/// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-		public StaticQueue(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null) 
+		public StaticQueue(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<T> comparator = null) 
             : base(maxsize, resizable ,allowEqualsElements, comparator)
 		{
 		}
@@ -30,7 +30,7 @@ namespace Algorithms.Collections
 		/// <exception cref="NullObjectException">Objeto não pode ser nulo.</exception>
 		/// <exception cref="FullCollectionException">A coleção está cheia.</exception>
 		/// <param name="obj">Objeto a ser inserido na fila</param>
-		public override void Push(E obj)
+		public override void Push(T obj)
 		{
 			//Validações
 			if (obj == null)
@@ -52,12 +52,12 @@ namespace Algorithms.Collections
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">Se a fila estiver vazia causa um erro.</exception>
 		/// <returns>Retorna o primeiro elemento a sair da fila</returns>
-		public override E Pop()
+		public override T Pop()
 		{
 			if (Empty())
 				throw new EmptyCollectionException();
 
-			E obj = Vector[0];
+			T obj = Vector[0];
 
             Length--;
             //Desloca os itens

@@ -9,24 +9,24 @@ namespace Algorithms.Nodes
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E"></typeparam>
-	public class LinkedDoubleNode<E> : NodeBase<E>
+	public class LinkedDoubleNode<T> : NodeBase<T>
 	{
 		/// <summary>
 		/// Representa um ponteiro para um node anterior.
 		/// </summary>
-		public LinkedDoubleNode<E> Previous { get; set; }
+		public LinkedDoubleNode<T> Previous { get; set; }
 
 		/// <summary>
 		/// Representa um ponteiro para um node posterior.
 		/// </summary>
-		public LinkedDoubleNode<E> Next { get; set; }
+		public LinkedDoubleNode<T> Next { get; set; }
 
 		public LinkedDoubleNode() : base()
 		{
 		}
 
 		/// <param name="obj">Objeto genérico que será armazenado no node.</param>
-		public LinkedDoubleNode(E obj) : base(obj)
+		public LinkedDoubleNode(T obj) : base(obj)
 		{
 		}
 

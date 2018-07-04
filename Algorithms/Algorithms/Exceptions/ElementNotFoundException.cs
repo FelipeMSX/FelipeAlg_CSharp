@@ -8,18 +8,18 @@ namespace Algorithms.Exceptions
 {
 	public class ElementNotFoundException : Exception
 	{
-		public const string MESSAGE = "The object can't be found in this collection!";
+		public const string Message = "The object can't be found in this collection!";
 
 
         public ElementNotFoundException()
         {
         }
 
-        public ElementNotFoundException(string message = null) : base(message ?? MESSAGE)
+        public ElementNotFoundException(string message = null) : base(message ?? Message)
 		{
 		}
 
-        public ElementNotFoundException(string message, Exception innerException) : base(message ?? MESSAGE)
+        public ElementNotFoundException(string message, Exception innerException) : base(message ?? Message, innerException)
         {
         }
     }

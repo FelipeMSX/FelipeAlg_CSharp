@@ -2,8 +2,8 @@
 
 namespace Algorithms.Interfaces
 {
-	public interface IDefaultComparator<E>
+	public interface IDefaultComparator<T>
 	{
-		Comparison<E> Comparator { get; set; }
+		Comparison<T> Comparator { get; set; }
 	}
 }

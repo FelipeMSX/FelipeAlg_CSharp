@@ -16,11 +16,11 @@ namespace Algorithms.Sorts
 
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
-    public class QuickSort<E> : IDefaultComparator<E>
+    public class QuickSort<T> : IDefaultComparator<T>
     {
-		public Comparison<E> Comparator { get; set; }
+		public Comparison<T> Comparator { get; set; }
 		
-		public QuickSort(Comparison<E> comparator)
+		public QuickSort(Comparison<T> comparator)
 		{
 			this.Comparator = comparator;
 		}
@@ -32,7 +32,7 @@ namespace Algorithms.Sorts
         /// <param name="list">Lista de elementos para ordenação.</param>
         /// <exception cref="ComparerNotSetException"/>
         /// <exception cref="NullObjectException"/>
-        public void Sort(IList<E> list)
+        public void Sort(IList<T> list)
 		{
             //validações
             if (Comparator == null)
@@ -43,7 +43,7 @@ namespace Algorithms.Sorts
             Quicksort(list, 0, list.Count -1);
 		}
 
-		private void Quicksort(IList<E> list, int init, int end)
+		private void Quicksort(IList<T> list, int init, int end)
 		{
 			if (init < end)
 			{
@@ -53,7 +53,7 @@ namespace Algorithms.Sorts
 			}
 		}
 
-		private int Partition(IList<E> list, int init, int end)
+		private int Partition(IList<T> list, int init, int end)
 		{
 			int positionPivot = DefinePivot(init, end);
 			//Ao definir o pivô é preciso colocá-lo no fim.

@@ -10,21 +10,21 @@ namespace Algorithms.Sorts
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E"></typeparam>
-    public class MergeSort<E> : IDefaultComparator<E>
+    public class MergeSort<T> : IDefaultComparator<T>
     {
 		/// <summary>
 		/// Compara dois objetos e retorna um inteiro indicando o grau de comparação entre eles.
 		/// </summary>
-		public Comparison<E> Comparator{ get; set; }
+		public Comparison<T> Comparator{ get; set; }
 
 		/// <summary>
 		/// Armazena os objetos que serão utilizados na ordenação. 
         /// No algoritmo do mergesort é necessário ter um vetor para armazenar os elementos.
 		/// </summary>
-		private IList<E> _vector;
+		private IList<T> _vector;
 
 		/// <param name="comparator">Método que compara dois objetos e retorna um inteiro.</param>
-		public MergeSort(Comparison<E> comparator)
+		public MergeSort(Comparison<T> comparator)
 		{
 			Comparator = comparator;
 		}
@@ -35,7 +35,7 @@ namespace Algorithms.Sorts
         /// <param name="list">Vetor com os objetos genéricos.</param>
         /// <exception cref="ComparerNotSetException"/>
         /// <exception cref="NullObjectException"/>
-        public void Sort(IList<E> list)
+        public void Sort(IList<T> list)
 		{
             //validações
             if (Comparator == null)
@@ -46,9 +46,9 @@ namespace Algorithms.Sorts
             Mergesort(list, list.Count);
 		}
 
-		private void Mergesort(IList<E> list, int length)
+		private void Mergesort(IList<T> list, int length)
 		{
-			_vector = new E[length];
+			_vector = new T[length];
 			Merge(list, 0, length - 1);
 		}
 
@@ -59,7 +59,7 @@ namespace Algorithms.Sorts
 		/// <param name="list">Vetor com todos os dados.</param>
 		/// <param name="init">Índice da posição inicial do vetor.</param>
 		/// <param name="end">ìndice da posição final do vetor.</param>
-		private void Merge(IList<E> list, int init, int end)
+		private void Merge(IList<T> list, int init, int end)
 		{
 			if(init < end)
 			{
@@ -70,7 +70,7 @@ namespace Algorithms.Sorts
 			}
 		}
 
-		private void Intercalate(IList<E> list, int init, int middle, int end)
+		private void Intercalate(IList<T> list, int init, int middle, int end)
 		{
 			int i = init;
 			int j = middle + 1;

@@ -8,18 +8,18 @@ namespace Algorithms.Exceptions
 {
 	public class NullObjectException : Exception
 	{
-		public const string MESSAGE = "Object can't be null!";
+		public const string Message = "Object can't be null!";
 
 
         public NullObjectException()
         {
         }
 
-        public NullObjectException(string message = null) : base(message ?? MESSAGE)
+        public NullObjectException(string message = null) : base(message ?? Message)
 		{
 		}
 
-        public NullObjectException(string message, Exception innerException) : base(message ?? MESSAGE)
+        public NullObjectException(string message, Exception innerException) : base(message ?? Message, innerException)
         {
 
         }

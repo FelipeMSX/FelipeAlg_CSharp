@@ -12,12 +12,12 @@ namespace Algorithms.Sorts
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E"></typeparam>
-    public class HeapSort<E> : IDefaultComparator<E>
+    public class HeapSort<T> : IDefaultComparator<T>
     {
         /// <summary>
         /// Compara dois objetos e retorna um inteiro indicando o grau de comparação entre eles.
         /// </summary>
-        public Comparison<E> Comparator { get; set; }
+        public Comparison<T> Comparator { get; set; }
 
         /// <summary>
         /// Indica se o Heap será construído com o maior valor no top da árvore"MAX", 
@@ -33,14 +33,14 @@ namespace Algorithms.Sorts
     
         /// <param name="comparator">Define a forma que os elementos serão comparados na lista</param>
         /// <param name="build">A forma que o heap será construído.</param>
-        public HeapSort(Comparison<E> comparator, Build build)
+        public HeapSort(Comparison<T> comparator, Build build)
         {
             Comparator = comparator;
             Operation = build;
         }
 
         /// <param name="comparator">Define a forma que os elementos serão comparados na lista</param>
-        public HeapSort(Comparison<E> comparator) : this(comparator, Build.Max) { }
+        public HeapSort(Comparison<T> comparator) : this(comparator, Build.Max) { }
 
         /// <summary>
         /// Ordena os elementos de um vetor utilizando o algoritmo do HeapSort
@@ -48,7 +48,7 @@ namespace Algorithms.Sorts
         /// <param name="list">Lista de elementos.</param>
         /// <exception cref="ComparerNotSetException"/>
         /// <exception cref="NullObjectException"/>
-		public void Sort(IList<E> list)
+		public void Sort(IList<T> list)
         {
             //validações
             if (Comparator == null)
@@ -60,7 +60,7 @@ namespace Algorithms.Sorts
         }
 
 
-        private void Heapsort(IList<E> list)
+        private void Heapsort(IList<T> list)
         {
             BuildHeap(list, list.Count);
             for (int i = list.Count - 1; i > 0; i--)
@@ -77,7 +77,7 @@ namespace Algorithms.Sorts
         /// <param name="list">Lista de objetos para ordenação.</param>
         /// <param name="currentPosition">Posição do item a ser analisado.</param>
         /// <param name="listLength">Tamanho da lista Ou o limite superior.</param>
-        private void Heapify(IList<E> list, int currentPosition, int listLength)
+        private void Heapify(IList<T> list, int currentPosition, int listLength)
         {
             int leftPosition = Left(currentPosition);
             int rightPosition = Right(currentPosition);
@@ -111,7 +111,7 @@ namespace Algorithms.Sorts
         /// <summary>
         /// Faz a troca de dois elementos da lista e chama o processo de Heapify novamente para o objeto trocado.
         /// </summary>
-        private void Realocate(IList<E> list, int currentPosition, int swapPosition, int listLength)
+        private void Realocate(IList<T> list, int currentPosition, int swapPosition, int listLength)
         {
             ListFunctions.Swap(list, currentPosition, swapPosition);
             Heapify(list, swapPosition, listLength);
@@ -120,7 +120,7 @@ namespace Algorithms.Sorts
         /// <summary>
         /// Constrói o heap a partir da lista.
         /// </summary>
-		private void BuildHeap(IList<E> list, int listLength)
+		private void BuildHeap(IList<T> list, int listLength)
         {
             for (int i = (listLength / 2) - 1; i >= 0; i--)
                 Heapify(list, i, listLength);

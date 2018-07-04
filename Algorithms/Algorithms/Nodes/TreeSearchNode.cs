@@ -2,29 +2,29 @@
 
 namespace Algorithms.Nodes
 {
-	public class TreeSearchNode<E> : NodeBase<E>
+	public class TreeSearchNode<T> : NodeBase<T>
 	{
 		/// <summary>
 		/// Representa um ponteiro para um node anterior.
 		/// </summary>
-		public TreeSearchNode<E> Left { get; set; }
+		public TreeSearchNode<T> Left { get; set; }
 
 		/// <summary>
 		/// Representa um ponteiro para um node posterior.
 		/// </summary>
-		public TreeSearchNode<E> Right { get; set; }
+		public TreeSearchNode<T> Right { get; set; }
 
 		/// <summary>
 		/// Representa um ponteiro para um node pai.
 		/// </summary>
-		public TreeSearchNode<E> Father { get; set; }
+		public TreeSearchNode<T> Father { get; set; }
 
 		public TreeSearchNode() : base()
 		{
 		}
 
 		/// <param name="obj">Objeto genérico que será armazenado no node.</param>
-		public TreeSearchNode(E obj) : base(obj)
+		public TreeSearchNode(T obj) : base(obj)
 		{
 		}
 

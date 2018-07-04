@@ -8,26 +8,26 @@ using Algorithms.Nodes;
 
 namespace Algorithms.Collections
 {
-	public class BinaryTree<E> : SearchTreeBase<E, TreeSearchNode<E>>
+	public class BinaryTree<T> : SearchTreeBase<T, TreeSearchNode<T>>
 	{
 
 
-		public override void Insert(E value)
+		public override void Insert(T value)
 		{
 			throw new NotImplementedException();
 		}
 
-		public override E Remove(E value)
+		public override T Remove(T value)
 		{
 			throw new NotImplementedException();
 		}
 
-		public override E Retrieve(E value)
+		public override T Retrieve(T value)
 		{
 			throw new NotImplementedException();
 		}
 
-		public override IEnumerator<E> GetEnumerator()
+		public override IEnumerator<T> GetEnumerator()
 		{
 			throw new NotImplementedException();
 		}

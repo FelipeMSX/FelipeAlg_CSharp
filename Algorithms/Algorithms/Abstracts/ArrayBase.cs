@@ -11,7 +11,7 @@ namespace Algorithms.Abstacts
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E">Tipo do objeto armazenado na coleção.</typeparam>
-    public abstract class ArrayBase<E> : ICommon<E>, IDefaultComparator<E>
+    public abstract class ArrayBase<T> : ICommon<T>, IDefaultComparator<T>
     {
         #region Properties
         /// <summary>
@@ -22,12 +22,12 @@ namespace Algorithms.Abstacts
         /// <summary>
         /// Fornece um método de comparação para os objetos da coleção.
         /// </summary>
-        public Comparison<E> Comparator { get; set; }
+        public Comparison<T> Comparator { get; set; }
 
         /// <summary>
         /// Vetor que armazena os objetos genéricos da coleção.
         /// </summary>
-        public E[] Vector { get; protected set; }
+        public T[] Vector { get; protected set; }
 
         /// <summary>
         /// Tamanho atual da coleção.
@@ -66,10 +66,10 @@ namespace Algorithms.Abstacts
         /// <param name="maxSize">Quantidade de itens que a coleção pode armazenar.</param>
         /// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
         /// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-        protected ArrayBase(int maxSize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null)
+        protected ArrayBase(int maxSize, bool resizable = true, bool allowEqualsElements = true, Comparison<T> comparator = null)
         {
             MaxSize = maxSize;
-            Vector = new E[maxSize];
+            Vector = new T[maxSize];
             Resizable = resizable;
             Comparator = comparator;
         }
@@ -85,7 +85,7 @@ namespace Algorithms.Abstacts
         /// </summary>
         public void Clear()
         {
-            Vector = new E[MaxSize];
+            Vector = new T[MaxSize];
             Length = 0;
         }
 
@@ -102,12 +102,12 @@ namespace Algorithms.Abstacts
         /// <summary>
         /// Retorna o primeiro elmento da coleção. Se estiver vazia retorna o valor default do tipo do objeto.
         /// </summary>
-        public E First() => Empty() ? default(E) : Vector[0];
+        public T First() => Empty() ? default(T) : Vector[0];
 
         /// <summary>
         /// Retorna o último elmento da coleção. Se estiver vazia retorna o valor default do tipo do objeto.
         /// </summary>
-        public E Last() => Empty() ? default(E) : Vector[Length - 1];
+        public T Last() => Empty() ? default(T) : Vector[Length - 1];
 
         /// <summary>
         /// Percorre a coleção até encontrar o objeto. Somente retorna o objeto não o remove. É necessário definir um Comparator a coleção.
@@ -116,7 +116,7 @@ namespace Algorithms.Abstacts
         /// <param name="obj">Objeto com as keys necessárias para encontrar um objeto na coleção.</param>
         /// <returns></returns>
         /// 
-        public E Retrive(E obj)
+        public T Retrive(T obj)
         {
             if (Comparator == null)
                 throw new ComparerNotSetException();
@@ -127,7 +127,7 @@ namespace Algorithms.Abstacts
                     return obj;
             }
 
-            return default(E);
+            return default(T);
         }
         #endregion
 
@@ -141,7 +141,7 @@ namespace Algorithms.Abstacts
                 throw new FullCollectionException();
 
             MaxSize += increment;
-            E[] temp = new E[MaxSize];
+            T[] temp = new T[MaxSize];
 
             for (int i = 0; i < Length; i++)
             {

@@ -13,7 +13,7 @@ namespace Algorithms.Collections
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E">Tipo de Objeto da pilha.</typeparam>
-    public class StaticStack<E> : QueueStackBase<E> 
+    public class StaticStack<T> : QueueStackBase<T> 
 	{
         /// <summary>
         /// Inicializa a coleção com o tamanho padrão de 100, e por padrão seu tamanho é reajustável.
@@ -25,7 +25,7 @@ namespace Algorithms.Collections
 		/// <param name="maxsize">Valor máximo de itens que a coleção pode armazenar.</param>
 		/// <param name="resizable">Define se a coleção deve se expandir ao atingir a capacidade máxima.</param>
 		/// <param name="comparator">Fornece um método de comparação para os objetos da coleção.</param>
-		public StaticStack(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<E> comparator = null) 
+		public StaticStack(int maxsize, bool resizable = true, bool allowEqualsElements = true, Comparison<T> comparator = null) 
             : base (maxsize, resizable, allowEqualsElements, comparator)
 		{
 
@@ -37,7 +37,7 @@ namespace Algorithms.Collections
 		/// <exception cref="NullObjectException">Objeto não pode ser nulo.</exception>
 		/// <exception cref="FullCollectionException">A pilha está cheia e não aceita está configurada para ser redimensionada.</exception>
 		/// <param name="obj">Objeto a ser inserido na coleção.</param>
-		public override void Push(E obj)
+		public override void Push(T obj)
 		{
             //Validações
 			if (obj == null)
@@ -53,13 +53,13 @@ namespace Algorithms.Collections
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">Não existe elemento para remover na pilha.</exception>
 		/// <returns></returns>
-		public override E Pop()
+		public override T Pop()
 		{
 			if (Empty())
 				throw new EmptyCollectionException();
 
-			E temp = Vector[--Length];
-			Vector[Length] = default(E);
+			T temp = Vector[--Length];
+			Vector[Length] = default(T);
 
 			return temp;
 		}

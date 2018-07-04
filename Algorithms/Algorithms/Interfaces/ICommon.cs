@@ -1,11 +1,11 @@
 ﻿namespace Algorithms.Interfaces
 {
-	interface ICommon<E>
+	interface ICommon<T>
 	{
         bool Empty();
-		E First();
-		E Last();
-		E Retrive(E obj);
+		T First();
+		T Last();
+		T Retrive(T obj);
         void Clear();
     }
 }

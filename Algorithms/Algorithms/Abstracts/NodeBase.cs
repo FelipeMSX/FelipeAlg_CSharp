@@ -5,11 +5,11 @@
 	/// </summary>
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
-	public abstract class NodeBase<E>
+	public abstract class NodeBase<T>
 	{
-		public E Value{ get; set; }
+		public T Value{ get; set; }
 
-		protected NodeBase(E value)
+		protected NodeBase(T value)
 		{
 			Value = value;
 		}

@@ -11,7 +11,7 @@ namespace Algorithms.Collections
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de objeto da lista.</typeparam>
-	class OrderedLinkedList<E> : LinkedList<E>
+	class OrderedLinkedList<T> : LinkedList<T>
 	{
 		/// <summary>
 		/// Define se a coleção aceita objetos iguais.
@@ -20,7 +20,7 @@ namespace Algorithms.Collections
 
 		/// <param name="comparator">Especifica um comparador para a lista.</param>
 		/// <param name="allowEquals">Especifica se a coleção aceita objetos iguais.</param>
-		public OrderedLinkedList(Comparison<E> comparator, bool allowEquals = true) : base()
+		public OrderedLinkedList(Comparison<T> comparator, bool allowEquals = true) : base()
 		{
 			Comparator = comparator;
 			AllowEquals = allowEquals;	
@@ -33,22 +33,22 @@ namespace Algorithms.Collections
 		/// <exception cref="ComparerNotSetException">É necessário definir o comparador.</exception>
 		/// <exception cref="EqualsElementException">Não é permitido objetos iguais na coleção.</exception>
 		/// <param name="obj">Novo objeto a ser adicionado na coleção.</param>
-		public override void Insert(E obj)
+		public override void Insert(T obj)
 		{
 			if (obj == null)
 				throw new NullObjectException();
 			if (Comparator == null)
 				throw new ComparerNotSetException();
 
-			LinkedNode<E> newNode = new LinkedNode<E>(obj);
+			LinkedNode<T> newNode = new LinkedNode<T>(obj);
 			if (Empty())
 			{
 				Head.Next = newNode;
 			} 
 			else
 			{
-				LinkedNode<E> search = Head.Next;
-				LinkedNode<E> previous = Head.Next;
+				LinkedNode<T> search = Head.Next;
+				LinkedNode<T> previous = Head.Next;
 
 				while (search != null)
 				{

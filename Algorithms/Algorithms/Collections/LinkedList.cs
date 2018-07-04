@@ -12,12 +12,12 @@ namespace Algorithms.Collections
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de objeto da lista.</typeparam>
-	public class LinkedList<E> : LinkedListBase<E, LinkedNode<E>>
+	public class LinkedList<T> : LinkedListBase<T, LinkedNode<T>>
 	{
 
-        public LinkedList(Comparison<E> comparator) : base()
+        public LinkedList(Comparison<T> comparator) : base()
         {
-            Head = new LinkedNode<E>();
+            Head = new LinkedNode<T>();
             Comparator = comparator;
         }
 
@@ -30,19 +30,19 @@ namespace Algorithms.Collections
 		/// </summary>
 		/// <exception cref="NullObjectException">Objeto não pode ser nulo.</exception>
 		/// <param name="obj">Novo objeto a ser adicionado na coleção.</param>
-		public override void Insert(E obj)
+		public override void Insert(T obj)
 		{
 			if (obj == null)
 				throw new NullObjectException();
 
-			LinkedNode<E> newNode;
-			newNode = new LinkedNode<E>(obj);
+			LinkedNode<T> newNode;
+			newNode = new LinkedNode<T>(obj);
 
 			if (Empty())
 				Head.Next = newNode;
 			else
 			{
-				LinkedNode<E> searchNode = Head.Next;
+				LinkedNode<T> searchNode = Head.Next;
 
 				while (searchNode.HasNext())
 					searchNode = searchNode.Next;
@@ -61,7 +61,7 @@ namespace Algorithms.Collections
 		/// <exception cref="ElementNotFoundException">Objeto não encontrado na lista.</exception>
 		/// <param name="obj">Objeto do tipo da lista com as chaves necessárias para encontrar qualquer elemento na lista.</param>
 		/// <returns></returns>
-		public override E Remove(E obj)
+		public override T Remove(T obj)
 		{
 			//Validações
 			if (obj == null)
@@ -77,7 +77,7 @@ namespace Algorithms.Collections
             //Caso quando a coleção possui vários elementos e é preciso procurar o elemento.
 			else
 			{
-                LinkedNode<E> previous = SearchPreviousPosition(obj);
+                LinkedNode<T> previous = SearchPreviousPosition(obj);
 
                 if (previous != null)
                     return RemoveNodeFromList(previous);
@@ -86,19 +86,19 @@ namespace Algorithms.Collections
             }
 		}
 
-        private E RemoveNodeFromList(LinkedNode<E> previousNode)
+        private T RemoveNodeFromList(LinkedNode<T> previousNode)
         {
-            LinkedNode<E> current = previousNode.Next;
+            LinkedNode<T> current = previousNode.Next;
             previousNode.Next     = current.Next; 
             current.Next          = null;
             Length--;
             return current.Value;
         }
 
-        private LinkedNode<E> SearchPreviousPosition( E objectKey)
+        private LinkedNode<T> SearchPreviousPosition(T objectKey)
         {
-            LinkedNode<E> search = Head.Next;
-            LinkedNode<E> previous = Head.Next;
+            LinkedNode<T> search = Head.Next;
+            LinkedNode<T> previous = Head.Next;
 
             while (previous.HasNext())
             {
@@ -116,7 +116,7 @@ namespace Algorithms.Collections
 		/// </summary>
 		/// <param name="obj">Objeto utilizado como parâmetro chave para encontrar os dados.</param>
 		/// <returns></returns>
-		public override E Retrive(E obj)
+		public override T Retrive(T obj)
 		{
 			if (Empty())
 				throw new EmptyCollectionException();
@@ -125,20 +125,20 @@ namespace Algorithms.Collections
 			if (Comparator == null)
 				throw new ComparerNotSetException();
 
-			LinkedNode<E> current = Head.Next;
+			LinkedNode<T> current = Head.Next;
 			while (current.HasNext() && Comparator(current.Value, obj) != 0)
 			{
 				current = current.Next;
 			}
            
-			return Comparator(current.Value, obj) == 0 ? current.Value : default(E);
+			return Comparator(current.Value, obj) == 0 ? current.Value : default(T);
 		}
 
 		/// <summary>
 		/// Obtém o primeiro elemento da lista.
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">A coleção está vazia.</exception>
-		public override E First()
+		public override T First()
 		{
 			//Validações
 			if (Empty())
@@ -151,12 +151,12 @@ namespace Algorithms.Collections
 		/// Obtém o último elemento da lista localizado no fim.
 		/// </summary>
 		/// <exception cref="EmptyCollectionException">Caso a coleção esteja vazia.</exception>
-		public override E Last()
+		public override T Last()
 		{
 			if (Empty())
 				throw new EmptyCollectionException();
 
-			LinkedNode<E> current = Head.Next;
+			LinkedNode<T> current = Head.Next;
 			while (current.HasNext())
 			{
 				current = current.Next;
@@ -167,9 +167,9 @@ namespace Algorithms.Collections
 		/// <summary>
 		/// Define um enumerador para a lista.
 		/// </summary>
-		public override IEnumerator<E> GetEnumerator()
+		public override IEnumerator<T> GetEnumerator()
 		{
-			LinkedNode<E> current = Head;
+			LinkedNode<T> current = Head;
 			while (current.HasNext())
 			{
                 current = current.Next;
