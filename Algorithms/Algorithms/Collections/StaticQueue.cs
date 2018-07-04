@@ -41,7 +41,7 @@ namespace Algorithms.Collections
             else
             if (Full())
             {
-                IncreaseCapacity(DEFAULT_SIZE);
+                IncreaseCapacity(DefaultSize);
             }
 
 			Vector[Length++] = obj;

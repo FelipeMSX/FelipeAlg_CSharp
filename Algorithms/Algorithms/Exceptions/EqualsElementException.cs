@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Algorithms.Exceptions
 {
-	public class EqualsElementException : Exception
-	{
-		public const string Message = "Equals elements are not allowed!";
+	public class EqualsElementException : Exception, ISerializable
+    {
+		public new const string Message = "Equals elements are not allowed!";
 
-        public EqualsElementException()
+        public EqualsElementException() : base(Message)
         {
         }
 
-        public EqualsElementException(string message = null) : base(message ?? Message)
+        public EqualsElementException(string message) : base(Message)
 		{
 		}
 

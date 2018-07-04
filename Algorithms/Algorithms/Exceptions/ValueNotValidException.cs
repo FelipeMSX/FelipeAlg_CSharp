@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Algorithms.Exceptions
 {
-	public class ValueNotValidException : Exception
+	public class ValueNotValidException : Exception, ISerializable
 	{
-		public const string Message = "The value is not valid!";
+		public new const string Message = "The value is not valid!";
 
-        public ValueNotValidException()
+        public ValueNotValidException() : base(Message)
         {
         }
 
-        public ValueNotValidException(string message = null) : base(message ?? Message)
+        public ValueNotValidException(string message) : base(message ?? Message)
 		{
 		}
 

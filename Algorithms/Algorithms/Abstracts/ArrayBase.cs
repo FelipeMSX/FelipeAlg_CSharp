@@ -17,7 +17,7 @@ namespace Algorithms.Abstacts
         /// <summary>
         /// Constante que define um valor inicial padrão para a coleção.
         /// </summary>
-        public const int DEFAULT_SIZE = 100;
+        public const int DefaultSize = 100;
 
         /// <summary>
         /// Fornece um método de comparação para os objetos da coleção.
