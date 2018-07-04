@@ -5,7 +5,7 @@ namespace Algorithms.Exceptions
 {
     public class NullObjectException : Exception, ISerializable
     {
-        public new const string Message = "Object can't be null!";
+        public new const string Message = "The object can't be null!";
 
         public NullObjectException() : base(Message)
         {
