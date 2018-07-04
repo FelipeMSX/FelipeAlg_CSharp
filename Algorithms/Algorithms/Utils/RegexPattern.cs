@@ -12,7 +12,7 @@ namespace Algorithms.Utils
     /// <author>Felipe Morais</author>
     /// <email>felipemsx18@gmail.com</email>
     /// <typeparam name="E"></typeparam>
-    public static class RegexExpressions
+    public static class RegexPattern
 	{
         public const String AddressIP = @"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$";
         public const String CPF = @"^\d{3}\.\d{3}\.\d{3}\-\d{2}$";

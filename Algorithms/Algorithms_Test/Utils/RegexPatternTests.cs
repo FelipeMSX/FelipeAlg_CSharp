@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Algorithms_Test.Utils
 {
     [TestClass]
-    public class RegexExpressionsTests
+    public class RegexPatternTests
     {
 
         #region CPF - Valid Inputs
@@ -18,7 +18,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("048.111.333-78", RegexExpressions.CPF);
+            bool result = Regex.IsMatch("048.111.333-78", RegexPattern.CPF);
             //Assert
             Assert.IsTrue(result, "The input is valid because the CPF has a match!");
         }
@@ -35,7 +35,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("048.111.333-0", RegexExpressions.CPF);
+            bool result = Regex.IsMatch("048.111.333-0", RegexPattern.CPF);
             //Assert
             Assert.IsFalse(result, "The input is invalid because the CPF pattern doesn't match!");
         }
@@ -48,7 +48,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("", RegexExpressions.CPF);
+            bool result = Regex.IsMatch("", RegexPattern.CPF);
             //Assert
             Assert.IsFalse(result, "The input is invalid because the CPF pattern doesn't match!");
         }
@@ -61,7 +61,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch(null, RegexExpressions.CPF);
+            bool result = Regex.IsMatch(null, RegexPattern.CPF);
             //Assert
             Assert.Inconclusive("An exception was expected!");
         }
@@ -74,7 +74,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("04811133340", RegexExpressions.CPF);
+            bool result = Regex.IsMatch("04811133340", RegexPattern.CPF);
             //Assert
             Assert.IsFalse(result, "The input is invalid because the CPF pattern doesn't match!");
         }
@@ -90,7 +90,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("86.218.925/0001-29", RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch("86.218.925/0001-29", RegexPattern.CNPJ);
             //Assert
             Assert.IsTrue(result, "The input is valid because the CNPJ has a match!");
         }
@@ -107,7 +107,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("86.218.925/001-29", RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch("86.218.925/001-29", RegexPattern.CNPJ);
             //Assert
             Assert.IsFalse(result, "CNPJ is invalid because one character is missing!");
         }
@@ -120,7 +120,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("86.218.A25/001-29", RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch("86.218.A25/001-29", RegexPattern.CNPJ);
             //Assert
             Assert.IsFalse(result, "CNPJ must contain only numbers with mask!");
         }
@@ -133,7 +133,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("", RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch("", RegexPattern.CNPJ);
             //Assert
             Assert.IsFalse(result, "The CNPJ is invalid because it is empty!");
         }
@@ -146,7 +146,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch(null, RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch(null, RegexPattern.CNPJ);
             //Assert
             Assert.Inconclusive("It's not acceptable null value!");
         }
@@ -159,7 +159,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("877317600003157", RegexExpressions.CNPJ);
+            bool result = Regex.IsMatch("877317600003157", RegexPattern.CNPJ);
             //Assert
             Assert.IsFalse(result, "CNPJ is only valid with mask!");
         }
@@ -176,7 +176,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("172.168.218.116", RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch("172.168.218.116", RegexPattern.AddressIP);
             //Assert
             Assert.IsTrue(result, "The input is valid because the IP has a match!");
         }
@@ -189,7 +189,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("1.2.3.4", RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch("1.2.3.4", RegexPattern.AddressIP);
             //Assert
             Assert.IsTrue(result, "The input is valid because the IP has a match!");
         }
@@ -206,7 +206,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("1a2.168.2a8.116", RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch("1a2.168.2a8.116", RegexPattern.AddressIP);
             //Assert
             Assert.IsFalse(result, "The input is valid because the IP has a match!");
         }
@@ -219,7 +219,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("", RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch("", RegexPattern.AddressIP);
             //Assert
             Assert.IsFalse(result, "The IP is invalid because it is empty!");
         }
@@ -232,7 +232,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch(null, RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch(null, RegexPattern.AddressIP);
             //Assert
             Assert.Inconclusive("It's not acceptable null value!");
         }
@@ -245,7 +245,7 @@ namespace Algorithms_Test.Utils
         {
             //Arrange
             //Act
-            bool result = Regex.IsMatch("172168218116", RegexExpressions.AddressIP);
+            bool result = Regex.IsMatch("172168218116", RegexPattern.AddressIP);
             //Assert
             Assert.IsFalse(result, "IP is only valid with mask!");
         }

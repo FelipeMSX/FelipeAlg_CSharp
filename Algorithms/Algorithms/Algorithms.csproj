@@ -125,7 +125,7 @@
     <Compile Include="Sorts\MergeSort.cs" />
     <Compile Include="Sorts\QuickSort.cs" />
     <Compile Include="Study\Aula03.cs" />
-    <Compile Include="Utils\RegexExpressions.cs" />
+    <Compile Include="Utils\RegexPattern.cs" />
     <Compile Include="Utils\ListFunctions.cs" />
     <Compile Include="Abstracts\LinkedListBase.cs" />
     <Compile Include="Abstracts\NodeBase.cs" />

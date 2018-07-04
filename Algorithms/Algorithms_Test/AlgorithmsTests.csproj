@@ -111,7 +111,7 @@
     <Compile Include="Sorts\QuickSortTests.cs" />
     <Compile Include="Collections\StaticQueueTests.cs" />
     <Compile Include="Collections\StaticStackTests.cs" />
-    <Compile Include="Utils\RegexExpressionsTests.cs" />
+    <Compile Include="Utils\RegexPatternTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj">
