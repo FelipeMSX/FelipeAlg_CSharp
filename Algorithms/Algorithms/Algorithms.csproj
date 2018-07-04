@@ -124,7 +124,6 @@
     <Compile Include="Sorts\HeapSort.cs" />
     <Compile Include="Sorts\MergeSort.cs" />
     <Compile Include="Sorts\QuickSort.cs" />
-    <Compile Include="Study\Aula03.cs" />
     <Compile Include="Utils\RegexPattern.cs" />
     <Compile Include="Utils\ListFunctions.cs" />
     <Compile Include="Abstracts\LinkedListBase.cs" />
@@ -143,7 +142,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Study\" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>

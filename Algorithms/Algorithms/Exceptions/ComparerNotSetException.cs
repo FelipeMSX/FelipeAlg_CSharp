@@ -8,10 +8,18 @@ namespace Algorithms.Exceptions
 {
 	public class ComparerNotSetException : Exception
 	{
-		public const string MESSAGE = "Comparer can't be null"; 
+		public const string MESSAGE = "Comparer can't be null";
 
-		public ComparerNotSetException(string message = null) : base(message ?? MESSAGE)
+        public ComparerNotSetException()
+        {
+        }
+
+        public ComparerNotSetException(string message = null) : base(message ?? MESSAGE)
 		{
 		}
-	}
+
+        public ComparerNotSetException(string message, Exception innerException) : base(message ?? MESSAGE)
+        {
+        }
+    }
 }

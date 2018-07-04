@@ -8,10 +8,19 @@ namespace Algorithms.Exceptions
 {
 	public class EmptyCollectionException : Exception
 	{
-		public const string MESSAGE = "This collection does not cotain any element!"; 
+		public const string MESSAGE = "This collection does not cotain any element!";
 
-		public EmptyCollectionException(string message = null) : base(message ?? MESSAGE)
+
+        public EmptyCollectionException()
+        {
+        }
+
+        public EmptyCollectionException(string message = null) : base(message ?? MESSAGE)
 		{
 		}
-	}
+
+        public EmptyCollectionException(string message, Exception innerException) : base(message ?? MESSAGE)
+        {
+        }
+    }
 }

@@ -102,7 +102,6 @@
   <ItemGroup>
     <Compile Include="Abstracts\ArrayBaseTests.cs" />
     <Compile Include="Collections\LinkedListTests.cs" />
-    <Compile Include="Study\Aula03Tests.cs" />
     <Compile Include="ObjectTest.cs" />
     <Compile Include="Searchs\SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,7 +124,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Study\" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

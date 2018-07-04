@@ -8,10 +8,18 @@ namespace Algorithms.Exceptions
 {
 	public class FullCollectionException : Exception
 	{
-		public const string MESSAGE = "The collection does not accept any more element"; 
+		public const string MESSAGE = "The collection does not accept any more element";
 
-		public FullCollectionException(string message = null) : base(message ?? MESSAGE)
+        public FullCollectionException()
+        {
+        }
+
+        public FullCollectionException(string message = null) : base(message ?? MESSAGE)
 		{
 		}
-	}
+
+        public FullCollectionException(string message, Exception innerException) : base(message ?? MESSAGE)
+        {
+        }
+    }
 }
