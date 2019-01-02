@@ -11,7 +11,7 @@ namespace Algorithms.Collections
 	/// <author>Felipe Morais</author>
 	/// <email>felipemsx18@gmail.com</email>
 	/// <typeparam name="E">Tipo de objeto da lista.</typeparam>
-	class OrderedLinkedList<T> : LinkedList<T>
+	public class OrderedLinkedList<T> : LinkedList<T>
 	{
 		/// <summary>
 		/// Define se a coleção aceita objetos iguais.
@@ -69,5 +69,7 @@ namespace Algorithms.Collections
 			}
 			Length++;
 		}
-	}
+
+
+    }
 }

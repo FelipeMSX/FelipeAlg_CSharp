@@ -43,7 +43,7 @@ namespace Algorithms.Nodes
 		/// <summary>
 		/// Avalia se existe um node anterior ao atual.
 		/// </summary>
-		/// <returns>Retorna true se existir um node anterior, caso contrário, false.</returns>
+		/// <returns>Retorna true se existir um node superior, caso contrário, false.</returns>
 		public bool HasFather() => Father != null;
 	}
 }

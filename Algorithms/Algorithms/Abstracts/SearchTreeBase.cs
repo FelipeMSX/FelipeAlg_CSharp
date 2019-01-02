@@ -9,6 +9,9 @@ namespace Algorithms.Abstacts
 	public abstract class SearchTreeBase<E, T> : IEnumerable<E>, IDefaultComparator<E>
 		where T : TreeSearchNode<E>
 	{
+        /// <summary>
+        /// Root não contém dados, é o "ponteiro" para o primeiro objeto da árvore.
+        /// </summary>
 		protected T Root { get; set;}
 		public int Length { get; protected set; }
 
@@ -16,7 +19,7 @@ namespace Algorithms.Abstacts
 		public abstract E Remove(E value);
 		public abstract E Retrieve(E value);
 		
-		public bool Empty() => Length == 0;
+		public bool IsEmpty() => Length == 0;
 
 		public Comparison<E> Comparator { get; set; }
 
