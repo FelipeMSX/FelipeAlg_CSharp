@@ -10,7 +10,7 @@ namespace Algorithms.Searchs
     /// 
     /// </summary>
     /// <author>Felipe Morais</author>
-	/// <email>felipemsx18@gmail.com</email>
+	/// <email>felipeprodev@gmail.com</email>
     public class Search<T> : ISearch<T>
 	{
         /// <summary>
@@ -26,35 +26,33 @@ namespace Algorithms.Searchs
         /// <summary>
         /// Utiliza a busca binária para encontrar um objeto no vetor.
         /// O vetor deve estar ordenado para funcionar.
+        /// <para> Complexidade de Espaço: Melhor -  Médio - Pior - </para>
+        /// <para> Complexidade de Tempo: Melhor -  Médio - Pior -</para>
         /// </summary>
         /// <exception cref="NullObjectException">Objeto de entrada não pode ser nulo.</exception>
         /// <exception cref="ComparerNotSetException">Comparator não deve ser nulo.</exception>
         /// <param name="orderedArray">Array com itens ordenados.</param>
         /// <param name="item">Objeto almejado.</param>
         /// <returns>Retorna o objeto caso exista, caso contrário, valor padrão do objeto.</returns>
+
         public T BinarySearch(IList<T> orderedArray, T item)
 		{
+            //5 + (7c)N/2   
             //Validações
             if (Comparator == null)
                 throw new ComparerNotSetException();
-            else
-            if (item == null)
-                throw new NullObjectException("The item can't be a null value!");
-            else
-            if (orderedArray == null)
-                throw new NullObjectException("The item can't be a null value!");
+            else if (item == null || orderedArray == null)
+                throw new NullObjectException();
 
             int left = 0;
 			int right = orderedArray.Count - 1;
-			int mid = 0;
-
-			while (left <= right)
+            while (left <= right)
 			{
-				mid = MidPosition(left, right);
-				// Se o valor do item a ser achado for maior ao do array é necessário avançar para direita.
-				// arrayItem < item
-     
-				if (Comparator(orderedArray[mid], item) <= -1)
+                int mid = MidPosition(left, right);
+                // Se o valor do item a ser achado for maior ao do array é necessário avançar para direita.
+                // arrayItem < item
+
+                if (Comparator(orderedArray[mid], item) <= -1)
 					left = mid + 1;
 				else
 				// Se o valor do item a ser achado for menor ao do array é necessário avançar para esquerda.
@@ -64,9 +62,17 @@ namespace Algorithms.Searchs
 				else
 					return orderedArray[mid];
 			}
-			return default(T);
+			return default;
 		}
-		private static int MidPosition(int left, int right)
+
+        /// <summary>
+        /// <para> Complexidade de Espaço: Melhor - 3; Médio - 3; Pior - 3. Notação O(1). </para>
+        /// <para> Complexidade de Tempo: Melhor - 0; Médio - 0; Pior - 0. Notação O(1).</para>
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        private static int MidPosition(int left, int right)
 		{
 			return left + (right - left) / 2;
 		}

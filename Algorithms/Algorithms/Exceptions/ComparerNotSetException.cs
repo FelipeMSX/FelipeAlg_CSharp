@@ -5,17 +5,17 @@ namespace Algorithms.Exceptions
 {
 	public class ComparerNotSetException : Exception, ISerializable
     {
-		public new const string Message = "Comparer can't be null";
+		public const string DefaultMessage = "Comparer can't be null";
 
-        public ComparerNotSetException() : base(Message)
+        public ComparerNotSetException() : base(DefaultMessage)
         {
         }
 
-        public ComparerNotSetException(string message) : base(message ?? Message)
+        public ComparerNotSetException(string message) : base(message ?? DefaultMessage)
 		{
 		}
 
-        public ComparerNotSetException(string message, Exception innerException) : base(message ?? Message, innerException)
+        public ComparerNotSetException(string message, Exception innerException) : base(message ?? DefaultMessage, innerException)
         {
         }
     }
