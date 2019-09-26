@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AlgorithmsTests;
-using Algorithms.Abstacts;
+using Algorithms.Abstracts;
 using Algorithms.Collections;
 using Algorithms.Exceptions;
 

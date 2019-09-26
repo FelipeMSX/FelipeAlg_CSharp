@@ -1,4 +1,4 @@
-﻿using Algorithms.Abstacts;
+﻿using Algorithms.Abstracts;
 
  namespace Algorithms.Nodes
 {

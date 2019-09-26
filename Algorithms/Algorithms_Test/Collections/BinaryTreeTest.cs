@@ -8,7 +8,7 @@ namespace Algorithms_Test.Collections
     [TestClass]
     public class BinaryTreeTest
     {
-        private BinaryTree<int?> _binaryTree;
+        private BinaryTreeCollection<int?> _binaryTree;
 
         private bool IsCrescentOrder()
         {
@@ -30,7 +30,7 @@ namespace Algorithms_Test.Collections
         [TestInitialize]
         public void SetUp()
         {
-            _binaryTree = new BinaryTree<int?>(Shared.DefaultIntComparison);
+            _binaryTree = new BinaryTreeCollection<int?>(Shared.DefaultIntComparison);
         }
 
         [TestCleanup]

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Algorithms.Abstacts;
+using Algorithms.Abstracts;
 using Algorithms.Exceptions;
 using Algorithms.Nodes;
 

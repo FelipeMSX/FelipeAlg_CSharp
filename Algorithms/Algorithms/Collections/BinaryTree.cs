@@ -3,67 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithms.Abstacts;
+using Algorithms.Abstracts;
 using Algorithms.Exceptions;
 using Algorithms.Nodes;
 
 namespace Algorithms.Collections
 {
-    public class BinaryTree<T> : SearchTreeBase<T, TreeSearchNode<T>>
+    public class BinaryTreeCollection<TType> : SearchTreeBase<TType, TreeSearchNode<TType>>
     {
 
-        public BinaryTree(Comparison<T> comparison)
+        public BinaryTreeCollection(Comparison<TType> comparison)
         {
             if (comparison == null)
             {
                 throw new NullObjectException("The comparison object cannot be null");
             }
 
-            Root = new TreeSearchNode<T>();
+            Root = new TreeSearchNode<TType>();
             Comparator = comparison;
         }
 
-        private TreeSearchNode<T> FindPosition(T value)
-        {
-            TreeSearchNode<T> searchNode = GetFirstNode();
-            bool positionFound = false;
 
-            while (!positionFound)
-            {
-                if (Comparator(searchNode.Value, value) > 0)
-                {
-                    if (searchNode.HasLeft())
-                        searchNode = searchNode.Left;
-                    else
-                        positionFound = true;
-                }
-                else if (Comparator(searchNode.Value, value) < 0)
-                {
-                    if (searchNode.HasRight())
-                        searchNode = searchNode.Right;
-                    else
-                        positionFound = true;
-                }
-                else
-                {
-                    positionFound = true;
-                }
-            }
-            return searchNode;
-        }
 
         /// <summary>
         /// Impressão é da esquerda para à direita. Resultando na ordem crescente.
         /// </summary>
         /// <returns></returns>
-        private IList<T> GenerateList()
+        private IList<TType> GenerateList()
         {
-            List<T> list = new List<T>();
-            GenerateListAuxiliar(GetFirstNode(), list);
+            List<TType> list = new List<TType>();
+            GenerateListAuxiliar(FirstNode, list);
             return list;
         }
 
-        private void GenerateListAuxiliar(TreeSearchNode<T> currentNode, IList<T> list)
+        private void GenerateListAuxiliar(TreeSearchNode<TType> currentNode, IList<TType> list)
         {
             if (currentNode != null)
             {
@@ -73,15 +46,9 @@ namespace Algorithms.Collections
             }
         }
 
-        private TreeSearchNode<T> GetFirstNode()
+        public override void Insert(TType value)
         {
-            return Root.Father;
-        }
-
-
-        public override void Insert(T value)
-        {
-            TreeSearchNode<T> newNode = new TreeSearchNode<T>(value);
+            TreeSearchNode<TType> newNode = new TreeSearchNode<TType>(value);
 
             //Validações
             if (value == null)
@@ -96,7 +63,7 @@ namespace Algorithms.Collections
             }
             else
             {
-                TreeSearchNode<T> searchNode = FindPosition(value);
+                TreeSearchNode<TType> searchNode = FindPreviousNodeByValue(value);
 
                 //Se chegar aqui deve ser inserido.
                 if (Comparator(searchNode.Value, value) > 0)
@@ -112,36 +79,30 @@ namespace Algorithms.Collections
         }
 
 
-        public override T Remove(T value)
+        public override TType Remove(TType value)
         {
             throw new NotImplementedException();
         }
 
-        public override T Retrieve(T value)
+        public override TType Retrieve(TType value)
         {
             //Validações
             if (value == null)
-            {
                 throw new NullObjectException();
-            }
             else if (IsEmpty())
-            {
                 throw new EmptyCollectionException();
-            }
 
-            TreeSearchNode<T> searchNode = FindPosition(value);
+            TreeSearchNode<TType> searchNode = FindNodeByValue(value);
 
-            if(Comparator(searchNode.Value, value) != 0 )
-            {
+            if (searchNode == null)
                 throw new ElementNotFoundException();
-            }
 
             return searchNode.Value;
         }
 
-        public override IEnumerator<T> GetEnumerator()
+        public override IEnumerator<TType> GetEnumerator()
         {
-            foreach (T item in GenerateList())
+            foreach (TType item in GenerateList())
             {
                 yield return item;
             }

@@ -3,7 +3,7 @@ using Algorithms.Interfaces;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace Algorithms.Abstacts
+namespace Algorithms.Abstracts
 {
 	/// <summary>
 	/// Classe abstrata utilizada em todas as coleções que se assemelham a uma lista dinâmica e suas variações.

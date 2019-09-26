@@ -1,4 +1,4 @@
-﻿namespace Algorithms.Abstacts
+﻿namespace Algorithms.Abstracts
 {
 	/// <summary>
 	/// Classe que tem como função armazenar um objeto qualquer.

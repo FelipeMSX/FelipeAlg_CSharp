@@ -108,6 +108,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\AVLTree.cs" />
     <Compile Include="Exceptions\ValueNotValidException.cs" />
     <Compile Include="Exceptions\NullObjectException.cs" />
     <Compile Include="Exceptions\FullCollectionException.cs" />

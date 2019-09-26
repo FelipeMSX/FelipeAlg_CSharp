@@ -1,5 +1,5 @@
 ﻿using System;
-using Algorithms.Abstacts;
+using Algorithms.Abstracts;
 using Algorithms.Exceptions;
 
 namespace Algorithms.Collections

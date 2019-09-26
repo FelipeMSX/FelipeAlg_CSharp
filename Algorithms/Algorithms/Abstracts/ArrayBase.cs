@@ -2,7 +2,7 @@
 using Algorithms.Interfaces;
 using Algorithms.Exceptions;
 
-namespace Algorithms.Abstacts
+namespace Algorithms.Abstracts
 {
     /// <summary>
     /// Define uma classe abstrata para qualquer estrutura que precise de um vetor.

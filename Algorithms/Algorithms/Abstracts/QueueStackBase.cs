@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Algorithms.Abstacts
+namespace Algorithms.Abstracts
 {
 	/// <summary>
 	/// Classe abstrata utilizada na criação de qualquer coleção que utilize uma pilha ou fila.
