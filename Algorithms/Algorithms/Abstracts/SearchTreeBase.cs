@@ -100,6 +100,50 @@ namespace Algorithms.Abstracts
             return foundNode;
         }
 
+
+        protected TreeSearchNode<TType> GoDeepToLeft(TreeSearchNode<TType> node)
+        {
+            TreeSearchNode<TType> foundNode = node;
+
+            while (foundNode.HasLeft())
+                foundNode = foundNode.Left;
+
+            return foundNode;
+        }
+
+        /// <summary>
+        /// Navega até não 
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        protected TreeSearchNode<TType> GoDeepToRight(TreeSearchNode<TType> node)
+        {
+            TreeSearchNode<TType> foundNode = node;
+            while (foundNode.HasRight())
+                foundNode = foundNode.Right;
+
+            return foundNode;
+        }
+
+
+        /// <summary>
+        /// Remove a conexão de um determinado nó. Só é possível a remoção caso não tenha nenhum filho no nó.
+        /// <para>Complexidade de Tempo: O(1).</para>
+        /// </summary>
+        /// <param name="node"></param>
+        protected void EraseConections(TreeSearchNode<TType> node)
+        {
+            if (node.Left != null || node.Right != null)
+                throw new InvalidOperationException("The operation is invalid because the leaf node has some children.");
+
+            if (node.Father.Left == node)
+                node.Father.Left = null;
+            else if (node.Father.Right == node)
+                node.Father.Right = null;
+
+            node.Father = null;
+        }
+
         protected TreeSearchNode<TType> FirstNode => Root.Father;
         
     }
