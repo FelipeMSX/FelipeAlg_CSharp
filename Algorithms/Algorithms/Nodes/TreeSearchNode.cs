@@ -17,7 +17,7 @@ namespace Algorithms.Nodes
 		/// <summary>
 		/// Representa um ponteiro para um node pai.
 		/// </summary>
-		public TreeSearchNode<T> Father { get; set; }
+		public TreeSearchNode<T> Parent { get; set; }
 
 		public TreeSearchNode() : base()
 		{
@@ -44,6 +44,6 @@ namespace Algorithms.Nodes
 		/// Avalia se existe um node anterior ao atual.
 		/// </summary>
 		/// <returns>Retorna true se existir um node superior, caso contrário, false.</returns>
-		public bool HasFather() => Father != null;
+		public bool HasFather() => Parent != null;
 	}
 }

@@ -9,24 +9,26 @@ namespace Algorithms.Abstracts
 	public abstract class SearchTreeBase<TType, TNode> : IEnumerable<TType>, IDefaultComparator<TType>
 		where TNode : TreeSearchNode<TType>
 	{
+        public int Length { get; protected set; }
+        public bool IsEmpty() => Length == 0;
+        public Comparison<TType> Comparator { get; set; }
+
         /// <summary>
         /// Root não contém dados, é o "ponteiro" para o primeiro objeto da árvore.
         /// </summary>
 		protected TNode Root { get; set;}
-		public int Length { get; protected set; }
-        public bool AllowUniqueObject { get; protected set; }
+        protected TreeSearchNode<TType> FirstNode
+        {
+            get { return Root.Parent; }
+            set { Root.Parent = value; }
+        }
 
 		public abstract void Insert(TType value);
 		public abstract TType Remove(TType value);
 		public abstract TType Retrieve(TType value);
-		
-		public bool IsEmpty() => Length == 0;
-
-		public Comparison<TType> Comparator { get; set; }
-
 		public abstract IEnumerator<TType> GetEnumerator();
 
-		IEnumerator IEnumerable.GetEnumerator()
+		public IEnumerator  GetEnumerator()
 		{
 			throw new NotImplementedException();
 		}
@@ -133,18 +135,39 @@ namespace Algorithms.Abstracts
         /// <param name="node"></param>
         protected void EraseConections(TreeSearchNode<TType> node)
         {
-            if (node.Left != null || node.Right != null)
-                throw new InvalidOperationException("The operation is invalid because the leaf node has some children.");
+            if (!node.HasLeft() && !node.HasRight())
+            {
+                if (node.Parent.Left == node)
+                    node.Parent.Left = null;
+                else if (node.Parent.Right == node)
+                    node.Parent.Right = null;
 
-            if (node.Father.Left == node)
-                node.Father.Left = null;
-            else if (node.Father.Right == node)
-                node.Father.Right = null;
+                node.Parent = null;
+            }
+            else if (node.HasLeft() && !node.HasRight())
+            {
+                if (node.Parent.Left == node)
+                    node.Parent.Left = node.Left;
+                else if (node.Parent.Right == node)
+                    node.Parent.Right = node.Left;
+            }
+            else if (!node.HasLeft() && node.HasRight())
+            {
+                if (node.Parent.Left == node)
+                    node.Parent.Left = node.Right;
+                else if (node.Parent.Right == node)
+                    node.Parent.Right = node.Right;
+            }
+            else if (node.HasLeft() && node.HasRight())
+            {
+               Tree rightMostNode = mostGoDeepToRight(node.Right)
+            }
 
-            node.Father = null;
+            node.Parent = null;
+
+
         }
 
-        protected TreeSearchNode<TType> FirstNode => Root.Father;
         
     }
 }

@@ -131,7 +131,7 @@ namespace Algorithms.Collections
 				current = current.Next;
 			}
            
-			return Comparator(current.Value, obj) == 0 ? current.Value : default(T);
+			return Comparator(current.Value, obj) == 0 ? current.Value : default;
 		}
 
 		/// <summary>

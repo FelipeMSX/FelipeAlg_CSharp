@@ -51,7 +51,7 @@ namespace Algorithms.Collections
 
             if (IsEmpty())
             {
-                Root.Father = newNode;
+                Root.Parent = newNode;
                 Length++;
             }
             else
@@ -66,7 +66,7 @@ namespace Algorithms.Collections
                 else
                     throw new EqualsElementException();
 
-                newNode.Father = searchNode;
+                newNode.Parent = searchNode;
                 Length++;
             }
         }
@@ -93,20 +93,12 @@ namespace Algorithms.Collections
             {
                 foundValue       = removeNode.Value;
                 removeNode.Value = default;
-                Root.Father      = null;
+                FirstNode        = null;
             }
             else
             {
-                //Remover um nó sem filho.
-                if (!removeNode.HasLeft() && !removeNode.HasRight())
-                {
-                    foundValue = removeNode.Value;
-                    EraseConections(removeNode);
-                }
-                else if (removeNode.HasLeft() && !removeNode.HasRight())
-                {
-                    TreeSearchNode<TValue> replaceNode = removeNode.Left;
-                }
+                foundValue = removeNode.Value;
+                EraseConections(removeNode);
             }
 
             Length--;
