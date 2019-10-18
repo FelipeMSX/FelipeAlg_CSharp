@@ -12,36 +12,13 @@ namespace Algorithms.Collections
     public class BinaryTreeCollection<TValue> : SearchTreeBase<TValue, TreeSearchNode<TValue>>
     {
 
-        public BinaryTreeCollection(Comparison<TValue> comparison)
+        public BinaryTreeCollection(Comparison<TValue> comparator) : base(comparator)
         {
             Root = new TreeSearchNode<TValue>();
-            Comparator = comparison ?? throw new NullObjectException("The comparison object cannot be null");
         }
 
 
-
-        /// <summary>
-        /// Impressão é da esquerda para à direita. Resultando na ordem crescente.
-        /// </summary>
-        /// <returns></returns>
-        private IList<TValue> GenerateList()
-        {
-            List<TValue> list = new List<TValue>();
-            GenerateListAuxiliar(FirstNode, list);
-            return list;
-        }
-
-        private void GenerateListAuxiliar(TreeSearchNode<TValue> currentNode, IList<TValue> list)
-        {
-            if (currentNode != null)
-            {
-                GenerateListAuxiliar(currentNode.Left, list);
-                list.Add(currentNode.Value);
-                GenerateListAuxiliar(currentNode.Right, list);
-            }
-        }
-
-        public override void Insert(TValue value)
+        public override void Add(TValue value)
         {
             TreeSearchNode<TValue> newNode = new TreeSearchNode<TValue>(value);
 
@@ -52,7 +29,7 @@ namespace Algorithms.Collections
             if (IsEmpty())
             {
                 Root.Parent = newNode;
-                Length++;
+                Count++;
             }
             else
             {
@@ -67,67 +44,41 @@ namespace Algorithms.Collections
                     throw new EqualsElementException();
 
                 newNode.Parent = searchNode;
-                Length++;
+                Count++;
             }
         }
 
 
-        public override TValue Remove(TValue value)
+        public override bool Remove(TValue value)
         {
             //Validações
-            if (value == null)
-                throw new NullObjectException();
-            else if (IsEmpty())
-                throw new EmptyCollectionException();
+            if (value == null || IsEmpty())
+                return false;
 
             TreeSearchNode<TValue> removeNode = FindNodeByValue(value);
 
-            if(removeNode == null || Comparator(removeNode.Value,value) != 0)
-                throw new ElementNotFoundException();
+            if (removeNode == null)
+                return false;
 
             //A partir daqui é pra remover o objeto.
-            TValue foundValue = default;
+            removeNode.Value = default;
 
             //Remover na Raiz
-            if (Length == 1)
+            if (Count == 1)
             {
-                foundValue       = removeNode.Value;
-                removeNode.Value = default;
-                FirstNode        = null;
+                removeNode.Parent   = null;
+                FirstNode           = null;
             }
             else
             {
-                foundValue = removeNode.Value;
-                EraseConections(removeNode);
+                EraseConnections(removeNode);
             }
 
-            Length--;
+            Count--;
 
-            return foundValue;
+            return true;
         }
 
-        public override TValue Retrieve(TValue value)
-        {
-            //Validações
-            if (value == null)
-                throw new NullObjectException();
-            else if (IsEmpty())
-                throw new EmptyCollectionException();
-
-            TreeSearchNode<TValue> searchNode = FindNodeByValue(value);
-
-            if (searchNode == null)
-                throw new ElementNotFoundException();
-
-            return searchNode.Value;
-        }
-
-        public override IEnumerator<TValue> GetEnumerator()
-        {
-            foreach (TValue item in GenerateList())
-            {
-                yield return item;
-            }
-        }
+  
     }
 }

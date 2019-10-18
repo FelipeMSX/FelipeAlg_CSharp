@@ -1,58 +1,101 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Algorithms.Exceptions;
 using Algorithms.Interfaces;
 using Algorithms.Nodes;
 
 namespace Algorithms.Abstracts
 {
-	public abstract class SearchTreeBase<TType, TNode> : IEnumerable<TType>, IDefaultComparator<TType>
-		where TNode : TreeSearchNode<TType>
+	public abstract class SearchTreeBase<TValue, TNode> : ICollection<TValue>, IDefaultComparator<TValue>
+		where TNode : TreeSearchNode<TValue>
 	{
-        public int Length { get; protected set; }
-        public bool IsEmpty() => Length == 0;
-        public Comparison<TType> Comparator { get; set; }
+        public int Count { get; protected set; }
+        public bool IsEmpty() => Count == 0;
+        public bool IsReadOnly => false;
+
+        public Comparison<TValue> Comparator { get; }
 
         /// <summary>
         /// Root não contém dados, é o "ponteiro" para o primeiro objeto da árvore.
         /// </summary>
 		protected TNode Root { get; set;}
-        protected TreeSearchNode<TType> FirstNode
+        protected TreeSearchNode<TValue> FirstNode
         {
-            get { return Root.Parent; }
-            set { Root.Parent = value; }
+            get => Root.Parent;
+            set => Root.Parent = value; 
         }
 
-		public abstract void Insert(TType value);
-		public abstract TType Remove(TType value);
-		public abstract TType Retrieve(TType value);
-		public abstract IEnumerator<TType> GetEnumerator();
 
-		public IEnumerator  GetEnumerator()
-		{
-			throw new NotImplementedException();
-		}
+        protected SearchTreeBase(Comparison<TValue> comparator)
+        {
+            Comparator = comparator ?? throw new NullObjectException("The comparison object cannot be null");
+        }
 
+
+        public abstract void Add(TValue item);
+		public abstract bool Remove(TValue value);
+		
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        public IEnumerator<TValue> GetEnumerator()
+        {
+            foreach (TValue item in GenerateList())
+            {
+                yield return item;
+            }
+        }
+        public TValue Retrieve(TValue item)
+        {
+            //Validações
+            if (item == null)
+                throw new NullObjectException();
+            else if (IsEmpty())
+                throw new EmptyCollectionException();
+
+            TreeSearchNode<TValue> searchNode = FindNodeByValue(item);
+
+            if (searchNode == null)
+                throw new ElementNotFoundException();
+
+            return searchNode.Value;
+        }
+
+        public void Clear()
+        {
+            Root = (TNode)new TreeSearchNode<TValue>();
+            Count = 0;
+        }
+
+        public bool Contains(TValue item) => FindNodeByValue(item) != null;
+
+        public void CopyTo(TValue[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Encontra a posição anterior ao valor informado. 
         /// Caso não encontre o nó com o valor retorna a posição mais próxima a ele.
         /// <para>Complexidade de Tempo: O(log n).</para>
         /// </summary>
-        protected TreeSearchNode<TType> FindPreviousNodeByValue(TType value)
+        protected TreeSearchNode<TValue> FindPreviousNodeByValue(TValue item)
         {
-            TreeSearchNode<TType> searchNode = FirstNode;
-            TreeSearchNode<TType> previousNode = searchNode;
+            TreeSearchNode<TValue> searchNode = FirstNode;
+            TreeSearchNode<TValue> previousNode = searchNode;
             bool positionFound = false;
 
-            while (!positionFound)
+            while (searchNode != null && !positionFound)
             {
-                if (Comparator(searchNode.Value, value) > 0 && searchNode.HasLeft())
+                if (Comparator(item, searchNode.Value) < 0)
                 {
                     previousNode = searchNode;
                     searchNode = searchNode.Left;
                 }
-                else if (Comparator(searchNode.Value, value) < 0 && searchNode.HasRight())
+                else if (Comparator(item, searchNode.Value) > 0)
                 {
                     previousNode = searchNode;
                     searchNode = searchNode.Right;
@@ -63,49 +106,43 @@ namespace Algorithms.Abstracts
                 }
             }
 
-            return previousNode;
+            return positionFound ? searchNode : previousNode;
         }
 
         /// <summary>
         /// Encontra a posição do nó de acordo com o valor informado.
         /// <para>Complexidade de Tempo: O(log n).</para>
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="item"></param>
         /// <returns>Retorna</returns>
-        protected TreeSearchNode<TType> FindNodeByValue(TType value)
+        protected TreeSearchNode<TValue> FindNodeByValue(TValue item)
         {
-            TreeSearchNode<TType> searchNode = FirstNode;
-            TreeSearchNode<TType> foundNode = null;
-            bool positionFound = false;
+            TreeSearchNode<TValue> searchNode = FirstNode;
+            bool found = false;
 
-            while (!positionFound)
+            while (searchNode != null && !found)
             {
-                if (Comparator(searchNode.Value, value) > 0 && searchNode.HasLeft())
+                if (Comparator(item, searchNode.Value) < 0)
                 {
                     searchNode = searchNode.Left;
                 }
-                else if (Comparator(searchNode.Value, value) < 0 && searchNode.HasRight())
+                else if (Comparator(item, searchNode.Value) > 0)
                 {
                     searchNode = searchNode.Right;
                 }
-                else if (Comparator(searchNode.Value, value) == 0)
+                else 
                 {
-                    foundNode = searchNode;
-                    positionFound = true;// parar o loop.
-                }
-                else
-                {
-                    positionFound = true;// parar o loop.
+                    found = true;
                 }
             }
 
-            return foundNode;
+            return found ? searchNode : null;
         }
 
 
-        protected TreeSearchNode<TType> GoDeepToLeft(TreeSearchNode<TType> node)
+        protected TreeSearchNode<TValue> GoDeepToLeft(TreeSearchNode<TValue> node)
         {
-            TreeSearchNode<TType> foundNode = node;
+            TreeSearchNode<TValue> foundNode = node;
 
             while (foundNode.HasLeft())
                 foundNode = foundNode.Left;
@@ -118,9 +155,9 @@ namespace Algorithms.Abstracts
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        protected TreeSearchNode<TType> GoDeepToRight(TreeSearchNode<TType> node)
+        protected TreeSearchNode<TValue> GoDeepToRight(TreeSearchNode<TValue> node)
         {
-            TreeSearchNode<TType> foundNode = node;
+            TreeSearchNode<TValue> foundNode = node;
             while (foundNode.HasRight())
                 foundNode = foundNode.Right;
 
@@ -133,7 +170,7 @@ namespace Algorithms.Abstracts
         /// <para>Complexidade de Tempo: O(1).</para>
         /// </summary>
         /// <param name="node"></param>
-        protected void EraseConections(TreeSearchNode<TType> node)
+        protected void EraseConnections(TreeSearchNode<TValue> node)
         {
             if (!node.HasLeft() && !node.HasRight())
             {
@@ -150,6 +187,9 @@ namespace Algorithms.Abstracts
                     node.Parent.Left = node.Left;
                 else if (node.Parent.Right == node)
                     node.Parent.Right = node.Left;
+
+                node.Parent = null;
+                node.Left = null;
             }
             else if (!node.HasLeft() && node.HasRight())
             {
@@ -157,17 +197,37 @@ namespace Algorithms.Abstracts
                     node.Parent.Left = node.Right;
                 else if (node.Parent.Right == node)
                     node.Parent.Right = node.Right;
+
+                node.Parent = null;
+                node.Right = null;
             }
             else if (node.HasLeft() && node.HasRight())
             {
-               Tree rightMostNode = mostGoDeepToRight(node.Right)
+                TreeSearchNode<TValue> leftMostNode = GoDeepToLeft(node.Right);
+                EraseConnections(leftMostNode);
+                node.Value = leftMostNode.Value;
+                leftMostNode.Value = default;
             }
-
-            node.Parent = null;
-
-
         }
 
-        
+        /// <summary>
+        /// Impressão é da esquerda para à direita. Resultando na ordem crescente.
+        /// </summary>
+        private IList<TValue> GenerateList()
+        {
+            List<TValue> list = new List<TValue>();
+            GenerateListAuxiliar(FirstNode, list);
+            return list;
+        }
+
+        private void GenerateListAuxiliar(TreeSearchNode<TValue> currentNode, IList<TValue> list)
+        {
+            if (currentNode != null)
+            {
+                GenerateListAuxiliar(currentNode.Left, list);
+                list.Add(currentNode.Value);
+                GenerateListAuxiliar(currentNode.Right, list);
+            }
+        }
     }
 }

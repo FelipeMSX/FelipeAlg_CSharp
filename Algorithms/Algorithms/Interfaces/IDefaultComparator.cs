@@ -4,6 +4,6 @@ namespace Algorithms.Interfaces
 {
 	public interface IDefaultComparator<T>
 	{
-		Comparison<T> Comparator { get; set; }
+		Comparison<T> Comparator { get;  }
 	}
 }
