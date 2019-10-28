@@ -33,7 +33,7 @@ namespace Algorithms.Abstracts
         }
 
 
-        public abstract void Add(TValue item);
+        public abstract void Add(TValue value);
 		public abstract bool Remove(TValue value);
 		
 

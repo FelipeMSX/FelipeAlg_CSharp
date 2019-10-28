@@ -1,22 +1,20 @@
-﻿using System;
+﻿using Algorithms.Abstracts;
+using Algorithms.Exceptions;
+using Algorithms.Nodes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Algorithms.Abstracts;
-using Algorithms.Exceptions;
-using Algorithms.Nodes;
 
 namespace Algorithms.Collections
 {
-    public class BinaryTreeCollection<TValue> : SearchTreeBase<TValue, TreeSearchNode<TValue>>
+    public class BalancedTreeCollection<TValue> : SearchTreeBase<TValue, TreeSearchNode<TValue>>
     {
-
-        public BinaryTreeCollection(Comparison<TValue> comparator) : base(comparator)
+        public BalancedTreeCollection(Comparison<TValue> comparator) : base(comparator)
         {
             Root = new TreeSearchNode<TValue>();
         }
-
 
         public override void Add(TValue value)
         {
@@ -46,39 +44,12 @@ namespace Algorithms.Collections
                 newNode.Parent = searchNode;
                 Count++;
             }
-        }
 
+        }
 
         public override bool Remove(TValue value)
         {
-            //Validações
-            if (value == null || IsEmpty())
-                return false;
-
-            TreeSearchNode<TValue> removeNode = FindNodeByValue(value);
-
-            if (removeNode == null)
-                return false;
-
-            //A partir daqui é pra remover o objeto.
-            removeNode.Value = default;
-
-            //Remover na Raiz
-            if (Count == 1)
-            {
-                removeNode.Parent   = null;
-                FirstNode           = null;
-            }
-            else
-            {
-                EraseConnections(removeNode);
-            }
-
-            Count--;
-
-            return true;
+            throw new NotImplementedException();
         }
-
-  
     }
 }

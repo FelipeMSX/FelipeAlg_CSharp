@@ -108,7 +108,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\AVLTree.cs" />
+    <Compile Include="Collections\BalancedTreeCollection.cs" />
     <Compile Include="Exceptions\ValueNotValidException.cs" />
     <Compile Include="Exceptions\NullObjectException.cs" />
     <Compile Include="Exceptions\FullCollectionException.cs" />
@@ -136,7 +136,7 @@
     <Compile Include="Abstracts\ArrayBase.cs" />
     <Compile Include="Interfaces\ICommon.cs" />
     <Compile Include="Interfaces\IDefaultComparator.cs" />
-    <Compile Include="Collections\BinaryTree.cs" />
+    <Compile Include="Collections\BinaryTreeCollection.cs" />
     <Compile Include="Collections\LinkedList.cs" />
     <Compile Include="Collections\OrderedLinkedList.cs" />
     <Compile Include="Collections\StaticQueue.cs" />
