@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Algorithms.Abstracts;
+using Algorithms.Helpers.TreeHelpers;
 using Algorithms.Exceptions;
+using Algorithms.Interfaces;
 using Algorithms.Nodes;
 
 namespace Algorithms.Collections
@@ -12,11 +14,15 @@ namespace Algorithms.Collections
     public class BinaryTreeCollection<TValue> : SearchTreeBase<TValue, TreeSearchNode<TValue>>
     {
 
-        public BinaryTreeCollection(Comparison<TValue> comparator) : base(comparator)
+        public BinaryTreeCollection(Comparison<TValue> comparator) : base(comparator, new InOrderTraversal<TValue>())
         {
             Root = new TreeSearchNode<TValue>();
         }
 
+        public BinaryTreeCollection(Comparison<TValue> comparator, ITraversalStrategy<TValue> traversalStrategy) : base(comparator, traversalStrategy)
+        {
+            Root = new TreeSearchNode<TValue>();
+        }
 
         public override void Add(TValue value)
         {

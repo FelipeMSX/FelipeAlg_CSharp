@@ -109,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\BalancedTreeCollection.cs" />
+    <Compile Include="Helpers\TreeHelpers\InOrderTraversal.cs" />
+    <Compile Include="Helpers\TreeHelpers\PostOrderTraversal.cs" />
+    <Compile Include="Helpers\TreeHelpers\PreOrderTraversal.cs" />
     <Compile Include="Exceptions\ValueNotValidException.cs" />
     <Compile Include="Exceptions\NullObjectException.cs" />
     <Compile Include="Exceptions\FullCollectionException.cs" />
@@ -119,6 +122,8 @@
     <Compile Include="Extensions\Enum.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Interfaces\ISearch.cs" />
+    <Compile Include="Interfaces\ITraversalStrategy.cs" />
+    <Compile Include="Nodes\BalancedTreeSearchNode.cs" />
     <Compile Include="Nodes\LinkedDoubleNode.cs" />
     <Compile Include="Nodes\LinkedNode.cs" />
     <Compile Include="Nodes\TreeSearchNode.cs" />
@@ -127,8 +132,8 @@
     <Compile Include="Sorts\HeapSort.cs" />
     <Compile Include="Sorts\MergeSort.cs" />
     <Compile Include="Sorts\QuickSort.cs" />
-    <Compile Include="Utils\RegexPattern.cs" />
-    <Compile Include="Utils\ListFunctions.cs" />
+    <Compile Include="Helpers\RegexPattern.cs" />
+    <Compile Include="Helpers\ListFunctions.cs" />
     <Compile Include="Abstracts\LinkedListBase.cs" />
     <Compile Include="Abstracts\NodeBase.cs" />
     <Compile Include="Abstracts\QueueStackBase.cs" />

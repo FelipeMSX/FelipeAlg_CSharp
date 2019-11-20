@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Algorithms.Utils
+namespace Algorithms.Helpers
 {
     public static class ListFunctions
 	{

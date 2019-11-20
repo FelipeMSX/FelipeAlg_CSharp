@@ -60,7 +60,7 @@ namespace Algorithms.Collections
 				throw new EmptyCollectionException();
 
 			T temp = Vector[--Length];
-			Vector[Length] = default(T);
+			Vector[Length] = default;
 
 			return temp;
 		}

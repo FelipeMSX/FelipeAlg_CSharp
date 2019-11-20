@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using Algorithms.Utils;
+using Algorithms.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Algorithms_Test.Utils

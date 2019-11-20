@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms.Utils
+namespace Algorithms.Helpers
 {
     /// <summary>
     /// Objeto da classe é realizar validações na camada de exibição.

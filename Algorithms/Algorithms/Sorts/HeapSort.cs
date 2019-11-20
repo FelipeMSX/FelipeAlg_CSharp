@@ -1,6 +1,6 @@
 ﻿using Algorithms.Interfaces;
 using Algorithms.Exceptions;
-using Algorithms.Utils;
+using Algorithms.Helpers;
 using System;
 using System.Collections.Generic;
 
