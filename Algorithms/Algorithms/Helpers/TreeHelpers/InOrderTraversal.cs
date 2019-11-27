@@ -6,15 +6,14 @@ using System.Collections.Generic;
 
 namespace Algorithms.Helpers.TreeHelpers
 {
+    //Inorder(Left, Root, Right)
     public class InOrderTraversal<T> : ITraversalStrategy<T>
     {
-
-        //Criar pilha dinâmica
         public IEnumerator<T> Traversal(TreeSearchNode<T> node)
         {
             QueueStackBase<TreeSearchNode<T>> staticStack = new StaticStack<TreeSearchNode<T>>(1000);
 
-            while(staticStack.Length > 0 && node != null)
+            while(staticStack.Length > 0 || node != null)
             {
                 if(node != null)
                 {

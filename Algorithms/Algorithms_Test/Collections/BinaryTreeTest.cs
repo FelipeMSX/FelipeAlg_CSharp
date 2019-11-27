@@ -1,7 +1,10 @@
 ﻿using System;
+using Algorithms.Abstracts;
 using Algorithms.Collections;
 using Algorithms.Exceptions;
+using Algorithms.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 
 namespace Algorithms_Test.Collections
 {
@@ -31,6 +34,8 @@ namespace Algorithms_Test.Collections
         public void SetUp()
         {
             _binaryTree = new BinaryTreeCollection<int?>(Shared.DefaultIntComparison) ;
+
+                var bTree = Substitute.For<SearchTreeBase<int?, TreeSearchNode<int?>>, BinaryTreeCollection<int?>>();
         }
 
         [TestCleanup]

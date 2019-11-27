@@ -13,14 +13,12 @@ namespace Algorithms.Abstracts
 		public int Count { get; protected set; }
 		public bool IsEmpty() => Count == 0;
 		public bool IsReadOnly => false;
-
 		public Comparison<TValue> Comparator { get; }
 
 		/// <summary>
 		/// Root não contém dados, é o "ponteiro" para o primeiro objeto da árvore.
 		/// </summary>
 		protected TNode Root { get; set; }
-
 		protected ITraversalStrategy<TValue> TraversalStrategy { get; set; }
 		protected TreeSearchNode<TValue> FirstNode
 		{
@@ -46,9 +44,10 @@ namespace Algorithms.Abstracts
 
 		public IEnumerator<TValue> GetEnumerator()
 		{
-            return TraversalStrategy.Traversal(Root);
+            return TraversalStrategy.Traversal(Root.Parent);
 
         }
+
 		public TValue Retrieve(TValue item)
 		{
 			//Validações

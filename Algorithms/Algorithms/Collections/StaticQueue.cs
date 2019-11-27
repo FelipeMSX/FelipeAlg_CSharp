@@ -68,5 +68,20 @@ namespace Algorithms.Collections
 
 			return obj;
 		}
-	}
+
+        /// <summary>
+        /// Retorna o primero elemento a sair da fila sem removê-lo.
+        /// </summary>
+        /// <exception cref="EmptyCollectionException">Se a fila estiver vazia causa um erro.</exception>
+        /// <returns></returns>
+        public override T Peek()
+        {
+            if (Empty())
+                throw new EmptyCollectionException();
+
+            T obj = Vector[0];
+
+            return obj;
+        }
+    }
 }

@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using Algorithms.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Algorithms_Test.Utils
+namespace Algorithms_Test.Helpers
 {
     [TestClass]
     public class RegexPatternTests

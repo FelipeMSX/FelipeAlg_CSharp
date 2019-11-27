@@ -104,6 +104,7 @@
     <Compile Include="Collections\LinkedListTests.cs" />
     <Compile Include="Collections\OrderedLinkedListTests.cs" />
     <Compile Include="Collections\BinaryTreeTest.cs" />
+    <Compile Include="Helpers\TraversalStrategy.cs" />
     <Compile Include="ObjectTest.cs" />
     <Compile Include="Searchs\SearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,7 +114,7 @@
     <Compile Include="Sorts\QuickSortTests.cs" />
     <Compile Include="Collections\StaticQueueTests.cs" />
     <Compile Include="Collections\StaticStackTests.cs" />
-    <Compile Include="Utils\RegexPatternTests.cs" />
+    <Compile Include="Helpers\RegexPatternTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation.txt" />

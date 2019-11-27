@@ -64,5 +64,21 @@ namespace Algorithms.Collections
 
 			return temp;
 		}
-	}
+
+
+        /// <summary>
+        /// Retorna o primero elemento a sair da pilha sem removê-lo.
+        /// </summary>
+        /// <exception cref="EmptyCollectionException">Se a pilha estiver vazia causa um erro.</exception>
+        /// <returns></returns>
+        public override T Peek()
+        {
+            if (Empty())
+                throw new EmptyCollectionException();
+
+            T obj = Vector[Length - 1];
+
+            return obj;
+        }
+    }
 }

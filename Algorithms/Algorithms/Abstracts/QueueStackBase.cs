@@ -13,6 +13,7 @@ namespace Algorithms.Abstracts
 
 		public abstract void Push(T obj);
 		public abstract T Pop();
+        public abstract T Peek();
 
 		protected QueueStackBase() : base()
 		{
